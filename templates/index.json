@@ -27,19 +27,11 @@
             "mobile_image": "shopify:\/\/shop_images\/s-m1.png",
             "pre_heading": "Women's Apparel",
             "heading": "Elevate your wardrobe with our limited-time fashion offer!",
-<<<<<<< HEAD
             "button_text": "Explore More",
             "button_url": "",
             "sub-heading_position": "align-center justify-center",
             "content_position": "align-center justify-center",
             "text_alignment": "center"
-=======
-            "button_text": "Button",
-            "button_url": "",
-            "padding_top": 30,
-            "padding_bottom": 30,
-            "color_scheme": "scheme-1"
->>>>>>> b2c89bf7a31dd9c6795f990e5882cac8cf8de3a6
           }
         },
         "slider_gTDGrP": {
@@ -47,7 +39,6 @@
           "settings": {
             "desktop_image": "shopify:\/\/shop_images\/s-d2.png",
             "mobile_image": "shopify:\/\/shop_images\/s-m2.png",
-<<<<<<< HEAD
             "pre_heading": "Trendy Classics",
             "heading": "Discover Signature Look: Fashion Forward and Fabulous!",
             "button_text": "Shop Now",
@@ -55,15 +46,6 @@
             "sub-heading_position": "align-start justify-start",
             "content_position": "align-center justify-start",
             "text_alignment": "left"
-=======
-            "pre_heading": "Women's Apparel",
-            "heading": "Elevate your wardrobe with our limited-time fashion offer!",
-            "button_text": "Button",
-            "button_url": "",
-            "padding_top": 30,
-            "padding_bottom": 30,
-            "color_scheme": "scheme-1"
->>>>>>> b2c89bf7a31dd9c6795f990e5882cac8cf8de3a6
           }
         },
         "slider_cQjrH7": {
@@ -71,7 +53,6 @@
           "settings": {
             "desktop_image": "shopify:\/\/shop_images\/s-d3.png",
             "mobile_image": "shopify:\/\/shop_images\/s-m3.png",
-<<<<<<< HEAD
             "pre_heading": "Modern Elegance",
             "heading": "Step into the World of Style with the Latest Fashion Trends Unveiled!",
             "button_text": "Explore Now",
@@ -79,15 +60,6 @@
             "sub-heading_position": "align-center justify-center",
             "content_position": "align-center justify-start",
             "text_alignment": "center"
-=======
-            "pre_heading": "Women's Apparel",
-            "heading": "Elevate your wardrobe with our limited-time fashion offer!",
-            "button_text": "Button",
-            "button_url": "",
-            "padding_top": 30,
-            "padding_bottom": 30,
-            "color_scheme": "scheme-1"
->>>>>>> b2c89bf7a31dd9c6795f990e5882cac8cf8de3a6
           }
         }
       },
@@ -97,7 +69,6 @@
         "slider_cQjrH7"
       ],
       "settings": {
-<<<<<<< HEAD
         "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
         "perPage": 1,
         "speed": 2,
@@ -108,8 +79,6 @@
         "pagination": true,
         "padding_top": 30,
         "padding_bottom": 30
-=======
->>>>>>> b2c89bf7a31dd9c6795f990e5882cac8cf8de3a6
       }
     }
   },
