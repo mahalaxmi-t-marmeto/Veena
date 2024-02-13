@@ -1,118 +1,5 @@
 {
   "sections": {
-    "image_banner": {
-      "type": "image-banner",
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Browse our latest products",
-            "heading_size": "h0"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify:\/\/collections\/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "scheme-3",
-        "image_behavior": "none",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "featured_collection": {
-      "type": "featured-collection",
-      "settings": {
-        "title": "Featured products",
-        "heading_size": "h2",
-        "description": "",
-        "show_description": false,
-        "description_style": "body",
-        "collection": "all",
-        "products_to_show": 8,
-        "columns_desktop": 4,
-        "full_width": false,
-        "show_view_all": true,
-        "view_all_style": "solid",
-        "enable_desktop_slider": false,
-        "color_scheme": "scheme-1",
-        "image_ratio": "adapt",
-        "image_shape": "default",
-        "show_secondary_image": true,
-        "show_vendor": false,
-        "show_rating": false,
-        "enable_quick_add": false,
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
-        "padding_top": 44,
-        "padding_bottom": 36
-      }
-    },
-    "image_with_text_Mwyfya": {
-      "type": "image-with-text",
-      "blocks": {
-        "heading_DKqAhz": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "text_nnXkhd": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
-          }
-        },
-        "button_YKFGJj": {
-          "type": "button",
-          "settings": {
-            "button_label": "Button label",
-            "button_link": "",
-            "button_style_secondary": false
-          }
-        }
-      },
-      "block_order": [
-        "heading_DKqAhz",
-        "text_nnXkhd",
-        "button_YKFGJj"
-      ],
-      "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "section_color_scheme": "",
-        "color_scheme": "",
-        "image_behavior": "none",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "featured_blog_tWDPax": {
       "type": "featured-blog",
       "settings": {
@@ -129,12 +16,74 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "custom_slider_E3wf9a": {
+      "type": "custom-slider",
+      "blocks": {
+        "slider_PHbYKK": {
+          "type": "slider",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/s-d1.png",
+            "mobile_image": "shopify:\/\/shop_images\/s-m1.png",
+            "pre_heading": "Women's Apparel",
+            "heading": "Elevate your wardrobe with our limited-time fashion offer!",
+            "button_text": "Explore More",
+            "button_url": "",
+            "sub-heading_position": "align-center justify-center",
+            "content_position": "align-center justify-center",
+            "text_alignment": "center"
+          }
+        },
+        "slider_gTDGrP": {
+          "type": "slider",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/s-d2.png",
+            "mobile_image": "shopify:\/\/shop_images\/s-m2.png",
+            "pre_heading": "Trendy Classics",
+            "heading": "Discover Signature Look: Fashion Forward and Fabulous!",
+            "button_text": "Shop Now",
+            "button_url": "",
+            "sub-heading_position": "align-start justify-start",
+            "content_position": "align-center justify-start",
+            "text_alignment": "left"
+          }
+        },
+        "slider_cQjrH7": {
+          "type": "slider",
+          "settings": {
+            "desktop_image": "shopify:\/\/shop_images\/s-d3.png",
+            "mobile_image": "shopify:\/\/shop_images\/s-m3.png",
+            "pre_heading": "Modern Elegance",
+            "heading": "Step into the World of Style with the Latest Fashion Trends Unveiled!",
+            "button_text": "Explore Now",
+            "button_url": "",
+            "sub-heading_position": "align-center justify-center",
+            "content_position": "align-center justify-start",
+            "text_alignment": "center"
+          }
+        }
+      },
+      "block_order": [
+        "slider_PHbYKK",
+        "slider_gTDGrP",
+        "slider_cQjrH7"
+      ],
+      "settings": {
+        "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
+        "perPage": 1,
+        "speed": 2,
+        "interval": 1,
+        "slider_type": "slide",
+        "autoplay": true,
+        "arrows": true,
+        "pagination": true,
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
     }
   },
   "order": [
-    "image_banner",
-    "featured_collection",
-    "image_with_text_Mwyfya",
-    "featured_blog_tWDPax"
+    "featured_blog_tWDPax",
+    "custom_slider_E3wf9a"
   ]
 }
