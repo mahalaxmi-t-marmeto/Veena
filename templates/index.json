@@ -72,11 +72,12 @@
         "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
         "perPage": 1,
         "speed": 2,
-        "interval": 1,
+        "interval": 4,
         "slider_type": "slide",
         "autoplay": true,
         "arrows": true,
         "pagination": true,
+        "rewind": true,
         "padding_top": 30,
         "padding_bottom": 30
       }
