@@ -193,7 +193,7 @@
       },
       "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b": {
         "settings": {
-          "background": "rgba(0,0,0,0)",
+          "background": "#fff",
           "background_gradient": "",
           "text": "#ffffff",
           "button": "#ffffff",
@@ -204,13 +204,24 @@
       },
       "scheme-274499fb-ff55-4273-a0b0-0259568b7890": {
         "settings": {
-          "background": "rgba(0,0,0,0)",
+          "background": "#fff",
           "background_gradient": "",
-          "text": "#ffffff",
-          "button": "#fff",
-          "button_label": "#242833",
-          "secondary_button_label": "#fff",
+          "text": "#121212",
+          "button": "#d03c3f",
+          "button_label": "#fff",
+          "secondary_button_label": "#d03c3f",
           "shadow": "#ffffff"
+        }
+      },
+      "scheme-f492ef5d-2bdc-4751-97ee-a10d51d4bb33": {
+        "settings": {
+          "background": "#ffffff",
+          "background_gradient": "",
+          "text": "#fff",
+          "button": "#fff",
+          "button_label": "#121212",
+          "secondary_button_label": "#fff",
+          "shadow": "#121212"
         }
       }
     }

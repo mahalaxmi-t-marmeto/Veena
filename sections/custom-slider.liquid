@@ -48,15 +48,15 @@
                                     <div class="slider__content">
                                         {%- if block.settings.heading != blank and block.settings.pre_heading != blank -%}
                                             <div class="slider__content-preheading {{ block.settings.sub-heading_position }}">
-                                                <ul class="slider__content-list">
+                                                <ul class="content-list">
                                                 <li>{{ block.settings.pre_heading }}</li>
                                                 </ul>
                                             </div>
-                                            <h2 class="h1">{{ block.settings.heading }}</h2>
+                                            <h2 class="h1 slider__heading">{{ block.settings.heading }}</h2>
                                             {%- if block.settings.button_text != blank -%}
                                                 <a class="button" {% if block.settings.button_link==blank %} 
                                                   role="link" aria-disabled="true" {% else %}
-                                                  href="{{ section.settings.button_link_one }}" {% endif %}>
+                                                  href="{{ block.settings.button_link }}" {% endif %}>
                                                   {{- block.settings.button_text | escape -}}
                                                 </a>
                                             {%- endif -%}
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                             {% else %}
-                                {{ 'hero-apparel-' | append: i | placeholder_svg_tag }}
+                                {{ 'hero-apparel-1'| placeholder_svg_tag }}
                             {% endif %}
                         </li>
                         {% endfor %}
@@ -166,27 +166,27 @@
         {
             "type": "header",
             "content": "Section padding"
-            },
-            {
-                "type": "range",
-                "id": "padding_top",
-                "min": 0,
-                "max": 100,
-                "step": 1,
-                "unit": "px",
-                "label": "Padding top",
-                "default": 30
-            },
-            {
-                "type": "range",
-                "id": "padding_bottom",
-                "min": 0,
-                "max": 100,
-                "step": 1,
-                "unit": "px",
-                "label": "Padding bottom",
-                "default": 30
-            }
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 30
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 30
+        }
     ],
     "blocks": [
         {
@@ -229,7 +229,7 @@
             },
             {
                 "type": "url",
-                "id":"button_url",
+                "id":"button_link",
                 "label":"Button URL"
             },
             {
@@ -315,7 +315,7 @@
                         }
                     ],
                     "default": "center"
-                    }
+                }
             ]
         }
     ] ,

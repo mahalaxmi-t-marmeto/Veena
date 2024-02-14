@@ -1,0 +1,140 @@
+{{ 'section-custom-image-grid.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+    .padding-{{ section.id }} 
+    {
+      padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+    }
+
+    @media screen and (min-width: 750px) 
+    {
+        .padding-{{ section.id }} 
+        {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+<div class=" padding-{{ section.id }} ">
+    <div class="page-width">
+        <div class="image-grid-wrapper color-{{ section.settings.color_scheme }}">
+            <div class="image-grid-container grid grid--2-col-desktop">
+                {% for block in section.blocks %}
+                    <div class="image-grid-item grid__item image-grid__item">
+                        {% if block.settings.image != blank %}
+                            {% render 'responsive-picture', desktopImage: block.settings.image %}
+                        {% else %}
+                            {{ 'lifestyle-1'| placeholder_svg_tag }}
+                        {% endif %}
+
+                        <div class="image-grid__content-box">
+                            <div class="image-grid__content">
+                                {% if block.settings.heading != blank %}
+                                    <ul class="content-list">
+                                        <li>{{ block.settings.pre_heading }}</li>
+                                    </ul>
+                                    <h2 class="h2"> {{ block.settings.heading }} </h2>
+                                {% endif %}
+                                {% if block.settings.button_label != blank %}
+                                    <a class="button" {%if block.settings.button_link==blank %} 
+                                        role="link" aria-disabled="true" {% else %}
+                                        href="{{ block.settings.button_link }}" {% endif %}>
+                                        {{- block.settings.button_label | escape -}}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% schema %}
+{
+    "name": "Image Grid",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content":"Image Grid"
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": " Color Schema",
+            "info": "applies color schema to whole section",
+            "default": "scheme-1"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 30
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 30
+        }
+        ],
+    "blocks": [
+        {
+            "type": "Image",
+            "name":"Image with text overlay",
+            "settings": [
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image",
+                    "info": "1440 x 600"
+                },
+                {
+                    "type": "text",
+                    "id":"pre_heading",
+                    "label": "Pre heading",
+                    "default":"Women's"
+                },
+                {
+                    "type": "text",
+                    "id":"heading",
+                    "label":"heading",
+                    "default": "Women's Clothing Collection"
+                },
+                {
+                    "type": "text",
+                    "id":"button_label",
+                    "label": "Button Label",
+                    "default": "Explore"
+                },
+                {
+                    "type": "url",
+                    "id":"button_link",
+                    "label": "Button Link"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Image Grid"
+        }
+    ]
+}
+{% endschema %}

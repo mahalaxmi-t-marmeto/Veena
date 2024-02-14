@@ -1,8 +1,11 @@
 .slider__image img
 {
-    max-width: 100%;
+
+    object-fit: cover;
+    width: 100%;
     height: auto;
-    border-radius: 16px;
+    min-height: 315px;
+    border-radius: 1.6rem;
 }
 
 .slider__flex
@@ -18,36 +21,28 @@
 
 .splide__track
 {
-    border-radius: 16px;
+    border-radius: 1.6rem;
 }
 
 .slider__content
 {
-    padding: 30px 40px;
+    padding: 2rem 2rem;
     position: absolute;
-    width: 48%;
-    margin-top: 4%;
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.slider__heading p
+{
+    margin: 0;
+    font-size: 2.6rem;
+    font-weight: 600;
 }
 
 .slider__content a.button
 {
-    font-weight: 400;
-    font-size: 1.6rem;
-    margin-top: 8%;
-}
-
-.slider__content-list
-{
-    width: 34%;
-    height: 26px;
-    border: 1px solid white;
-    font-size: 1.4rem;
-    font-weight: 400;
-    border-radius: 25px;
-    padding-left: 30px;
-    padding-top: 2px;
-    margin-bottom: 2%;
-    list-style: disc;
+    padding: .8rem;
+    margin-top: 1rem;
 }
 
 .slider__content-preheading
@@ -60,8 +55,8 @@
     left: 1em;
     top: unset;
     transform: unset;
-    bottom: 5px;
-    left: 44%;
+    bottom: .5rem;
+    left: 30%;
     background: none;
 }
 
@@ -70,8 +65,8 @@
     right: 1em;
     top: unset;
     transform: unset;
-    bottom: 5px;
-    right: 44%;
+    bottom: .5rem;
+    right: 30%;
     background: none;
 }
 
@@ -82,9 +77,9 @@
 
 .slider button.splide__pagination__page.is-active 
 {
-    border-radius: 5px;
-    width: 20px;
-    height: 6px;
+    border-radius: .5rem;
+    width: 2rem;
+    height: .6rem;
 }
 
 .slider .splide__pagination li 
@@ -92,17 +87,61 @@
     display: inline-block;
     line-height: 0;
     list-style-type: none;
-    margin: 4px;
+    margin: .4rem;
     pointer-events: auto;
 }
 
-@media screen and (max-width: 1024px)
-    {
+@media screen and (min-width: 750px) 
+{
+        .slider__image img
+        {
+            max-width: 100%;
+            height: auto;
+            border-radius: 1.6rem;
+        }
+
         .slider__content
         {
-            padding: 30px 40px;
+            padding: 3rem 4rem;
             position: absolute;
             width: 48%;
             margin-top: 4%;
         }
-    }
+
+        .slider__content a.button
+        {
+            font-weight: 400;
+            font-size: 1.6rem;
+            margin-top: 8%;
+            padding: 1.3rem 1.1rem
+        }
+
+        .slider .splide__arrow--prev 
+        {
+            left: 42%;
+        }
+
+        .slider .splide__arrow--next 
+        {
+            right: 42%;
+        }
+
+        .slider__image img
+        {
+            max-width: 100%;
+            min-height: 3.5rem;
+            object-fit: cover;
+        }
+
+        .slider__content
+        {
+            margin-top: 4%;
+            margin-bottom: 0;
+        }
+
+        .slider__heading p
+        {
+            font-size: 4rem;
+        }
+
+}

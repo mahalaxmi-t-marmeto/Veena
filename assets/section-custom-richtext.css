@@ -1,0 +1,40 @@
+/* .richtext-heading
+{
+    font-size: 2.8rem;
+} */
+
+.richtext-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.richtext-container p
+{
+    margin: 0;
+    margin-bottom: 1rem;
+    margin-top: .5rem;
+}
+
+.richtext-wrapper .button
+{
+    margin-top: 3%;
+    padding: .5rem 1.5rem;
+    letter-spacing: .3px;
+    line-height: 2.88rem;
+}
+
+@media screen and (min-width: 750px) {
+    
+
+    .richtext-wrapper 
+    {
+        display: flex;
+        width: 55%;
+    }
+
+    /* .richtext-heading
+    {
+        font-size: 5.2rem;
+    } */
+}
+
