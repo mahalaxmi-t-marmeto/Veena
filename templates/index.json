@@ -55,20 +55,12 @@
         "slider_type": "slide",
         "perPage": 1,
         "speed": 2,
-<<<<<<< HEAD
         "interval": 3,
-=======
-        "interval": 4,
-        "slider_type": "slide",
->>>>>>> abe5b691bfc860adcca49be9330a003d862c6ac1
         "autoplay": true,
         "arrows": true,
         "pagination": true,
         "rewind": true,
-<<<<<<< HEAD
         "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
-=======
->>>>>>> abe5b691bfc860adcca49be9330a003d862c6ac1
         "padding_top": 30,
         "padding_bottom": 30
       }
