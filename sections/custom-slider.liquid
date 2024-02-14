@@ -1,7 +1,4 @@
 {{ 'section-custom-slider.css' | asset_url | stylesheet_tag }}
-
-<script src="{{'splide.min.js'| asset_url}}" defer></script>
-<link rel="stylesheet" href="{{'splide.min.css'| asset_url}}">
 <script src="{{'custom-slider.js'| asset_url}}" defer></script>
 
 {% style %}
@@ -21,10 +18,24 @@
     }
 {% endstyle %}
 
-<div class="slider padding-{{ section.id }}">
+{% capture sliderOptions %}
+    {
+        "autoplay": {{ section.settings.autoplay }},
+        "arrows": {{ section.settings.arrows }},
+        "pagination": {{ section.settings.pagination }},
+        "perPage": {{ section.settings.perPage }},
+        "speed": {{ section.settings.speed |  append: '000'}},
+        "type": "{{ section.settings.slider_type }}",
+        "interval":{{ section.settings.interval | append :'000' }},
+        "rewind":{{ section.settings.rewind }},
+        "autoHeight":true
+    }
+{% endcapture %}
+
+<div class="slider padding-{{ section.id }}" >
     <div class="page-width">
-        <custom-slider class="color-{{ section.settings.color_scheme  }}">
-                <div class="splide">
+        <custom-slider class="color-{{ section.settings.color_scheme  }}" data-slider-options='{{ sliderOptions }}' >
+            <div class="splide">
                 <div class="splide__track">
                     <ul class="splide__list">
                         {% for block in section.blocks %}
@@ -32,48 +43,34 @@
                             {% if block.settings.desktop_image != blank and block.settings.mobile_image != blank %}
                                 <div class=" slider__flex {{ block.settings.content_position }} {{ block.settings.text_alignment }}">
                                     <div class="slider__image">
-                                    {% render 'responsive-picture', desktopImage: block.settings.desktop_image  , mobileImage: block.settings.mobile_image  %}
+                                        {% render 'responsive-picture', desktopImage: block.settings.desktop_image  , mobileImage: block.settings.mobile_image  %}
                                     </div>
                                     <div class="slider__content">
                                         {%- if block.settings.heading != blank and block.settings.pre_heading != blank -%}
-                                            <div class="slider__content-subheading {{ block.settings.sub-heading_position }}">
+                                            <div class="slider__content-preheading {{ block.settings.sub-heading_position }}">
                                                 <ul class="slider__content-list">
                                                 <li>{{ block.settings.pre_heading }}</li>
                                                 </ul>
                                             </div>
                                             <h2 class="h1">{{ block.settings.heading }}</h2>
-                                            <a class="button" href="{{ block.settings.button_link }}">
-                                            {{ block.settings.button_text }}
-                                            </a>
+                                            {%- if block.settings.button_text != blank -%}
+                                                <a class="button" {% if block.settings.button_link==blank %} 
+                                                  role="link" aria-disabled="true" {% else %}
+                                                  href="{{ section.settings.button_link_one }}" {% endif %}>
+                                                  {{- block.settings.button_text | escape -}}
+                                                </a>
+                                            {%- endif -%}
                                         {%- endif -%}
                                     </div>
                                 </div>
                             {% else %}
-                            {% for i in (1..5) %}
-                                <div class="media media--square">
-                                   {{ 'hero-apparel-' | append: i | placeholder_svg_tag }}
-                                </div>
-                            {% endfor %}
+                                {{ 'hero-apparel-' | append: i | placeholder_svg_tag }}
                             {% endif %}
                         </li>
                         {% endfor %}
                     </ul>
                 </div>
-                </div>
-
-                <script id="splideProperties">
-                    {
-                        "autoplay": {{ section.settings.autoplay }},
-                        "arrows": {{ section.settings.arrows }},
-                        "pagination": {{ section.settings.pagination }},
-                        "perPage": {{ section.settings.perPage }},
-                        "speed": {{ section.settings.speed |  append: '000'}},
-                        "type": "{{ section.settings.slider_type }}",
-                        "interval":{{ section.settings.interval | append :'000' }},
-                        "rewind":{{ section.settings.rewind }}
-                    }
-                </script>
-
+            </div>
         </custom-slider>
     </div>
 </div>
@@ -89,11 +86,24 @@
             "content":"Slider Settings"
         },
         {
-            "type": "color_scheme",
-            "id": "color_scheme",
-            "label": "colors label",
-            "info": "applies color schema to whole section",
-            "default": "scheme-6"
+            "type": "select",
+            "id": "slider_type",
+            "label": "Slider Type",
+            "options": [
+                {
+                "value": "loop",
+                "label": "Loop"
+                },
+                {
+                "value": "slide",
+                "label": "Slide"
+                },
+                {
+                "value": "fade",
+                "label": "Fade"
+                }
+            ],
+            "default": "loop"
         },
         {
             "type": "range",
@@ -119,45 +129,25 @@
             "min": 1,
             "max": 10,
             "step": 1,
-            "label": "Change slide every howmany second",
+            "label": "Slider timing",
             "default": 1
-        },
-        {
-            "type": "select",
-            "id": "slider_type",
-            "label": "Slider Type",
-            "options": [
-                {
-                "value": "loop",
-                "label": "Loop"
-                },
-                {
-                "value": "slide",
-                "label": "Slide"
-                },
-                {
-                "value": "fade",
-                "label": "Fade"
-                }
-            ],
-            "default": "loop"
         },
         {
             "type": "checkbox",
             "id": "autoplay",
-            "label": "Autoplay Slider",
+            "label": "Enable Autoplay",
             "default": true
         },
         {
             "type": "checkbox",
             "id": "arrows",
-            "label": "Arrows Slider",
+            "label": "Enable Arrows",
             "default": true
         },
         {
             "type": "checkbox",
             "id": "pagination",
-            "label": "Pagination Slider",
+            "label": "Show Dots",
             "default": true
         },
         {
@@ -165,6 +155,13 @@
             "id": "rewind",
             "label": "Rewind Slider",
             "default": true
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": " Color Schema",
+            "info": "applies color schema to whole section",
+            "default": "scheme-6"
         },
         {
             "type": "header",
@@ -219,10 +216,10 @@
                 "default": "Women's Apparel"
             },
             {
-                "type": "text",
+                "type": "richtext",
                 "id":"heading",
                 "label": "Heading",
-                "default": "Elevate your wardrobe with our limited-time fashion offer!"
+                "default": "<p>Elevate your wardrobe with our limited-time fashion offer!</p>"
             },
             {
                 "type": "text",
@@ -260,39 +257,39 @@
                 "id": "content_position",
                 "options": [
                     {
-                    "label": "Top-Left",
+                    "label": "Top left",
                     "value": "align-start justify-start"
                     },
                     {
-                    "label": "Top-center",
+                    "label": "Top center",
                     "value": "align-start justify-center"
                     },
                     {
-                    "label": "Top-right",
+                    "label": "Top right",
                     "value": "align-start justify-end"
                     },
                     {
-                    "label": "Middle-left",
+                    "label": "Middle left",
                     "value": "align-center justify-start"
                     },
                     {
-                    "label": "Middle-center",
+                    "label": "Middle center",
                     "value": "align-center justify-center"
                     },
                     {
-                    "label": "Middle-right",
+                    "label": "Middle right",
                     "value": "align-center justify-end"
                     },
                     {
-                    "label": "Bottom-left",
+                    "label": "Bottom left",
                     "value": "align-end justify-start"
                     },
                     {
-                    "label": "Bottom-center",
+                    "label": "Bottom center",
                     "value": "align-end justify-center"
                     },
                     {
-                    "label": "Bottom-right",
+                    "label": "Bottom right",
                     "value": "align-end justify-end"
                     }
                     ],

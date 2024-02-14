@@ -1,22 +1,5 @@
 {
   "sections": {
-    "featured_blog_tWDPax": {
-      "type": "featured-blog",
-      "settings": {
-        "heading": "Blog posts",
-        "heading_size": "h1",
-        "blog": "",
-        "post_limit": 3,
-        "columns_desktop": 3,
-        "color_scheme": "",
-        "show_image": true,
-        "show_date": true,
-        "show_author": false,
-        "show_view_all": true,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "custom_slider_E3wf9a": {
       "type": "custom-slider",
       "blocks": {
@@ -26,7 +9,7 @@
             "desktop_image": "shopify:\/\/shop_images\/s-d1.png",
             "mobile_image": "shopify:\/\/shop_images\/s-m1.png",
             "pre_heading": "Women's Apparel",
-            "heading": "Elevate your wardrobe with our limited-time fashion offer!",
+            "heading": "<p>Elevate your wardrobe with our limited-time fashion offer!<\/p>",
             "button_text": "Explore More",
             "button_url": "",
             "sub-heading_position": "align-center justify-center",
@@ -40,7 +23,7 @@
             "desktop_image": "shopify:\/\/shop_images\/s-d2.png",
             "mobile_image": "shopify:\/\/shop_images\/s-m2.png",
             "pre_heading": "Trendy Classics",
-            "heading": "Discover Signature Look: Fashion Forward and Fabulous!",
+            "heading": "<p>Discover Signature Look: Fashion Forward and Fabulous!<\/p>",
             "button_text": "Shop Now",
             "button_url": "",
             "sub-heading_position": "align-start justify-start",
@@ -54,7 +37,7 @@
             "desktop_image": "shopify:\/\/shop_images\/s-d3.png",
             "mobile_image": "shopify:\/\/shop_images\/s-m3.png",
             "pre_heading": "Modern Elegance",
-            "heading": "Step into the World of Style with the Latest Fashion Trends Unveiled!",
+            "heading": "<p>Step into the World of Style with the Latest Fashion Trends Unveiled!<\/p>",
             "button_text": "Explore Now",
             "button_url": "",
             "sub-heading_position": "align-center justify-center",
@@ -69,21 +52,21 @@
         "slider_cQjrH7"
       ],
       "settings": {
-        "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
+        "slider_type": "slide",
         "perPage": 1,
         "speed": 2,
-        "interval": 1,
-        "slider_type": "slide",
+        "interval": 3,
         "autoplay": true,
         "arrows": true,
         "pagination": true,
+        "rewind": true,
+        "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
         "padding_top": 30,
         "padding_bottom": 30
       }
     }
   },
   "order": [
-    "featured_blog_tWDPax",
     "custom_slider_E3wf9a"
   ]
 }
