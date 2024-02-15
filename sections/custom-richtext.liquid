@@ -1,4 +1,6 @@
 {{ 'section-custom-richtext.css' | asset_url | stylesheet_tag }}
+<script src = "{{ 'custom-richtext-animation.js' |asset_url }}" defer></script>
+
 
 {% style %}
     .padding-{{ section.id }} 
@@ -29,7 +31,7 @@
                         <h2 class="h0 richtext-heading">{{ block.settings.heading }}</h2>
                     {% endif %}
                     {% if block.settings.button_label != blank %}
-                        <a class="button" {%if block.settings.button_link==blank %} 
+                        <a class="button hover-button" {%if block.settings.button_link==blank %} 
                             role="link" aria-disabled="true" {% else %}
                             href="{{ block.settings.button_link }}" {% endif %}>
                             {{- block.settings.button_label | escape -}}
@@ -143,7 +145,8 @@
                     "type": "inline_richtext",
                     "id": "heading",
                     "label": "Heading",
-                    "default": "Fashion Emerges </br> As A Universal Language"
+                    "default": "Fashion Emerges As A Universal Language",
+                    "info": "Make the text as link to Animate..."
                 },
                 {
                 "type": "select",

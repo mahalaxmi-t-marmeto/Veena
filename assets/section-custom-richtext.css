@@ -8,26 +8,85 @@
     width: 100%;
 }
 
-.richtext-container p
-{
+.richtext-container p {
     margin: 0;
     margin-bottom: 1rem;
     margin-top: .5rem;
 }
 
-.richtext-wrapper .button
-{
+.richtext-wrapper .button {
     margin-top: 3%;
     padding: .5rem 1.5rem;
     letter-spacing: .3px;
     line-height: 2.88rem;
 }
 
-@media screen and (min-width: 750px) {
-    
+.richtext-heading a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, transparent 50%, #D03C3F 50%);
+    background-size: 200% 100%;
+    transition: background-position 0.3s ease-in-out;
+}
 
-    .richtext-wrapper 
-    {
+.letter {
+    display: inline-block;
+    position: relative;
+    transform: translateZ(25px);
+    transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+    transform: rotateX(90deg);
+    transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+    transform: rotateX(-90deg);
+}
+
+.letter.in {
+    transform: rotateX(0deg);
+    transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+
+.richtext-heading a:hover::before {
+    background-position: -100% 0;
+}
+
+.richtext-heading a {
+    color: #D03C3F;
+    outline: none;
+    border: none;
+}
+
+
+.hover-button {
+    background: linear-gradient(to right, black 50%, #D03C3F 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.4s ease-out;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+.hover-button:hover {
+    background-position: left bottom;
+}
+
+@media screen and (min-width: 750px) {
+
+
+    .richtext-wrapper {
         display: flex;
         width: 55%;
     }
@@ -37,4 +96,3 @@
         font-size: 5.2rem;
     } */
 }
-
