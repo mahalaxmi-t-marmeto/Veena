@@ -40,7 +40,7 @@
                     <ul class="splide__list">
                         {% for block in section.blocks %}
                         <li class="splide__slide ">
-                            {% if block.settings.desktop_image != blank and block.settings.mobile_image != blank %}
+                            {% if block.settings.desktop_image != blank %}
                                 <div class=" slider__flex {{ block.settings.content_position }} {{ block.settings.text_alignment }}">
                                     <div class="slider__image">
                                         {% render 'responsive-picture', desktopImage: block.settings.desktop_image  , mobileImage: block.settings.mobile_image  %}

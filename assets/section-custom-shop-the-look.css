@@ -1,0 +1,144 @@
+.shop-the-look__image .media img {
+    width: 100%;
+    height: auto;
+    border-radius: 1.6rem;
+}
+
+.shop-the-look__image {
+    position: relative;
+}
+
+.shop-the-look__dots::before {
+    content: "";
+    position: absolute;
+    width: 2.4rem;
+    height: 2.4rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    z-index: -1;
+    left: -8px;
+    top: 4px;
+    transition: .3s ease;
+}
+
+.shop-the-look__dots:hover::before {
+    width: 3.2rem;
+    height: 3.2rem;
+    left: -11px;
+    top: 1px;
+}
+
+.shop-the-look__dot {
+    color: black;
+    width: 0.8rem;
+    height: 0.8rem;
+    transition: .3s ease;
+}
+
+.shop-the-look__dots:hover .shop-the-look__dot {
+    color: black;
+    width: 1rem;
+    height: 1rem;
+}
+
+.shop-the-look .media--portrait {
+    padding-bottom: 116%;
+    border-radius: 1.6rem;
+}
+
+.shop-the-look__content {
+    margin-top: 2rem;
+}
+
+.shop-the-look__content .h3 {
+    font-size: 2.6rem;
+    font-weight: 600;
+}
+
+.shop-the-look__product {
+    padding: 0.6rem;
+    background-color: white;
+    min-width: 17rem;
+    min-height: 10rem;
+    border-radius: 1rem;
+    position: absolute;
+    top: -2rem;
+    left: 5rem;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s ease;
+    display: flex;
+    gap: 1rem;
+}
+
+.shop-the-look__dots:hover .shop-the-look__product {
+    left: 3rem;
+    opacity: 1;
+    visibility: unset;
+}
+
+.shop-the-look__product a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.shop-the-look-product-details s {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.shop-the-look__product a:hover {
+    color: #D03C3F;
+}
+
+.shop-the-look__product-image {
+    width: 30%;
+    max-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shop-the-look-product-details {
+    width: 60%;
+}
+
+.shop-the-look-product-details .h4 {
+    margin: 0;
+}
+
+.shop-the-look__product-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.6rem
+}
+
+.shop-the-look .hover-button {
+    background: linear-gradient(to right, #D03C3F 50%, black 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.4s ease-out;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    margin-top: 2rem;
+    padding: 1rem 2rem;
+    letter-spacing: 0.3px;
+    line-height: 28.8px ;
+}
+
+.shop-the-look .hover-button:hover {
+    background-position: left bottom;
+}
+
+.shop-the-look__content p
+{
+    line-height: normal;
+    font-size: 1.8rem;
+    margin: 0;
+}

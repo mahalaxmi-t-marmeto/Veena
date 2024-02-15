@@ -28,7 +28,9 @@
                         {{ block.settings.pre_heading }}
                     {% endif %}
                     {% if block.settings.heading != blank %}
-                        <h2 class="h0 richtext-heading">{{ block.settings.heading }}</h2>
+                        <h2 class="h0 richtext-heading">
+                            <p>{{ block.settings.heading }}</p>
+                        </h2>
                     {% endif %}
                     {% if block.settings.button_label != blank %}
                         <a class="button hover-button" {%if block.settings.button_link==blank %} 
@@ -42,10 +44,6 @@
         </div>
     </div>
 </div>
-
-{%- liquid
-    assign colorSchema = 
-  -%}
 
 {% schema %}
 {
@@ -142,10 +140,10 @@
                     "default": "<p>Talk about your brand</p>"
                 },
                 {
-                    "type": "inline_richtext",
+                    "type": "richtext",
                     "id": "heading",
                     "label": "Heading",
-                    "default": "Fashion Emerges As A Universal Language",
+                    "default": "<p>Fashion Emerges As A Universal Language</p>",
                     "info": "Make the text as link to Animate..."
                 },
                 {

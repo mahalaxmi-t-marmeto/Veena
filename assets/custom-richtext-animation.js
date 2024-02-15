@@ -1,4 +1,4 @@
-var words = document.querySelectorAll('.richtext-heading a');
+var words = document.querySelectorAll('.richtext-heading p a');
 console.log(words);
   var wordArray = [];
   var currentWord = 0;

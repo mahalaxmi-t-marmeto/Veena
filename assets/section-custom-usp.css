@@ -1,0 +1,47 @@
+.usp-wrapper__container {
+    padding: 4rem 0rem;
+}
+
+.usp-wrapper__grid {
+    padding: 0rem 1.5rem;
+    gap: 2rem;
+}
+
+.usp-wrapper__grid .grid__item 
+{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.usp-wrapper__content
+{
+    text-align: center;
+}
+
+.usp-wrapper__content p
+{
+    margin: 0;
+    line-height: normal;
+    font-size: 1.4rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.usp-wrapper__content .h3
+{
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: .3px;
+    margin-bottom: 0.6rem;
+}
+
+.usp-wrapper__svg
+{
+    transition: all .25s;
+}
+
+.usp-wrapper__grid .grid__item:hover  .usp-wrapper__svg
+{
+    transform: scaleX(-1);
+}
