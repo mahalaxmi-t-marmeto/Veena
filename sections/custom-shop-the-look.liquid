@@ -41,7 +41,8 @@
                 <svg class="shop-the-look__dot" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none" class="icon-circle">
                     <circle class="icon-circle" cx="5.5" cy="5.5" r="5.5" fill="currentColor"></circle>
                 </svg>
-                <div class="shop-the-look__product">
+                {% if block.settings.primary_product != blank %}
+                  <div class="shop-the-look__product">
                   <div class="shop-the-look__product-image">
                     {% render 'responsive-picture', desktopImage:block.settings.primary_product.featured_image %}
                   </div>
@@ -62,13 +63,15 @@
                       <s>{{ block.settings.primary_product.compare_at_price | money_without_trailing_zeros }}</s>                    
                     {% endif %}
                   </div>
-                </div>
+                  </div>
+                {% endif %}
             </div>
             <div class="shop-the-look__dots shop-the-look-secondary-{{ block.id }}">
                 <svg class="shop-the-look__dot" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none" class="icon-circle">
                     <circle class="icon-circle" cx="5.5" cy="5.5" r="5.5" fill="currentColor"></circle>
                 </svg>
-                <div class="shop-the-look__product">
+                {% if block.settings.secondary_product != blank %}
+                  <div class="shop-the-look__product">
                   <div class="shop-the-look__product-image">
                     {% render 'responsive-picture', desktopImage:block.settings.secondary_product.featured_image %}
                   </div>
@@ -89,7 +92,8 @@
                       <s>{{ block.settings.secondary_product.compare_at_price | money_without_trailing_zeros }}</s>                    
                     {% endif %}
                   </div>
-                </div>
+                  </div>
+                {% endif %}
             </div>
             {% if block.settings.desktop_image != blank %}
               <div class="media media--portrait">
