@@ -142,3 +142,8 @@
     font-size: 1.8rem;
     margin: 0;
 }
+
+.shop-the-look__grid
+{
+    gap: 2rem;
+}

@@ -48,9 +48,7 @@
                                     <div class="slider__content">
                                         {%- if block.settings.heading != blank and block.settings.pre_heading != blank -%}
                                             <div class="slider__content-preheading {{ block.settings.sub-heading_position }}">
-                                                <ul class="content-list">
-                                                <li>{{ block.settings.pre_heading }}</li>
-                                                </ul>
+                                                {% render 'custom-caption', caption: block.settings.pre_heading %}
                                             </div>
                                             <h2 class="h1 slider__heading">{{ block.settings.heading }}</h2>
                                             {%- if block.settings.button_text != blank -%}

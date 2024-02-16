@@ -32,9 +32,7 @@
                         <div class="image-grid__content-box">
                             <div class="image-grid__content">
                                 {% if block.settings.heading != blank %}
-                                    <ul class="content-list">
-                                        <li>{{ block.settings.pre_heading }}</li>
-                                    </ul>
+                                    {% render 'custom-caption', caption: block.settings.pre_heading %}
                                     <h2 class="h2"> {{ block.settings.heading }} </h2>
                                 {% endif %}
                                 {% if block.settings.button_label != blank %}
