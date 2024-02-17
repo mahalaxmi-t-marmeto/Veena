@@ -16,7 +16,7 @@
     z-index: -1;
 }
 
-.splide__track {
+.slider .splide__track {
     border-radius: 1.6rem;
 }
 
@@ -76,6 +76,22 @@
     list-style-type: none;
     margin: .4rem;
     pointer-events: auto;
+}
+
+.slider .hover-button {
+    background: linear-gradient(to right, white 50%, white 50%);
+    background-size: 200% 100%;
+    background-position: right bottom;
+    transition: all 0.4s ease-out;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+}
+
+.slider .hover-button:hover {
+    background-position: left bottom;
+    color: #D03F29;
 }
 
 @media screen and (min-width: 750px) {

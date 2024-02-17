@@ -65,23 +65,24 @@
     border: none;
 }
 
-
 .richtext-wrapper .hover-button {
-    background: linear-gradient(to right, black 50%, #D03C3F 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all 0.4s ease-out;
-    border: none;
+    background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all 1s ease-out;
     color: white;
-    padding: 10px 20px;
+    border: 1px solid white;
     cursor: pointer;
-    font-size: 16px;
     outline: none;
+    border-radius: 50px;
+    background-clip: padding-box; 
 }
 
 .richtext-wrapper .hover-button:hover {
-    background-position: left bottom;
+    background-position: center;
+    background-size: 150% 300%;
 }
+
 
 @media screen and (min-width: 750px) {
 

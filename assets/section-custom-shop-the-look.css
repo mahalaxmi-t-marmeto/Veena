@@ -28,7 +28,7 @@
     width: 3.2rem;
     height: 3.2rem;
     left: -11px;
-    top: 1px;
+    top: -1px;
 }
 
 .shop-the-look__dot {
@@ -117,10 +117,10 @@
 }
 
 .shop-the-look .hover-button {
-    background: linear-gradient(to right, #D03C3F 50%, black 50%);
-    background-size: 200% 100%;
-    background-position: right bottom;
-    transition: all 0.4s ease-out;
+    background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all 1s ease-out;
     border: none;
     color: white;
     cursor: pointer;
@@ -133,7 +133,8 @@
 }
 
 .shop-the-look .hover-button:hover {
-    background-position: left bottom;
+    background-position: center;
+    background-size: 150% 300%;
 }
 
 .shop-the-look__content p

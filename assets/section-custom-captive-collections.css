@@ -1,0 +1,128 @@
+.captive-container__image img
+{
+    max-width: 22rem;
+    max-height: 27.5rem;
+    object-fit: cover;
+    border-radius: 1.6rem;
+    transition: all .6s ease;
+}
+
+.captive-container__image
+{
+    position: relative;
+    max-width: 22rem;
+    max-height: 27.5rem;
+    object-fit: cover;
+    border-radius: 1.6rem;
+    overflow: hidden;
+}
+
+.captive-container__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 1.5rem;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.captive-container__content-title a
+{
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    letter-spacing: .2px;
+    transition: all .3s ease;
+}
+
+.captive-container__content-title a:hover
+{
+    color: #D03C3F;
+}
+
+.captive-container__button a
+{
+    text-decoration: none;
+    color: inherit;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: .3px;
+}
+
+.captive-container .splide__slide:hover img
+{
+    transform: scale(1.06);
+}
+
+.captive-container .button  {
+    background: radial-gradient(ellipse, white 50%, transparent 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all .8s ease-out ;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    background-clip: padding-box; 
+}
+
+.captive-container .button :hover {
+    color: #D03C3F;
+    background-position: center;
+    background-size: 150% 300%;
+}
+
+.captive-container .splide__arrow {
+    background-color: #D03C3F;
+    opacity: 1;
+}
+
+.captive-container .splide__arrow:hover{
+    opacity: 1;
+}
+
+.captive-container .splide__arrow {
+    background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all .8s ease ;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    background-clip: padding-box; 
+}
+
+.captive-container .splide__arrow:hover {
+    color: #D03C3F;
+    background-position: center;
+    background-size: 150% 300%;
+}
+
+.captive-container .splide__arrow[disabled]{
+    opacity: 0;
+}
+
+.captive-container .splide__arrow--next {
+    right: 0em;
+    border-radius: 50% 0% 0% 50%;
+    width: 4.4rem;
+    height: 4.4rem;
+}
+
+.captive-container .splide__arrow--prev {
+    left: 0em;
+    border-radius: 0% 50% 50% 0%;
+    width: 4.4rem;
+    height: 4.4rem;
+}
+
+.captive-container .splide__arrow svg {
+    fill: #fff;
+}

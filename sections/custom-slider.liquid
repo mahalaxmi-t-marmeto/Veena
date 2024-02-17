@@ -2,16 +2,13 @@
 <script src="{{'custom-slider.js'| asset_url}}" defer></script>
 
 {% style %}
-    .padding-{{ section.id }} 
-    {
+    .padding-{{ section.id }} {
       padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
       padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
     }
 
-    @media screen and (min-width: 750px) 
-    {
-        .padding-{{ section.id }} 
-        {
+    @media screen and (min-width: 750px) {
+        .padding-{{ section.id }} {
         padding-top: {{ section.settings.padding_top }}px;
         padding-bottom: {{ section.settings.padding_bottom }}px;
         }
@@ -27,8 +24,7 @@
         "speed": {{ section.settings.speed |  append: '000'}},
         "type": "{{ section.settings.slider_type }}",
         "interval":{{ section.settings.interval | append :'000' }},
-        "rewind":{{ section.settings.rewind }},
-        "autoHeight":true
+        "rewind":{{ section.settings.rewind }}
     }
 {% endcapture %}
 
@@ -52,7 +48,7 @@
                                             </div>
                                             <h2 class="h1 slider__heading">{{ block.settings.heading }}</h2>
                                             {%- if block.settings.button_text != blank -%}
-                                                <a class="button" {% if block.settings.button_link==blank %} 
+                                                <a class="button hover-button" {% if block.settings.button_link==blank %} 
                                                   role="link" aria-disabled="true" {% else %}
                                                   href="{{ block.settings.button_link }}" {% endif %}>
                                                   {{- block.settings.button_text | escape -}}
