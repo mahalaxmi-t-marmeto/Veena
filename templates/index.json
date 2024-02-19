@@ -173,6 +173,24 @@
         "padding_bottom": 30
       }
     },
+    "custom_featured_collection_gnep9T": {
+      "type": "custom-featured-collection",
+      "settings": {
+        "heading": "Featured Collection",
+        "heading_size": "h1",
+        "button_label": "View all",
+        "button_link": "",
+        "product_list": [
+          "men-winter-jacket",
+          "travel-handy-hiking-zip-pouch",
+          "long-casual-hooded-coat",
+          "nylon-waist-bag"
+        ],
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
     "custom_shop_the_look_RaDBgj": {
       "type": "custom-shop-the-look",
       "blocks": {
@@ -240,6 +258,8 @@
       "type": "custom-captive-collections",
       "settings": {
         "heading": "Captivating Collections",
+        "heading_button_label": "View All",
+        "heading_link": "",
         "heading_size": "h1",
         "button_label": "Shop Now",
         "collection_list": [
@@ -429,6 +449,7 @@
     "custom_richtext_UyxmCW",
     "custom_image_grid_8FDmtw",
     "custom_usp_8Bq6Le",
+    "custom_featured_collection_gnep9T",
     "custom_shop_the_look_RaDBgj",
     "custom_captive_collections_qxE9NT",
     "custom_logos_HKVnq6",

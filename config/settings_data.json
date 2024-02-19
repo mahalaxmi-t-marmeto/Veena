@@ -133,6 +133,74 @@
       },
       "swatches": {
         "type": "swatches",
+        "blocks": {
+          "color_settings_VGtDVd": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Moccasin",
+              "color_code": "#e3cca5"
+            }
+          },
+          "color_settings_9VETmC": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Black",
+              "color_code": "#000000"
+            }
+          },
+          "color_settings_Ur73rz": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Deep Pink",
+              "color_code": "#ff1493"
+            }
+          },
+          "color_settings_4YBA7z": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Deep Sky Blue",
+              "color_code": "#00bfff"
+            }
+          },
+          "color_settings_6nwTiA": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Dark Blue",
+              "color_code": "#00008b"
+            }
+          },
+          "color_settings_c8frLh": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Dark Olive Green",
+              "color_code": "#556b2f"
+            }
+          },
+          "color_settings_hD3LTj": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "White Smoke",
+              "color_code": "#f5f5f5"
+            }
+          },
+          "color_settings_cQWTm9": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Lime Green",
+              "color_code": "#32cd32"
+            }
+          }
+        },
+        "block_order": [
+          "color_settings_VGtDVd",
+          "color_settings_9VETmC",
+          "color_settings_Ur73rz",
+          "color_settings_4YBA7z",
+          "color_settings_6nwTiA",
+          "color_settings_c8frLh",
+          "color_settings_hD3LTj",
+          "color_settings_cQWTm9"
+        ],
         "settings": {
         }
       }

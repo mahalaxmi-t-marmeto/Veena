@@ -42,9 +42,11 @@
     <div class="brands-container">
       <div class="brands-container__grid">
         {% for block in section.blocks %}
-        <div class="brands-container__logos">
-          {% render 'responsive-picture', desktopImage: block.settings.logo_image %}
-        </div>
+        {% if block.settings.logo_image != blank %}
+          <div class="brands-container__logos">
+            {% render 'responsive-picture', desktopImage: block.settings.logo_image %}
+          </div>
+        {% endif %}
         {% endfor %}
       </div>
     </div>

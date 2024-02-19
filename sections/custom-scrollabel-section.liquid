@@ -21,45 +21,40 @@
 <div class="scrollabel-wrapper padding-{{ section.id }} background-{{ section.id }}">
   <div class="scrollabel-container">
     <div class="scrollabel-text">
-      {% for i in (1..5) %}
-        <div class="div">
-        {{ section.settings.svg1 }}
-      </div>
-      <div class="div">
-        {{ section.settings.text1 }}
-      </div>
-      <div class="div">
+      {% if section.settings.svg1 != blank %}        
+      <div class="div"> {{ section.settings.svg1 }} </div>
+      {% endif %}
+      {% if section.settings.text1 != blank %}
+      <div class="div"> {{ section.settings.text1 }} </div>
+      {% endif %}
+      <div class="div"> 
         <a href="{{ section.settings.button_link1 }}">
-          {{ section.settings.button_label1 }}
-        </a>
+        {{ section.settings.button_label1 }} </a>
       </div>
     </div>
     <div class="scrollabel-text">
-      <div class="div">
-        {{ section.settings.svg2 }}
-      </div>
-      <div class="div">
-        {{ section.settings.text2 }}
-      </div>
-      <div class="div">
+      {% if section.settings.svg2 != blank %}        
+      <div class="div"> {{ section.settings.svg2 }} </div>
+      {% endif %}
+      {% if section.settings.text2 != blank %}
+      <div class="div"> {{ section.settings.text2 }} </div>
+      {% endif %}
+      <div class="div"> 
         <a href="{{ section.settings.button_link2 }}">
-          {{ section.settings.button_label2 }}
-        </a>
+        {{ section.settings.button_label2 }} </a>
       </div>
     </div>
     <div class="scrollabel-text">
-      <div class="div">
-        {{ section.settings.svg3 }}
-      </div>
-      <div class="div">
-        {{ section.settings.text3 }}
-      </div>
-      <div class="div">
+      {% if section.settings.svg2 != blank %}        
+      <div class="div"> {{ section.settings.svg3 }} </div>
+      {% endif %}
+      {% if section.settings.text2 != blank %}
+      <div class="div"> {{ section.settings.text3 }} </div>
+      {% endif %}
+      <div class="div"> 
         <a href="{{ section.settings.button_link3 }}">
-          {{ section.settings.button_label3 }}
-        </a>
-      </div>        
-      {% endfor %}
+        {{ section.settings.button_label3 }} </a>
+      </div>
     </div>
   </div>
 </div>
