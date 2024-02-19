@@ -442,6 +442,27 @@
         "padding_top": 30,
         "padding_bottom": 30
       }
+    },
+    "custom_blog_pzykdG": {
+      "type": "custom-blog",
+      "settings": {
+        "blog_heading": "Let You Know",
+        "button_label": "Read All",
+        "button_link": "shopify:\/\/blogs\/news",
+        "blog": "news",
+        "slider_type": "loop",
+        "perPage": 2,
+        "speed": 1,
+        "interval": 1,
+        "gap": 2,
+        "autoplay": false,
+        "arrows": true,
+        "pagination": false,
+        "rewind": true,
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
     }
   },
   "order": [
@@ -454,6 +475,7 @@
     "custom_captive_collections_qxE9NT",
     "custom_logos_HKVnq6",
     "custom_testimonials_CkdrWG",
-    "custom_scrollabel_section_qr789p"
+    "custom_scrollabel_section_qr789p",
+    "custom_blog_pzykdG"
   ]
 }
