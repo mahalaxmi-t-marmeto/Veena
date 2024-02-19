@@ -1,18 +1,13 @@
-.captive-container__image img
-{
-    max-width: 22rem;
-    max-height: 27.5rem;
-    object-fit: cover;
+.captive-container__image img {
     border-radius: 1.6rem;
     transition: all .6s ease;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-.captive-container__image
-{
+.captive-container__image {
     position: relative;
-    max-width: 22rem;
-    max-height: 27.5rem;
-    object-fit: cover;
     border-radius: 1.6rem;
     overflow: hidden;
 }
@@ -31,8 +26,49 @@
     flex-direction: column;
 }
 
-.captive-container__content-title a
-{
+.captive-container__heading {
+    margin: 0;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 1rem;
+}
+
+.captive-container__heading a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.captive-container__heading h2 {
+    margin: 0;
+    font-size: 2.4rem;
+    font-weight: 600;
+    line-height: 31.2px;
+    letter-spacing: 0.3px;
+}
+
+.captive-container__heading .hover-button {
+    background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all 1s ease-out;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    outline: none;
+    padding: .4rem 2rem;
+    letter-spacing: 0.3px;
+    line-height: 28.8px;
+}
+
+.captive-container__heading .hover-button:hover {
+    background-position: center;
+    background-size: 150% 300%;
+}
+
+.captive-container__content-title a {
     text-decoration: none;
     color: inherit;
     font-weight: 500;
@@ -40,13 +76,11 @@
     transition: all .3s ease;
 }
 
-.captive-container__content-title a:hover
-{
+.captive-container__content-title a:hover {
     color: #D03C3F;
 }
 
-.captive-container__button a
-{
+.captive-container__button a {
     text-decoration: none;
     color: inherit;
     font-size: 16px;
@@ -54,25 +88,24 @@
     letter-spacing: .3px;
 }
 
-.captive-container .splide__slide:hover img
-{
+.captive-container .splide__slide:hover img {
     transform: scale(1.06);
 }
 
-.captive-container .button  {
+.captive-container__button {
     background: radial-gradient(ellipse, white 50%, transparent 50%);
     background-size: 700% 450%;
     background-position: right;
-    transition: all .8s ease-out ;
+    transition: all .8s ease-out;
     color: white;
     border: 1px solid white;
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background-clip: padding-box; 
+    background-clip: padding-box;
 }
 
-.captive-container .button :hover {
+.captive-container__button:hover {
     color: #D03C3F;
     background-position: center;
     background-size: 150% 300%;
@@ -83,7 +116,7 @@
     opacity: 1;
 }
 
-.captive-container .splide__arrow:hover{
+.captive-container .splide__arrow:hover {
     opacity: 1;
 }
 
@@ -91,12 +124,12 @@
     background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
     background-size: 700% 450%;
     background-position: right;
-    transition: all .8s ease ;
+    transition: all .8s ease;
     color: white;
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background-clip: padding-box; 
+    background-clip: padding-box;
 }
 
 .captive-container .splide__arrow:hover {
@@ -105,24 +138,57 @@
     background-size: 150% 300%;
 }
 
-.captive-container .splide__arrow[disabled]{
+.captive-container .splide__arrow[disabled] {
     opacity: 0;
 }
 
 .captive-container .splide__arrow--next {
     right: 0em;
     border-radius: 50% 0% 0% 50%;
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 3.4rem;
+    height: 3.4rem;
 }
 
 .captive-container .splide__arrow--prev {
     left: 0em;
     border-radius: 0% 50% 50% 0%;
-    width: 4.4rem;
-    height: 4.4rem;
+    width: 3.4rem;
+    height: 3.4rem;
 }
 
 .captive-container .splide__arrow svg {
     fill: #fff;
+}
+
+@media screen and (min-width:750px) {
+    .captive-container .splide__arrow--next {
+        right: 0em;
+        border-radius: 50% 0% 0% 50%;
+        width: 4.4rem;
+        height: 4.4rem;
+    }
+
+    .captive-container .splide__arrow--prev {
+        left: 0em;
+        border-radius: 0% 50% 50% 0%;
+        width: 4.4rem;
+        height: 4.4rem;
+    }
+
+    .captive-container__heading h2 {
+        font-size: 3.4rem;
+        line-height: 44.2px;
+    }
+
+    .captive-container__heading {
+        margin-bottom: 3rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    .captive-container__heading .hover-button {
+        padding: .8rem 3.3rem;
+    }
 }

@@ -1,0 +1,125 @@
+.testimonials-container .splide__arrow {
+    background-color: #D03C3F;
+    opacity: 1;
+}
+
+.testimonials-container .splide__arrow:hover {
+    opacity: 1;
+}
+
+.testimonials-container .splide__arrow {
+    background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all .8s ease;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    background-clip: padding-box;
+}
+
+.testimonials-container .splide__arrow:hover {
+    color: #D03C3F;
+    background-position: center;
+    background-size: 150% 300%;
+}
+
+.testimonials-container .splide__arrow[disabled] {
+    opacity: 0;
+}
+
+.testimonials-container .splide__arrow--next {
+    right: 0em;
+    border-radius: 50% 0% 0% 50%;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.testimonials-container .splide__arrow--prev {
+    left: 0em;
+    border-radius: 0% 50% 50% 0%;
+    width: 3.4rem;
+    height: 3.4rem;
+}
+
+.testimonials-container .splide__arrow svg {
+    fill: #fff;
+}
+
+.testimonials__heading .h1 {
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 2.4rem;
+    letter-spacing: 0.3px;
+    line-height: 31.2px;
+}
+
+
+
+.testimonials-container .splide__slide {
+    padding: 2.5rem;
+    border-radius: 1.6rem;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.testimonials-container .splide__slide:hover img
+{
+    transform: scale(1.06);
+}
+
+.testimonials__image img {
+    border-radius: 50%;
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    transition: all .6s ease;
+}
+
+.testimonials__bottom-grid-item p {
+    margin: 0;
+    line-height: 2.2rem;
+    color: black;
+}
+
+.testimonials__author__name {
+    font-size: 16px;
+    margin: 0;
+    margin-top: 1.5rem;
+    letter-spacing: 0.3px;
+}
+
+.testimonials__author__occupation {
+    font-size: 1.4rem;
+    color: #000000CC;
+    line-height: 25.2px;
+    font-weight: 400;
+}
+
+@media screen and (min-width:750px) {
+
+    .testimonials__heading .h1 {
+        margin-bottom: 3rem;
+        font-size: 3.4rem;
+    }
+
+    .testimonials-container .splide__arrow--next {
+        right: 0em;
+        border-radius: 50% 0% 0% 50%;
+        width: 4.4rem;
+        height: 4.4rem;
+    }
+    
+    .testimonials-container .splide__arrow--prev {
+        left: 0em;
+        border-radius: 0% 50% 50% 0%;
+        width: 4.4rem;
+        height: 4.4rem;
+    }
+
+}

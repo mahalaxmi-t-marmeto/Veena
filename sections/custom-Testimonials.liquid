@@ -1,18 +1,23 @@
-{{ 'section-custom-captive-collections.css' | asset_url | stylesheet_tag }}
-<script src="{{'custom-slider.js'| asset_url}}" defer></script>
+{{ 'section-custom-testimonials.css' | asset_url | stylesheet_tag }}
 
-{% style %}
-    .padding-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
-      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
-    }
+{% style  %} 
 
-    @media screen and (min-width: 750px) {
-        .padding-{{ section.id }} {
-        padding-top: {{ section.settings.padding_top }}px;
-        padding-bottom: {{ section.settings.padding_bottom }}px;
-        }
+  .padding-{{ section.id }} {
+    padding-top:{{ section.settings.padding_top |  divided_by: 2 }}px;
+    padding-bottom:{{ section.settings.padding_bottom | divided_by: 2 }}px;
+  }
+
+  .background-{{ section.id }} {
+    background-color:{{ section.settings.background_color }}
+  }
+
+  @media screen and (min-width:750px) {
+      .padding-{{ section.id }} {
+      padding-top:{{ section.settings.padding_top }}px;
+      padding-bottom:{{ section.settings.padding_bottom}}px;
     }
+  }
+
 {% endstyle %}
 
 {% capture CaptiveSlide %}
@@ -23,7 +28,7 @@
       "perPage": {{ section.settings.perPage }},
       "breakpoints":{
         "640": {
-			"perPage": 2
+			"perPage": 1
       }
       },
       "speed": {{ section.settings.speed |  append: '000'}},
@@ -34,98 +39,65 @@
   }
 {% endcapture %}
 
-
-<div class="captive-container padding-{{ section.id }}">
-  <div class="page-width">
-    <div class="captive-container__heading">
-      <h2> {{ section.settings.heading }}  </h2>
-      <div class="button hover-button">
-        <a href="{{ section.settings.heading_link }}">{{ section.settings.heading_button_label }} </a>
-      </div>
-    </div>
-    <custom-slider class="color-{{ section.settings.color_scheme  }}" data-slider-options='{{ CaptiveSlide }}'>
-      <div class="splide">
-        <div class="splide__track">
-          <ul class="splide__list">
-            {% for collection in section.settings.collection_list %}
+<div class="testimonials-wrapper background-{{ section.id }} padding-{{ section.id }}">
+  <div class="page-width testimonials-container">
+    <div class="testimonials__heading">
+      <h2 class="h1">
+        {{ section.settings.heading }}
+      </h2>
+      <custom-slider class="color-{{ section.settings.color_scheme  }}" data-slider-options='{{ CaptiveSlide }}'>
+        <div class="splide">
+          <div class="splide__track">
+            <ul class="splide__list">
+              {% for block in section.blocks %}
               <li class="splide__slide">
-                  <div class="captive-container__image media media--portrait">
-                  {% render 'responsive-picture', desktopImage: collection.featured_image%}
-                  </div>
-                  <div class="captive-container__content">
-                    <div class="h2 captive-container__content-title">
-                      <a href="{{ collection.url }}"> {{ collection.title }} </a>
+                <div class="testimonials__top-grid-item center">
+                  {% if block.settings.image != blank %}
+                    <div class="testimonials__image">
+                    {% render 'responsive-picture', desktopImage: block.settings.image %}
                     </div>
-                    <div class="captive-container__button button button--tertiary">
-                      <a class="h3" href="{{ collection.url }}"> {{ section.settings.button_label }} </a>
+                  {% endif %}
+                  <div class="testimonials__author">
+                    <h2 class="h3 testimonials__author__name">
+                      {{ block.settings.author_name }}
+                    </h2>
+                    <div class="testimonials__author__occupation">
+                      {{ block.settings.author_occupation }}
                     </div>
                   </div>
+                </div>
+                <div class="testimonials__bottom-grid-item">
+                    {{ block.settings.author_testimony }}
+                </div>
               </li>
-            {% endfor %}
-          </ul>
+              {% endfor %}
+            </ul>
+          </div>
         </div>
-      </div>
-    </custom-slider>
+      </custom-slider>
+    </div>
   </div>
 </div>
 
 {% schema %}
 {
-  "name": "Captive Collections",
-  "tag":"section",
+  "name": "Testimonials",
   "settings": [
     {
       "type":"header",
-      "content":"Collection"
+      "content":"Testimonials"
     },
     {
-      "type":"text",
+      "type": "text",
       "id":"heading",
-      "label":"Heading",
-      "default":"Captivating Collections"
+      "label": "Heading",
+      "default": "Our Customers Review"
     },
     {
-      "type": "text",
-      "id": "heading_button_label",
-      "label": "Button Label",
-      "default": "View All"
-    },
-    {
-      "type": "url",
-      "id":"heading_link",
-      "label": "Heading Link"
-    },
-    {
-      "type": "select",
-      "id": "heading_size",
-      "options": [
-        {
-        "value": "h2",
-        "label": "Large"
-        },
-        {
-        "value": "h1",
-        "label": "Medium"
-        },
-        {
-        "value": "h0",
-        "label": "Small"
-        }
-      ],
-      "default": "h1",
-      "label": "Heading Size"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "label": "Button Label",
-      "default": "Shop Now"
-    },
-    {
-      "type": "collection_list",
-      "id": "collection_list",
-      "label": "Collections",
-      "limit": 8
+      "type": "color",
+      "id":"background_color",
+      "label": "Background Color",
+      "default": "#F5F5F5"
     },
     {
       "type": "header",
@@ -243,9 +215,41 @@
       "default": 30
     }
     ],
-    "presets":[
+    "blocks": [
       {
-        "name": "Captive Collections"
+        "type":"Slider",
+        "name":"Testimony Slider",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id":"image",
+            "label":"Image",
+            "info":"60 x 60"
+          },
+          {
+            "type": "text",
+            "id":"author_name",
+            "label":"Author name",
+            "default": "Sarah Mitchell"
+          },
+          {
+            "type": "text",
+            "id":"author_occupation",
+            "label":"Author Occupation",
+            "default": "Stylist"
+          },
+          {
+            "type": "richtext",
+            "id":"author_testimony",
+            "label":"Author testimony",
+            "default": "<p>Tesgtimony here</p>"
+          }          
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Testimonials"
       }
     ]
 }

@@ -1,0 +1,40 @@
+.scrollabel-wrapper {
+    font-size: 3.5rem;
+    font-weight: 400;
+    color: black;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.scrollabel-wrapper {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .scrollabel-container {
+    display: flex;
+    flex-direction: row;
+    gap: 8rem;
+    align-items: center;
+    justify-content: flex-start;
+    white-space: nowrap;
+    animation: scroll 25s linear infinite;
+  }
+  
+  .scrollabel-text {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+  }
+  
