@@ -7,7 +7,7 @@
 
 <custom-product-card
 class="product-card"
- data-product-handle="{{ product.handle }}" 
+ data-product-handle="{{ product.url | within: collection }}" 
   data-section-id="{{ section_id }}">
 
   <a href="{{ current_variant.url }}">
