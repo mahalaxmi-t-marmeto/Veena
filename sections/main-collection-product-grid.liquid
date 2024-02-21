@@ -110,41 +110,52 @@
         >
           {% render 'breadcrumbs' %}
 
-          <details>
-          <summary>About Me</summary>
-          <p>I am a web developer with 5 years of experience. I have worked on various projects, including e-commerce websites and content management systems. My skills include HTML, CSS, JavaScript, and PHP.</p>
-        </details>
         
-        <ul class="parent">
-          {% for link in section.settings.menu.links %}
-          <li>
-            <a href="{{ link.url }}">
-              {{ link.title }}
-            </a>
-            {% if link.links != blank %}
-            <ul class="child">
-              {% for child_link in link.links %}
-              <li>
-                <a href="{{ child_link.url }}">
-                  {{ child_link.title }}
-                </a>
-                {% if child_link.links != blank %}
-                <ul class="grandchild">
-                  {% for grandchild_link in child_link.links %}
-                  <li>
-                    <a href="{{ grandchild_link.url }}">
-                      {{ grandchild_link.title }}</a>
-                  </li>
+            {% for link in section.settings.menu.links %}
+              <details>
+                <summary> = {{ link.title }}</summary>
+                <p>
+                  {% for child_link in link.links %}
+                    <details>
+                      {% if child_link.links != blank %}
+                      <summary> =={{ child_link.title }}</summary>
+                      {% endif %}
+                      <p>
+                        {% for grandchild in child_link.links %}
+                          <details>
+                            {% if grandchild.link != blank %}
+                            <summary> ==={{ grandchild.title }}</summary>
+                            {% endif %}
+                          </details>
+                        {% endfor %}
+                      </p>
+                    </details>
                   {% endfor %}
-                </ul>
-                {% endif %}
-              </li>
-              {% endfor %}
+                </p>
+              </details>         
+            {% endfor %}
+
+          <ul class="parent">
+            {% for link in section.settings.menu.links %}
+            <li><a href="{{ link.url }}">{{ link.title }}</a>
+            {% if link.links != blank %}
+              <ul class="child">
+                {% for child_link in link.links %}  
+                <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
+                {% if child_link.links != blank %}
+                  <ul class="grandchild">
+                  {% for grandchild_link in child_link.links %}  
+                    <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+                  {% endfor %}
+                  </ul>
+                {% endif %}   
+                </li>
+                {% endfor %}
+              </ul> 
+            {% endif %} 
+            </li>
+            {% endfor %}
             </ul>
-            {% endif %}
-          </li>
-          {% endfor %}
-        </ul>
 
           {% render 'facets',
             results: collection,
@@ -209,8 +220,8 @@
                     style="--animation-order: {{ forloop.index }};"
                   {% endif %}
                 >
-                  {% render 'card-product',
-                    card_product: product,
+                  {% render 'custom-product-card',
+                    product: product,
                     media_aspect_ratio: section.settings.image_ratio,
                     image_shape: section.settings.image_shape,
                     show_secondary_image: section.settings.show_secondary_image,

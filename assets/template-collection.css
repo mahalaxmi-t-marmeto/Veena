@@ -103,7 +103,7 @@
   display: block;
   width: 30px;
   height: 30px;
-  border: 2px solid transparent;
+  border: 1.5px solid transparent;
   border-radius: 50%;
 }
 
@@ -112,18 +112,7 @@ ul.facets-layout-list {
 }
 
 
-.color-variant {
-  color: white;
-  font-size: 16px;
-  cursor: pointer;
-  position: relative;
-}
-
-.color-variant:hover {
-  box-shadow:0 0 0 3px white inset;
-}
-
-.color-variant:active {
+.list-menu__item:hover .color-variant{
   box-shadow:0 0 0 3px white inset;
 }
 
@@ -131,25 +120,32 @@ ul.facets-layout-list {
   box-shadow:0 0 0 3px white inset;
 }
 
-.color-variant:active::before,
-.color-variant:active::after {
-  content: '';
-  position: absolute;
-  top: -2px;
-  left: -2px;
-  right: -2px;
-  bottom: -2px;
-  border-radius: 50%;
-  box-shadow:0 0 0 3px white inset;
-  pointer-events: none;
+.product-card__title {
+  text-decoration: none;
+  font-weight: 500;
+  height: 2.3rem;
+  letter-spacing: .4px;
+  color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
 }
 
-.color-variant:active::before {
-  border-right: none;
-  border-bottom: none;
+.product-card__info
+{
+  margin-top: .5rem;
 }
 
-.color-variant:active::after {
-  border-left: none;
-  border-top: none;
+.facet-color_swatches .item-swatch {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+span.facet-checkbox__text
+{
+  font-weight: 600;
+  margin-left: 1rem;
+  color: black;
 }

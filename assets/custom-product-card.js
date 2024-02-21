@@ -24,6 +24,8 @@ class CustomProductCard extends HTMLElement {
       .then((response) => response.text())
       .then((responseText) => {
         const html = new DOMParser().parseFromString(responseText, "text/html");
+        console.log(html);
+        console.log(html.querySelector(`[data-product-handle="${this.productHandle}"]`));
         this.innerHTML = html.querySelector(`[data-product-handle="${this.productHandle}"]`).innerHTML;
       });
   }

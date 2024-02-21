@@ -10,6 +10,10 @@
     <script src="{{'splide.min.js'| asset_url}}" defer></script>
     <link rel="stylesheet" href="{{'splide.min.css'| asset_url}}">
 
+    <script src="{{'custom-product-card.js'| asset_url}}" defer></script>
+    {{ 'section-custom-featured-collection.css' | asset_url | stylesheet_tag }}
+
+
     {%- if settings.favicon != blank -%}
       <link rel="icon" type="image/png" href="{{ settings.favicon | image_url: width: 32, height: 32 }}">
     {%- endif -%}

@@ -226,10 +226,10 @@
                                   {% assign swatch_image = value.label | escape | append: '.jpg' | file_url %}
                                   {% assign swatch_color = value.label | escape %}
                                    {% if filter_label == "color" %}
-                                      <div class="item-swatch">
-                                        <div class="color-variant-box">
-                                            <div class="color-variant" data-value="{{ swatch_color }}"> </div>
-                                        </div>
+                                    <div class="item-swatch">
+                                      <div class="color-variant-box">
+                                          <div class="color-variant" data-value="{{ swatch_color }}"> </div>
+                                      </div>
                                     <div>    
                                    {% endif %}
                                 </div>
@@ -243,7 +243,8 @@
                                     %}
                                   </div>
                                 {% else %}
-                                  <svg
+                                  {% if filter_label != 'color' %}
+                                    <svg
                                     width="1.6rem"
                                     height="1.6rem"
                                     viewBox="0 0 16 16"
@@ -267,7 +268,8 @@
                                       stroke-width="1.75"
                                       stroke-linecap="round"
                                       stroke-linejoin="round" />
-                                  </svg>
+                                  </svg>                                    
+                                  {% endif %}
                                 {% endif %}
 
                                 <span class="facet-checkbox__text" aria-hidden="true">
