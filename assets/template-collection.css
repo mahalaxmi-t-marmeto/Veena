@@ -97,3 +97,59 @@
 .collection__view-all a:not(.link) {
   margin-top: 1rem;
 }
+
+.facet-color_swatches .product-card__swatch,
+.color-variant {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border: 2px solid transparent;
+  border-radius: 50%;
+}
+
+ul.facets-layout-list {
+  column-count: 2;
+}
+
+
+.color-variant {
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  position: relative;
+}
+
+.color-variant:hover {
+  box-shadow:0 0 0 3px white inset;
+}
+
+.color-variant:active {
+  box-shadow:0 0 0 3px white inset;
+}
+
+.facet-color-swatch-input:checked ~ .facet-color_swatches .color-variant{
+  box-shadow:0 0 0 3px white inset;
+}
+
+.color-variant:active::before,
+.color-variant:active::after {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 50%;
+  box-shadow:0 0 0 3px white inset;
+  pointer-events: none;
+}
+
+.color-variant:active::before {
+  border-right: none;
+  border-bottom: none;
+}
+
+.color-variant:active::after {
+  border-left: none;
+  border-top: none;
+}

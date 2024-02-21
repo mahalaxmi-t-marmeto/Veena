@@ -10,7 +10,7 @@
 
 <custom-product-card
 class="product-card"
-  data-product-handle="{{ product.handle }}" 
+ data-product-handle="{{ product.handle }}" 
   data-section-id="{{ section_id }}">
 
   <a href="{{ current_variant.url }}">
@@ -53,14 +53,14 @@ class="product-card"
     </div>
     <div class="product-card__stock">
       {% if current_variant.inventory_quantity > 10 %}
-        <div class="product-card__stock-more">{{ current_variant.inventory_quantity | append: ' in stock' }}</div>
-        {% else %}
-        <div class="product-card__stock-less">{{ current_variant.inventory_quantity | prepend: 'Only ' | append: ' units left' }}</div>
-        {% endif %}
+      <div class="product-card__stock-more">{{ current_variant.inventory_quantity | append: ' in stock' }}</div>
+      {% else %}
+      <div class="product-card__stock-less">{{ current_variant.inventory_quantity | prepend: 'Only ' | append: ' units left' }}</div>
+      {% endif %}
     </div>
   </div>
 
-  <script class="">
+  <script>
     {{ product.variants | json }}
   </script>
 

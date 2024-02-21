@@ -209,7 +209,8 @@
                                 class="facets__label facet-checkbox{% if is_disabled %} facet-checkbox--disabled disabled{% endif %}{% if has_visual_display %} visual-display-parent visual-display-parent--{{ filter.presentation }}{% endif %}{% if value.active %} active{% endif %}"
                               >
                                 <input
-                                  type="checkbox"
+                                  type="checkbox",
+                                  class="facet-color-swatch-input"
                                   name="{{ value.param_name }}"
                                   value="{{ value.value }}"
                                   id="Filter-{{ filter.param_name | escape }}-{{ forloop.index }}"
@@ -220,6 +221,18 @@
                                     disabled
                                   {% endif %}
                                 >
+                                <div class="facet-color_swatches">
+                                  {% assign filter_label = filter.label |  handleize  %}
+                                  {% assign swatch_image = value.label | escape | append: '.jpg' | file_url %}
+                                  {% assign swatch_color = value.label | escape %}
+                                   {% if filter_label == "color" %}
+                                      <div class="item-swatch">
+                                        <div class="color-variant-box">
+                                            <div class="color-variant" data-value="{{ swatch_color }}"> </div>
+                                        </div>
+                                    <div>    
+                                   {% endif %}
+                                </div>
 
                                 {% if has_visual_display %}
                                   <div class="facets__visual-display-wrapper">

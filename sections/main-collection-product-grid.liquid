@@ -1,6 +1,7 @@
 {{ 'template-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'main-collection-product-grid.js' |  asset_url }}" defer></script>
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -18,6 +19,12 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .product-grid__buttons {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -27,6 +34,7 @@
 {%- endstyle -%}
 
 <div class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}">
+  
   {%- paginate collection.products by section.settings.products_per_page -%}
     {% comment %} Sort is the first tabbable element when filter type is vertical {% endcomment %}
     {%- if section.settings.enable_sorting and section.settings.filter_type == 'vertical' -%}
@@ -100,6 +108,44 @@
           id="main-collection-filters"
           data-id="{{ section.id }}"
         >
+          {% render 'breadcrumbs' %}
+
+          <details>
+          <summary>About Me</summary>
+          <p>I am a web developer with 5 years of experience. I have worked on various projects, including e-commerce websites and content management systems. My skills include HTML, CSS, JavaScript, and PHP.</p>
+        </details>
+        
+        <ul class="parent">
+          {% for link in section.settings.menu.links %}
+          <li>
+            <a href="{{ link.url }}">
+              {{ link.title }}
+            </a>
+            {% if link.links != blank %}
+            <ul class="child">
+              {% for child_link in link.links %}
+              <li>
+                <a href="{{ child_link.url }}">
+                  {{ child_link.title }}
+                </a>
+                {% if child_link.links != blank %}
+                <ul class="grandchild">
+                  {% for grandchild_link in child_link.links %}
+                  <li>
+                    <a href="{{ grandchild_link.url }}">
+                      {{ grandchild_link.title }}</a>
+                  </li>
+                  {% endfor %}
+                </ul>
+                {% endif %}
+              </li>
+              {% endfor %}
+            </ul>
+            {% endif %}
+          </li>
+          {% endfor %}
+        </ul>
+
           {% render 'facets',
             results: collection,
             enable_filtering: section.settings.enable_filtering,
@@ -117,6 +163,15 @@
           data-cascade
         {% endif %}
       >
+
+        <custom-grid>
+          <div class="product-grid__buttons">
+            <div class="button">4</div>
+            <div class="button">3</div>
+            <div class="button">1</div>
+          </div>
+        </custom-grid>
+
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">
             <div class="loading-overlay gradient"></div>
@@ -187,6 +242,11 @@
   "name": "t:sections.main-collection-product-grid.name",
   "class": "section",
   "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    },
     {
       "type": "range",
       "id": "products_per_page",

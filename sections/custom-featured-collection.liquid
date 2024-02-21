@@ -14,8 +14,6 @@
   }
 {% endstyle %}
 
-
-
 <div class="collection-wrapper padding-{{ section.id }}">
   <div class="page-width">
     <div class="collection-container">
@@ -27,7 +25,7 @@
       <div class="grid grid--4-col-desktop grid--2-col-tablet grid--2-col">
         {% for product in section.settings.product_list %}
           <div class="grid__item">
-            {% render 'product-card', product: product, section_id: section.id %}
+            {% render 'custom-product-card', product: product, section_id: section.id %}
           </div>
          {% endfor %}
       </div>
