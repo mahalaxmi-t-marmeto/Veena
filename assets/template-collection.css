@@ -149,3 +149,28 @@ span.facet-checkbox__text
   margin-left: 1rem;
   color: black;
 }
+
+.navigation-menu p
+{
+  margin: 0;
+}
+
+.navigation-menu__parent
+{
+  background: #f5f5f5;
+  margin: 2px;
+  border-radius: 12px;
+  padding: 2px 0px 2px 20px;
+}
+
+.navigation-menu__group[open]
+{
+  border: 1px solid rgba(128, 128, 128, 0.502);
+  border-radius: 12px;
+  border-top: none;
+}
+
+.navigation-menu details
+{
+  transition: all 4s;
+}

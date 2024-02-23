@@ -189,6 +189,20 @@
               "title": "Lime Green",
               "color_code": "#32cd32"
             }
+          },
+          "color_settings_xYNaR7": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Clear",
+              "color_code": "#eee9e9"
+            }
+          },
+          "color_settings_haRFgr": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "Candy",
+              "color_code": "#ff7ac2"
+            }
           }
         },
         "block_order": [
@@ -199,7 +213,9 @@
           "color_settings_6nwTiA",
           "color_settings_c8frLh",
           "color_settings_hD3LTj",
-          "color_settings_cQWTm9"
+          "color_settings_cQWTm9",
+          "color_settings_xYNaR7",
+          "color_settings_haRFgr"
         ],
         "settings": {
         }
@@ -221,11 +237,11 @@
         "settings": {
           "background": "#ffffff",
           "background_gradient": "",
-          "text": "#121212",
-          "button": "#121212",
+          "text": "#000000",
+          "button": "#000000",
           "button_label": "#ffffff",
-          "secondary_button_label": "#121212",
-          "shadow": "#121212"
+          "secondary_button_label": "#000000",
+          "shadow": "#000000"
         }
       },
       "scheme-2": {

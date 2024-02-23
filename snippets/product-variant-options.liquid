@@ -85,6 +85,7 @@
   {%- elsif picker_type == 'button' -%}
     <input
       type="radio"
+      class="product-swatches"
       id="{{ input_id }}"
       name="{{ option.name }}"
       value="{{ value | escape }}"
@@ -96,9 +97,17 @@
         class="disabled"
       {% endif %}
     >
-    <label for="{{ input_id }}">
+    {% comment %} <label for="{{ input_id }}">
       {{ value -}}
       {{ label_unavailable }}
+    </label> {% endcomment %}
+
+    <label for="{{ input_id }}">
+      <div class="item-swatch product-card__swatch-container">
+      <div class="color-variant-box">
+          <div class="product-card__swatch product-card__colorswatch color-variant" data-value="{{ value }}"></div>
+      </div>
+      </div> 
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
     <option

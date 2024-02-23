@@ -979,6 +979,9 @@ class VariantSelects extends HTMLElement {
         return element.value;
       }
       if (element.tagName === 'FIELDSET') {
+        const label_value=this.querySelector('.form__label')
+        const updated_label_value=Array.from(element.querySelectorAll('input')).find((radio) => radio.checked)?.value;
+        label_value.innerHTML= `Color: ${updated_label_value}` ;
         return Array.from(element.querySelectorAll('input')).find((radio) => radio.checked)?.value;
       }
     });
@@ -1134,6 +1137,10 @@ class VariantSelects extends HTMLElement {
           `Volume-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
 
+        const variantMetafieldDestination= document.getElementById(`variantMetafield`);
+        const variantMetafieldSource = html.getElementById(`variantMetafield`)
+        variantMetafieldDestination.innerHTML=variantMetafieldSource.innerHTML
+
         const pricePerItemDestination = document.getElementById(`Price-Per-Item-${this.dataset.section}`);
         const pricePerItemSource = html.getElementById(
           `Price-Per-Item-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
@@ -1187,12 +1194,13 @@ class VariantSelects extends HTMLElement {
 
   toggleAddButton(disable = true, text, modifyClass = true) {
     const productForm = document.getElementById(`product-form-${this.dataset.section}`);
+    console.log(productForm);
     if (!productForm) return;
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
     if (!addButton) return;
 
-    if (disable) {
+    if (disable) {  
       addButton.setAttribute('disabled', 'disabled');
       if (text) addButtonText.textContent = text;
     } else {

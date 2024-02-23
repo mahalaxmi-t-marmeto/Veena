@@ -3,6 +3,8 @@
   class="section-{{ section.id }}-padding gradient color-{{ section.settings.color_scheme }}"
   data-section="{{ section.id }}"
 >
+
+  {{ 'section-custom-main-product.css' | asset_url |  stylesheet_tag }}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -179,7 +181,26 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
+                  <h2>{{ "About the Product" }}</h2>
                   {{ product.description }}
+                  <div class="product_details">
+                    <details>
+                      <summary>
+                        <div class="product_details_heading">
+                        <svg class="icon icon-accordion" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+                          <path d="M7.63356 11.3048L7.5176 11.294C6.03849 11.1571 5.29894 11.0885 5.06402 10.5732C4.82911 10.0581 5.25496 9.43836 6.10668 8.19914L9.57517 3.15246C10.1378 2.33379 10.41921.92446 10.6618 2.01151C10.9044 2.09854 10.8718 2.59709 10.8065 3.5942L10.6098 6.60011C10.5504 7.50746 10.5207 7.96113 10.7767 8.26644C11.0327 8.57175 11.4773 8.61292 12.3664 8.69524L12.4824 8.70598C13.9615 8.84293 14.7011 8.91141 14.936 9.42665C15.1709 9.94194 14.745 10.5616 13.8933 11.8008L10.4248 16.8475C9.86215 17.6661 9.58082 18.0755 9.33819 17.9885C9.09556 17.9014 9.12819 17.4029 9.19346 16.4058L9.39021 13.3999C9.4496 12.4925 9.4793 12.0389 9.22331 11.7335C8.96733 11.4282 8.52274 11.3871 7.63356 11.3048Z"></path>
+                        </svg>
+                      <h2>{{ "Product Details" }}</h2>
+                      <svg aria-hidden="true" focusable="false" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor"></path>
+                      </svg>
+                    </div>
+                      </summary>
+                      <p>
+                        <div id="variantMetafield">{{ product.selected_or_first_available_variant.metafields.custom.productdetails | metafield_tag }}</div>
+                      </p>
+                    </details>
+                  </div>
                 </div>
               {%- endif -%}
             {%- when 'sku' -%}
@@ -416,6 +437,20 @@
               {% render 'product-variant-picker', product: product, block: block, product_form_id: product_form_id %}
             {%- when 'buy_buttons' -%}
               {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
+
+              <div class="payment__svg">
+                {%- unless shop.enabled_payment_types == empty -%}
+                <strong class="">Secure checkout with</strong>
+                <ul class="list list-payment" role="list">
+                  {%- for type in shop.enabled_payment_types -%}
+                    <li class="list-payment__item">
+                      {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+                    </li>
+                  {%- endfor -%}
+                </ul>
+                {% endunless %}
+              </div>
+
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid

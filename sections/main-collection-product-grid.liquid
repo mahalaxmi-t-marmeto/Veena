@@ -110,52 +110,51 @@
         >
           {% render 'breadcrumbs' %}
 
-        
+          <ul class="navigation-menu" >
             {% for link in section.settings.menu.links %}
-              <details>
-                <summary> = {{ link.title }}</summary>
+            <li>
+              <details class="navigation-menu__group">
+                <summary class="navigation-menu__parent"> 
+                  {% if link.links != blank %}
+                    {{ link.title |  append: '>' }} 
+                  {% else %}
+                    {{ link.title }}
+                  {% endif %}
+                   </summary>
+                {% if link.links != blank %}
+                {% for childlink in link.links %}
                 <p>
-                  {% for child_link in link.links %}
-                    <details>
-                      {% if child_link.links != blank %}
-                      <summary> =={{ child_link.title }}</summary>
+                  <ul>
+                    <li>
+                      <details>
+                    <summary class="navigation-menu__child">
+                      {% if childlink.links != blank %}
+                        {{ childlink.title |  append: '>'}} 
+                        {% else %}
+                        {{ childlink.title }} 
                       {% endif %}
-                      <p>
-                        {% for grandchild in child_link.links %}
-                          <details>
-                            {% if grandchild.link != blank %}
-                            <summary> ==={{ grandchild.title }}</summary>
-                            {% endif %}
-                          </details>
-                        {% endfor %}
-                      </p>
-                    </details>
-                  {% endfor %}
-                </p>
-              </details>         
-            {% endfor %}
-
-          <ul class="parent">
-            {% for link in section.settings.menu.links %}
-            <li><a href="{{ link.url }}">{{ link.title }}</a>
-            {% if link.links != blank %}
-              <ul class="child">
-                {% for child_link in link.links %}  
-                <li><a href= "{{ child_link.url }}">{{ child_link.title }}</a>
-                {% if child_link.links != blank %}
-                  <ul class="grandchild">
-                  {% for grandchild_link in child_link.links %}  
-                    <li><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
-                  {% endfor %}
+                    </summary>
+                   <ul>
+                    {% if childlink.links != blank %}
+                      {% for grandchildlink in childlink.links %}
+                        <li>
+                          <p>
+                          {{ grandchildlink.title }}
+                          </p>
+                        </li>
+                      {% endfor %}
+                    {% endif %}
+                   </ul>
+                  </details>
+                    </li>
                   </ul>
-                {% endif %}   
-                </li>
+                </p>
                 {% endfor %}
-              </ul> 
-            {% endif %} 
+                {% endif %}
+              </details>
             </li>
             {% endfor %}
-            </ul>
+          </ul>
 
           {% render 'facets',
             results: collection,
