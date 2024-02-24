@@ -84,13 +84,14 @@
               disabled
             {% endif %}
           >
-            <span id="cartwithprice">
+            <span>
               {%- if product.selected_or_first_available_variant.available == false or quantity_rule_soldout -%}
                 {{ 'products.product.sold_out' | t }}
-                {{ product.selected_variant.price | money_with_currency }}
               {%- else -%}
                 {{ 'products.product.add_to_cart' | t }}
-                {{ product.selected_variant.price | money_with_currency }}
+                <span id="cartwithprice">
+                  {{ product.selected_variant.price | money_with_currency }}
+                </span>
               {%- endif -%}
             </span>
             {%- render 'loading-spinner' -%}

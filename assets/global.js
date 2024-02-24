@@ -949,6 +949,7 @@ customElements.define('slideshow-component', SlideshowComponent);
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
+    this.updatedcartvalue;
     this.addEventListener('change', this.onVariantChange);
   }
 
@@ -960,6 +961,7 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
+    this.updateColorOption();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -971,6 +973,11 @@ class VariantSelects extends HTMLElement {
       this.renderProductInfo();
       this.updateShareUrl();
     }
+  }
+
+  updateColorOption()
+  {
+    console.log(this.querySelector('.form__label'));
   }
 
   updateOptions() {
@@ -1175,6 +1182,8 @@ class VariantSelects extends HTMLElement {
         if (price) price.classList.remove('hidden');
 
         if (inventoryDestination) inventoryDestination.classList.toggle('hidden', inventorySource.innerText === '');
+        this.updatedcartvalue = html.getElementById(`cartwithprice`).innerHTML;
+        console.log(this.updatedcartvalue);
 
         const addButtonUpdated = html.getElementById(`ProductSubmitButton-${sectionId}`);
         this.toggleAddButton(
@@ -1194,18 +1203,19 @@ class VariantSelects extends HTMLElement {
 
   toggleAddButton(disable = true, text, modifyClass = true) {
     const productForm = document.getElementById(`product-form-${this.dataset.section}`);
-    console.log(productForm);
+        console.log(productForm);
     if (!productForm) return;
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
+    console.log(document.getElementById('cartwithprice'));
     if (!addButton) return;
 
-    if (disable) {  
+    if (disable) {
       addButton.setAttribute('disabled', 'disabled');
       if (text) addButtonText.textContent = text;
     } else {
       addButton.removeAttribute('disabled');
-      addButtonText.textContent = window.variantStrings.addToCart;
+      addButtonText.textContent = window.variantStrings.addToCart + this.updatedcartvalue;
     }
 
     if (!modifyClass) return;
