@@ -184,7 +184,8 @@
 .facets__heading {
   display: block;
   color: rgba(var(--color-foreground), 0.85);
-  font-size: 1.4rem;
+  font-size: 2.2rem;
+  font-weight: 500;
   margin: -1.5rem 2rem 0 0;
 }
 
@@ -198,9 +199,11 @@
 
 .facets__summary {
   color: rgba(var(--color-foreground), 0.75);
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  font-weight: 500;
   padding: 0 1.75rem 0 0;
   margin-bottom: 1.5rem;
+  text-transform: uppercase;
 }
 
 .facets__disclosure fieldset {
@@ -398,14 +401,20 @@
   background-color: rgb(var(--color-background));
   margin-right: 1.2rem;
   flex-shrink: 0;
+  border: 1px solid black;
+  border-radius: 10px;
 }
 
 .facet-checkbox .icon-checkmark {
   visibility: hidden;
   position: absolute;
-  left: 0.3rem;
+  /* left: 0.3rem; */
   z-index: 5;
-  top: 1.4rem;
+  /* top: 1.4rem; */
+  background: black;
+  color: white;
+  width: 15px;
+  height: 16px;
 }
 
 .facet-checkbox > input[type='checkbox']:checked ~ .icon-checkmark {
@@ -1061,7 +1070,8 @@ input.mobile-facets__checkbox {
 
   .facets__heading--vertical {
     margin: 0 0 1.5rem 0;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
+    font-weight: 500;
   }
 
   .facets__header-vertical {
@@ -1075,6 +1085,8 @@ input.mobile-facets__checkbox {
 
   .facets-vertical .facets-wrapper {
     padding-right: 3rem;
+    position: relative;
+    top: -6.5rem;
   }
 
   .facets-vertical .facets-wrapper--no-filters {
@@ -1091,7 +1103,12 @@ input.mobile-facets__checkbox {
 
   .facets-vertical-form {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    width: 72%;
+    margin-left: auto;
+    background-color: #F5F5F5;
+    padding: 1.5rem;
+    border-radius: 1.6rem;
   }
 
   .product-count-vertical {
@@ -1189,3 +1206,44 @@ input.mobile-facets__checkbox {
     padding: 0 1rem 1rem;
   }
 }
+
+.facets-verticle-from-right
+{
+  display: flex;
+  align-items: center;
+}
+
+.product-grid-container .product-grid
+{
+  margin-top: 3rem;
+}
+
+.facets-vertical ul.navigation-menu
+{
+  padding: 0;
+  list-style: none;
+}
+
+.facets-vertical ul 
+{
+  list-style: none;
+}
+
+.facet-filters__field .select__select {
+  background-color: white;
+  border-radius: 20px;
+  padding: 6px;
+}
+
+.select__select:focus
+{
+  box-shadow: none;
+  outline: none;
+}
+
+.facet-filters__sort+.icon-caret {
+  right: 4px;
+}
+
+
+

@@ -44,7 +44,7 @@ class="product-card"
     </div>
 
     <div class="product-card__vendor"> {{ product.vendor }} </div>
-    <a href="{{ product.url }}" class="product-card__title h3">{{ product.title }}</a>
+    <a href="{{ product.url }}" class="product-card__title h3">{{ product.title | truncatewords: 2 }}</a>
     <div class="product-card__prices">
       <span class="product-card__price">{{ current_variant.price | money_without_trailing_zeros }}</span>
       {% if current_variant.compare_at_price > current_variant.price %}

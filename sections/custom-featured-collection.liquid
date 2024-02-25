@@ -14,12 +14,17 @@
   }
 {% endstyle %}
 
-<div class="collection-wrapper padding-{{ section.id }}">
+<div class="collection-wrapper padding-{{ section.id }}  color-{{ section.settings.color_scheme }}">
   <div class="page-width">
     <div class="collection-container">
       <div class="collection-container__title">
-        <div class="h0">
+        <div class="h1">
           {{ section.settings.heading }}
+        </div>
+        <div>
+          <button class="button hover-button">
+            {{ section.settings.button_label }}
+          </button>
         </div>
       </div>
       <div class="grid grid--4-col-desktop grid--2-col-tablet grid--2-col">

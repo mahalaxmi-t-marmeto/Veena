@@ -59,3 +59,19 @@
 .collection-list-view-all {
   margin-top: 2rem;
 }
+
+
+.collection_heading
+{
+  font-size: 3.8rem;
+  margin: 0;
+  margin-bottom: 3rem;
+}
+
+.card__heading
+{
+  font-size: 1.6rem;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  line-height: 20.8px;
+}

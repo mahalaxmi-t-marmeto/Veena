@@ -1,40 +1,85 @@
-.scrollabel-wrapper {
-    font-size: 3.5rem;
-    font-weight: 400;
-    color: black;
-    text-decoration: none;
-    text-transform: uppercase;
+.custom-marquee {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    background: linear-gradient(90deg, rgba(218, 64, 68, 0.25), rgba(255, 250, 126, 0.25) 30.21%, rgba(218, 64, 68, 0.25) 64.1%, rgba(255, 250, 126, 0.25) 100%);
 }
 
-.scrollabel-wrapper {
-    width: 100%;
+.custom-marquee .marquee {
+    display: flex;
+    flex-wrap: nowrap;
+    text-align: center;
+    gap: 40px;
+    position: absolute;
+    width: 300%;
     overflow: hidden;
-  }
-  
-  .scrollabel-container {
-    display: flex;
-    flex-direction: row;
-    gap: 8rem;
-    align-items: center;
-    justify-content: flex-start;
-    white-space: nowrap;
-    animation: scroll 10s linear infinite;
-  }
-  
-  .scrollabel-text {
-    display: flex;
-    flex-direction: row;
-    gap: 2rem;
-    align-items: center;
-    justify-content: flex-start;
-  }
-  
-  @keyframes scroll {
+    animation: marquee 20s linear infinite;
+}
+
+
+.custom-marquee div:hover {
+    animation-play-state: paused;
+}
+
+.custom-marquee span {
+    float: left;
+    width: 50%;
+}
+
+@keyframes marquee {
     0% {
-      transform: translateX(0%);
+        left: 0;
     }
+
     100% {
-        transform: translateX(-100%);
+        left: -100%;
     }
-  }
-  
+}
+
+
+.custom-marquee svg {
+    width: 30px;
+    height: 30px;
+}
+
+.marquee-item {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    text-align: center;
+    align-items: center;
+    gap: 20px;
+    line-height: normal;
+    font-size: 35px;
+    color: #000;
+}
+
+.marquee-item .button {
+    font-size: 1.6rem;
+    letter-spacing: .1rem;
+    line-height: calc(1 + .2 / var(--font-body-scale));
+
+}
+
+
+.marquee-item .button span {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2px;
+    z-index: 2;
+}
+
+.marquee-item .button--secondary {
+    background-color: transparent;
+    border: 1px solid #000;
+}
+
+.marquee--button {
+    display: flex;
+    align-items: center;
+}

@@ -5,7 +5,8 @@ class CustomGrid extends HTMLElement {
     }
 
     buttonClicked(event) {
-        const buttonText = event.target.textContent;
+        console.log(event.target.classList.value);
+        const buttonText = event.target.classList.value;
         var productGrid = document.querySelector('#product-grid');
 
         productGrid.classList.forEach(function (className) {
