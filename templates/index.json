@@ -100,7 +100,8 @@
             "pre_heading": "Women's",
             "heading": "Women's Clothing Collection",
             "button_label": "Explore",
-            "button_link": "shopify:\/\/collections"
+            "button_link": "shopify:\/\/collections",
+            "content_position": "align-center justify-center"
           }
         },
         "image_9WVkJJ": {
@@ -110,7 +111,8 @@
             "pre_heading": "Fashion",
             "heading": "Women's Sustainable Style Hub",
             "button_label": "Explore",
-            "button_link": "shopify:\/\/collections"
+            "button_link": "shopify:\/\/collections",
+            "content_position": "align-center justify-center"
           }
         }
       },
@@ -245,7 +247,8 @@
             "pre_heading": "Men's",
             "heading": "Introducing Our Distinguished Men's Clothing Collection",
             "button_label": "Explore",
-            "button_link": "shopify:\/\/collections\/all"
+            "button_link": "shopify:\/\/collections\/all",
+            "content_position": "align-end justify-center"
           }
         },
         "image_d3KpX6": {
@@ -255,7 +258,8 @@
             "pre_heading": "Women's",
             "heading": "Women's Elevate Your Wardrobe With Our Women's Clothing Collection",
             "button_label": "Explore",
-            "button_link": "shopify:\/\/collections\/handbags"
+            "button_link": "shopify:\/\/collections\/handbags",
+            "content_position": "align-end justify-center"
           }
         }
       },
@@ -623,7 +627,7 @@
         "accordian_wUFdyf"
       ],
       "settings": {
-        "background_color": "#F5F5F5",
+        "background_color": "#f5f5f5",
         "heading": "FAQ",
         "description": "Ensure that your FAQs are regularly updated based on common customer queries and changes in your business operations.",
         "padding_top": 60,
