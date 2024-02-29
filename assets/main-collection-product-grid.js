@@ -5,13 +5,19 @@ class CustomGrid extends HTMLElement {
     }
 
     buttonClicked(event) {
-        console.log(event.target.classList.value);
         const buttonText = event.target.classList.value;
         var productGrid = document.querySelector('#product-grid');
 
         productGrid.classList.forEach(function (className) {
             if (className.endsWith('desktop')) {
                 productGrid.classList.replace(className, `grid--${buttonText}-col-desktop`);
+            }
+        });
+
+        productGrid.classList.forEach(function (className) {
+            if (className.endsWith('down')) {
+                if( buttonText== 2 || buttonText== 1)
+                productGrid.classList.replace(className, `grid--${buttonText}-col-tablet-down`);
             }
         });
 

@@ -54,7 +54,7 @@
 }
 
 .shop-the-look__content .h3 {
-    font-size: 2.6rem;
+    font-size: 1.8rem;
     font-weight: 600;
 }
 
@@ -120,7 +120,7 @@
 }
 
 .shop-the-look .hover-button {
-    background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+    background: radial-gradient(ellipse, #D03C3F 50%, black 50%);
     background-size: 700% 450%;
     background-position: right;
     transition: all 1s ease-out;
@@ -130,9 +130,9 @@
     font-size: 16px;
     outline: none;
     margin-top: 2rem;
-    padding: 1rem 2rem;
+    padding: .3rem .9rem;
     letter-spacing: 0.3px;
-    line-height: 28.8px ;
+    line-height: 28.8px;
 }
 
 .shop-the-look .hover-button:hover {
@@ -140,15 +140,13 @@
     background-size: 150% 300%;
 }
 
-.shop-the-look__content p
-{
+.shop-the-look__content p {
     line-height: normal;
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     margin: 0;
 }
 
-.shop-the-look__grid
-{
+.shop-the-look__grid {
     gap: 2rem;
 }
 
@@ -159,12 +157,24 @@
         display: flex;
         flex-direction: row;
     }
-    
+
     .shop-the-look__product-image {
         width: 30%;
     }
 
     .shop-the-look-product-details {
         width: 60%;
+    }
+
+    .shop-the-look .hover-button {
+        padding: 1rem 2rem;
+    }
+
+    .shop-the-look__content .h3 {
+        font-size: 2.6rem;
+    }
+
+    .shop-the-look__content p {
+        font-size: 1.8rem;
     }
 }

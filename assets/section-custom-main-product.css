@@ -17,7 +17,7 @@
     cursor: pointer;
     outline: none;
     border-radius: 50px;
-    background-clip: padding-box; 
+    background-clip: padding-box;
 }
 
 .product-form__submit:hover {
@@ -25,35 +25,141 @@
     background-size: 150% 600%;
 }
 
-.product__media img
-{
-  border-radius: 1.6rem;
-}
-
-.product-media-container
-{
+.product__media img {
     border-radius: 1.6rem;
 }
 
-.media>*:not(.zoom):not(.deferred-media__poster-button)
-{
+.product-media-container {
+    border-radius: 1.6rem;
+}
+
+.media>*:not(.zoom):not(.deferred-media__poster-button) {
     height: auto;
 }
 
-.product-media-container .product__media.media.media--transparent
-{
+.product-media-container .product__media.media.media--transparent {
     border-radius: 1.6rem;
 }
 
-.product_details_heading
-{
+.product_details_heading {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 1rem;
 }
 
-.product__description span
-{
+.product__description span {
     color: var(--color-foreground);
+}
+
+.variant-discount-coupons {
+    width: 100%;
+    height: 13rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1.6rem;
+}
+
+.variant-discount-code__container {
+    width: 35%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.variant-discount-coupons__container {
+    width: 100%;
+    display: block;
+}
+
+.variant-discount-code__text {
+    width: 50%;
+}
+
+.variant-discount-code {
+    border: 2px dashed;
+    width: 100%;
+    height: 94%;
+    border-right: none;
+    text-align: center;
+}
+
+.variant-discount-code__container .button {
+    padding: 0;
+    width: 100%;
+    height: 98%;
+    margin: 0;
+    border-radius: 0;
+}
+
+.variant-discount-code__text input {
+    display: none;
+}
+
+.variant-discount-coupons .disk {
+    width: 30px;
+    height: 28px;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.disk__left {
+    position: relative;
+    right: 15px;
+}
+
+.disk__right {
+    position: relative;
+    left: 15px;
+}
+
+.variant-discount-coupons__container .h2 {
+    font-size: 18px;
+}
+
+#custom__atc {
+    display: flex;
+    width: 70%;
+    position: relative;
+    left: 28%;
+    min-height: 46px;
+    bottom: 63px;
+}
+
+.custom-atc__hover-button {
+    background: radial-gradient(ellipse, #D03C3F 50%, black 50%);
+    background-size: 700% 450%;
+    background-position: right;
+    transition: all 1s ease-out;
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    outline: none;
+    border-radius: 50px;
+    background-clip: padding-box;
+    padding: 0.4rem 1rem;
+}
+
+.custom-atc__hover-button:hover {
+    background-position: center;
+    background-size: 150% 300%;
+}
+
+@media screen and (min-width:750px) {
+
+    .variant-discount-coupons__container {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .variant-discount-coupons__container .h2 {
+        font-size: 3rem;
+    }
+
 }

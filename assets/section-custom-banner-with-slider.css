@@ -81,7 +81,7 @@
     outline: none;
     border-radius: 50px;
     background-clip: padding-box;
-    padding: .4rem 0rem;
+    padding: 0.4rem 1rem;
 }
 
 .main-container__heading .hover-button:hover {
@@ -163,6 +163,11 @@
     margin-bottom: 1rem;
 }
 
+.main-container__mobile-banner a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .main-container__mobile-banner-content {
     position: absolute;
     top: 0;
@@ -231,5 +236,9 @@
 
     .main-container__heading a {
         font-size: 1.6rem;
+    }
+
+    .main-container__heading .hover-button {
+        padding: .4rem 0rem;
     }
 }

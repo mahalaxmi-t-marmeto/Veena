@@ -19,19 +19,6 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .product-grid__buttons {
-    display: flex;
-    align-items: start;
-    justify-content: center;
-}
-
-
-.product-grid__buttons div
-{
-  padding:0 2rem;
-  cursor:pointer;
-}
-
   @media screen and (min-width: 750px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -146,7 +133,7 @@
           data-id="{{ section.id }}"
         >
 
-          <ul class="navigation-menu">
+          <ul class="navigation-menu custom-navigation-menu">
             {% for link in section.settings.menu.links %}
             <li>
               <details class="navigation-menu__group">
@@ -162,7 +149,9 @@
                     </svg>
                   </p>
                   {% else %}
-                  {{ link.title }}
+                  <a href="{{ link.url }}">
+                      {{ link.title}}
+                    </a>
                   {% endif %}
                 </summary>
                 {% if link.links != blank %}
@@ -189,9 +178,13 @@
                         {% if childlink.links != blank %}
                         {% for grandchildlink in childlink.links %}
                         <li>
-                          <p class="navigation-menu__grandchild">
-                            {{ grandchildlink.title }}
+                          <summary>
+                            <p class="navigation-menu__grandchild">
+                            <a href="{{ grandchildlink.url }}">
+                              {{ grandchildlink.title }}
+                            </a>
                           </p>
+                          </summary>
                         </li>
                         {% endfor %}
                         {% endif %}
@@ -218,7 +211,8 @@
       {%- endif -%}
 
       <div
-        class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+        class="product-grid-container{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}
+          product-grid-container__mobile"
         id="ProductGridContainer"
         {% if settings.animations_reveal_on_scroll %}
           data-cascade

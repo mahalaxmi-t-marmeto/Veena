@@ -961,7 +961,6 @@ class VariantSelects extends HTMLElement {
     this.updatePickupAvailability();
     this.removeErrorMessage();
     this.updateVariantStatuses();
-    this.updateColorOption();
 
     if (!this.currentVariant) {
       this.toggleAddButton(true, '', true);
@@ -975,10 +974,7 @@ class VariantSelects extends HTMLElement {
     }
   }
 
-  updateColorOption()
-  {
-    console.log(this.querySelector('.form__label'));
-  }
+
 
   updateOptions() {
     this.options = Array.from(this.querySelectorAll('select, fieldset'), (element) => {
@@ -1143,10 +1139,18 @@ class VariantSelects extends HTMLElement {
         const volumePricingSource = html.getElementById(
           `Volume-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`
         );
+     
+        document.getElementById(`custom__atc`).dataset.productId = html.getElementById(`custom__atc`).dataset.productId;
 
         const variantMetafieldDestination= document.getElementById(`variantMetafield`);
         const variantMetafieldSource = html.getElementById(`variantMetafield`)
         variantMetafieldDestination.innerHTML=variantMetafieldSource.innerHTML
+
+        
+
+        const variantdiscountDestination= document.getElementById(`variant-discount`);
+        const variantdiscountSource = html.getElementById(`variant-discount`);
+        if (variantdiscountSource && variantdiscountDestination) variantdiscountDestination.innerHTML=variantdiscountSource.innerHTML
 
         const pricePerItemDestination = document.getElementById(`Price-Per-Item-${this.dataset.section}`);
         const pricePerItemSource = html.getElementById(
@@ -1182,8 +1186,7 @@ class VariantSelects extends HTMLElement {
         if (price) price.classList.remove('hidden');
 
         if (inventoryDestination) inventoryDestination.classList.toggle('hidden', inventorySource.innerText === '');
-        this.updatedcartvalue = html.getElementById(`cartwithprice`).innerHTML;
-        console.log(this.updatedcartvalue);
+        if(html.getElementById(`cartwithprice`)) this.updatedcartvalue = html.getElementById(`cartwithprice`).innerHTML;
 
         const addButtonUpdated = html.getElementById(`ProductSubmitButton-${sectionId}`);
         this.toggleAddButton(
@@ -1203,11 +1206,9 @@ class VariantSelects extends HTMLElement {
 
   toggleAddButton(disable = true, text, modifyClass = true) {
     const productForm = document.getElementById(`product-form-${this.dataset.section}`);
-        console.log(productForm);
     if (!productForm) return;
     const addButton = productForm.querySelector('[name="add"]');
     const addButtonText = productForm.querySelector('[name="add"] > span');
-    console.log(document.getElementById('cartwithprice'));
     if (!addButton) return;
 
     if (disable) {

@@ -1,4 +1,4 @@
-{{ 'custom-timer.css' | asset_url | stylesheet_tag }}
+{{ 'section-custom-timer.css' | asset_url | stylesheet_tag }}
 <script src="{{ " custom-timer.js" | asset_url }}" defer></script>
 
 {% style %}
@@ -17,7 +17,7 @@
 
 <div class="custom-timer padding-{{ section.id }} color-{{ section.settings.color_scheme }}">
   <div class="page-width">
-    <div class="grid grid--1-col grid--2-col-desktop">
+    <div class="grid grid--1-col grid--2-col-desktop custom-timer__grid-mobile">
       <div class="grid__item custom-timer__text-wrapper">
         {% if section.settings.heading %}
         <h2 class="h1x">{{ section.settings.heading }}</h2>
@@ -26,12 +26,58 @@
         <p class="custom-timer__description">{{ section.settings.description }}</p>
         {% endif %}
         {% if section.settings.button_label %}
-        <a class="button custom-button-secondary_color" href="{{section.settings.button_link }}">
-          {{ section.settings.button_label }}
+        <a class="button" href="{{section.settings.button_link }}">
+          <span>{{ section.settings.button_label }}</span>
         </a>
         {% endif %}
       </div>
       <div class="grid__item custom-timer__time-wrapper">
+        <div class="custom-timer__card custom-border-radius">
+          <span class="h1 custom-timer__time" id="days">
+            {{ section.settings.days }}
+          </span>
+          <span class="h4">Days</span>
+        </div>
+        <span class="h1 custom-timer__colon">:</span>
+        <div class="custom-timer__card custom-border-radius">
+          <h2 class="h1 custom-timer__time" id="hours">
+            {{ section.settings.hours }}
+          </h2>
+          <span class="h4">Hours</span>
+        </div>
+        <span class="h1 custom-timer__colon">:</span>
+        <div class="custom-timer__card custom-border-radius">
+          <span class="h1 custom-timer__time" id="minutes">
+            {{ section.settings.minutes }}
+          </span>
+          <span class="h4">Mins</span>
+        </div>
+        <span class="h1 custom-timer__colon">:</span>
+        <div class="custom-timer__card custom-border-radius">
+          <span class="h1 custom-timer__time" id="seconds">
+            {{ section.settings.seconds }}
+          </span>
+          <span class="h4">Sec</span>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="custom-timer__grid-desktop">
+      <div class="custom-timer__text-wrapper">
+        {% if section.settings.heading %}
+        <h2 class="h1">{{ section.settings.heading }}</h2>
+        {% endif %}
+        {% if section.settings.description %}
+        <p class="custom-timer__description">{{ section.settings.description }}</p>
+        {% endif %}
+        {% if section.settings.button_label %}
+        <a class="button hover-button" href="{{section.settings.button_link }}">
+          <span>{{ section.settings.button_label }}</span>
+        </a>
+        {% endif %}
+      </div>
+      <div class="custom-timer__time-wrapper">
         <div class="custom-timer__card custom-border-radius">
           <span class="h1 custom-timer__time" id="days">
             {{ section.settings.days }}
