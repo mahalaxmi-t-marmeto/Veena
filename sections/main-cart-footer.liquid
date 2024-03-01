@@ -59,8 +59,8 @@
                 </div>
 
                 <div class="totals">
-                  <h2 class="totals__total">{{ 'sections.cart.estimated_total' | t }}</h2>
-                  <p class="totals__total-value">{{ cart.total_price | money_with_currency }}</p>
+                  <h2 class="cart-page-total totals__total">Subtotal ({{ cart.item_count  }})</h2>
+                  <p class="cart-page-total totals__total-value">{{ cart.total_price | money_with_currency }}</p>
                 </div>
 
                 <small class="tax-note caption-large rte">
@@ -74,6 +74,9 @@
                     {{ 'sections.cart.taxes_and_shipping_at_checkout' | t }}
                   {%- endif -%}
                 </small>
+
+                {%  render 'free-shipping'  %}
+
               </div>
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
@@ -86,7 +89,7 @@
                 <button
                   type="submit"
                   id="checkout"
-                  class="cart__checkout-button button"
+                  class="cart__checkout-button button gradiant-button-black "
                   name="checkout"
                   {% if cart == empty %}
                     disabled

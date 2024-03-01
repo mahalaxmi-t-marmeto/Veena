@@ -1,0 +1,44 @@
+.shipping-bar {
+    width: 100%;
+    border-radius: 2rem;
+    padding: 0 2rem;
+}
+
+.cart-drawer__black {
+    color: #111314;
+    margin: 0;
+}
+
+.shipping-bar .shipping-bar__container {
+    height: 0.6rem;
+    background: #fff;
+    border-radius: 1rem;
+    position: relative;
+    margin: 1.4rem 0 1.4rem;
+}
+
+.shipping-bar .shipping-bar__filled {
+    height: 100%;
+    border-radius: 1rem;
+    transition: all .75s ease-in-out;
+    background-color: #00D964;
+}
+
+.shipping-bar .shipping__icon {
+    position: absolute;
+    transition: all .75s ease-in-out;
+    transform: translate(-70%, -45%) rotate(30deg);
+}
+
+.shipping-bar__message p {
+    margin: 0;
+    color: white;
+}
+
+.free_shipping {
+    color: #00D964;
+}
+
+.free_shipping_title {
+    color: white;
+}
