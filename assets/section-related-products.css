@@ -4,4 +4,72 @@
 
 .related-products__heading {
   margin: 0 0 3rem;
+  font-size: 3.4rem;
+  letter-spacing: 0.3px;
+}
+
+
+.related-products .splide__arrow {
+  background-color: #D03C3F;
+  opacity: 1;
+}
+
+.related-products .splide__arrow:hover {
+  opacity: 1;
+}
+
+.related-products .splide__arrow {
+  background: radial-gradient(ellipse, black 50%, #D03C3F 50%);
+  background-size: 700% 450%;
+  background-position: right;
+  transition: all .8s ease;
+  color: white;
+  cursor: pointer;
+  outline: none;
+  border-radius: 50px;
+  background-clip: padding-box;
+}
+
+.related-products .splide__arrow:hover {
+  color: #D03C3F;
+  background-position: center;
+  background-size: 150% 300%;
+}
+
+.related-products .splide__arrow[disabled] {
+  opacity: 0;
+}
+
+.related-products .splide__arrow--next {
+  right: 0em;
+  border-radius: 50% 0% 0% 50%;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.related-products .splide__arrow--prev {
+  left: 0em;
+  border-radius: 0% 50% 50% 0%;
+  width: 3.4rem;
+  height: 3.4rem;
+}
+
+.related-products .splide__arrow svg {
+  fill: #fff;
+}
+
+@media screen and (min-width:750px) {
+  .related-products .splide__arrow--next {
+      right: 0em;
+      border-radius: 50% 0% 0% 50%;
+      width: 4.4rem;
+      height: 4.4rem;
+  }
+
+  .related-products .splide__arrow--prev {
+      left: 0em;
+      border-radius: 0% 50% 50% 0%;
+      width: 4.4rem;
+      height: 4.4rem;
+  }
 }

@@ -3615,3 +3615,45 @@ details-disclosure > details {
   background-position: center;
   background-size: 150% 300%;
 }
+
+.account_options {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 70%;
+  right: 8%;
+  border: 1px solid rgba(97, 96, 96, 0.402);
+  border-radius: 1.6rem;
+  background-color: white;
+  padding: 1.2rem  1.5rem;
+  width: 208px;
+}
+
+.account_options a {
+  display: flex;
+  width: max-content;
+  align-items: center;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  transition: all .3s ease;
+}
+
+.account_options a:hover {
+  color: #D03C3F;
+}
+
+.account_options a svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  transition: all .3s ease;
+}
+
+.account_options a:hover svg {
+  fill: #D03C3F;
+}
+
+.header__icon--account:hover .account_options {
+  display: flex;
+}
+

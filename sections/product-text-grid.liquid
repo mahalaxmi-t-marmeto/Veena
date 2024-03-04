@@ -1,4 +1,4 @@
-{{ 'section-msin-product-text-grid.css' | asset_url | stylesheet_tag }}
+{{ 'section-main-product-text-grid.css' | asset_url | stylesheet_tag }}
 
 {% style %}
     .padding-{{ section.id }} 
@@ -7,6 +7,9 @@
       padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
     }
 
+    .text-grid-wrapper {
+      background:{{ section.settings.background_color }};
+    }
 
     @media screen and (min-width: 750px) 
     {
@@ -18,8 +21,8 @@
     }
 {% endstyle %}
 
-<div class=" padding-{{ section.id }} ">
-    <div class="">
+<div class="text-grid-wrapper color-{{ section.settings.color_scheme }} padding-{{ section.id }} ">
+    <div class="text-grid">
         <div class="page-width text-grid-wrapper
          color-{{ section.settings.color_scheme }}
          grid grid--2-col-desktop grid--1-col">
@@ -27,6 +30,13 @@
           <div class="grid__item">
               <h2> {{ block.settings.heading }} </h2>
               <p> {{ block.settings.description }} </p>
+              {% if block.settings.button_label != blank %}
+                <a class="button gradiant-button-black " {%if block.settings.button_link==blank %} 
+                    role="link" aria-disabled="true" {% else %}
+                    href="{{ block.settings.button_link }}" {% endif %}>
+                    <span>{{- block.settings.button_label | escape -}}</span>
+                </a>
+            {% endif %}
             </div>
          {% endfor %}
         </div>
@@ -39,15 +49,18 @@
   "tag":"section",
   "settings": [
     {
-      "type": "header",
-      "content":"Text Grid"
-    },
-    {
       "type": "color_scheme",
       "id": "color_scheme",
       "label": " Color Schema",
       "info": "applies color schema to whole section",
       "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "info": "background Color of container",
+      "default": "#f5f5f5"
     },
     {
       "type": "header",

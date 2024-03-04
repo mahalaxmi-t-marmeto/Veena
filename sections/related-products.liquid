@@ -1,6 +1,8 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'section-related-products.css' | asset_url | stylesheet_tag }}
+<script src="{{'custom-slider.js'| asset_url}}" defer></script>
+
 
 {% if section.settings.image_shape == 'blob' %}
   {{ 'mask-blobs.css' | asset_url | stylesheet_tag }}
@@ -20,34 +22,50 @@
   }
 {%- endstyle -%}
 
+{% capture RelatedProductsSlider %}
+  {
+      "autoplay": {{ section.settings.autoplay }},
+      "arrows": {{ section.settings.arrows }},
+      "pagination": {{ section.settings.pagination }},
+      "perPage": {{ section.settings.perPage }},
+      "perMove":1,
+      "breakpoints":{
+        "640": {
+			"perPage": 2
+      }
+      },
+      "speed": {{ section.settings.speed |  append: '000'}},
+      "type": "{{ section.settings.slider_type }}",
+      "interval":{{ section.settings.interval | append :'000' }},
+      "rewind":{{ section.settings.rewind }},
+      "gap":"{{ section.settings.gap |  append: 'rem'}}"
+  }
+{% endcapture %}
+
 <div class="color-{{ section.settings.color_scheme }} gradient no-js-hidden">
   <product-recommendations
     class="related-products page-width section-{{ section.id }}-padding isolate{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
-    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}"
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}"
   >
-    {% if recommendations.performed and recommendations.products_count > 0 %}
-      <h2 class="related-products__heading inline-richtext {{ section.settings.heading_size }}">
+
+  <h2 class="related-products__heading inline-richtext ">
         {{ section.settings.heading }}
       </h2>
-      <ul
-        class="grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down"
-        role="list"
-      >
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'custom-product-card', product: recommendation, section_id: section.id %}
-            {% comment %} {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              image_shape: section.settings.image_shape,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
-            %} {% endcomment %}
-          </li>
-        {% endfor %}
-      </ul>
-    {% endif %}
+
+  <custom-slider data-slider-options='{{ RelatedProductsSlider }}'>
+    <div class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          {% for recommendation in recommendations.products %}
+            <li class="splide__slide">
+              {% render 'custom-product-card', product: recommendation, section_id: section.id %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </custom-slider>
+
   </product-recommendations>
   {% if section.settings.image_shape == 'arch' %}
     {% render 'mask-arch' %}
@@ -72,41 +90,83 @@
     },
     {
       "type": "select",
-      "id": "heading_size",
+      "id": "slider_type",
+      "label": "Slider Type",
       "options": [
-        {
-          "value": "h2",
-          "label": "t:sections.all.heading_size.options__1.label"
-        },
-        {
-          "value": "h1",
-          "label": "t:sections.all.heading_size.options__2.label"
-        },
-        {
-          "value": "h0",
-          "label": "t:sections.all.heading_size.options__3.label"
-        }
+          {
+          "value": "loop",
+          "label": "Loop"
+          },
+          {
+          "value": "slide",
+          "label": "Slide"
+          },
+          {
+          "value": "fade",
+          "label": "Fade"
+          }
       ],
-      "default": "h1",
-      "label": "t:sections.all.heading_size.label"
+        "default": "slide"
     },
     {
       "type": "range",
-      "id": "products_to_show",
-      "min": 2,
+      "id": "perPage",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Per Page",
+      "default": 4
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 1,
       "max": 10,
       "step": 1,
-      "default": 4,
-      "label": "t:sections.related-products.settings.products_to_show.label"
+      "label": "Transition Speed of Slide",
+      "default": 1
     },
     {
       "type": "range",
-      "id": "columns_desktop",
+      "id": "interval",
       "min": 1,
-      "max": 5,
+      "max": 10,
       "step": 1,
-      "default": 4,
-      "label": "t:sections.related-products.settings.columns_desktop.label"
+      "label": "Slider Autoplay Interval in seconds",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Gap between slides in rem",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Enable Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pagination",
+      "label": "Show Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "rewind",
+      "label": "Rewind Slider",
+      "default": true
     },
     {
       "type": "color_scheme",
@@ -114,110 +174,6 @@
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info",
       "default": "scheme-1"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.related-products.settings.header__2.content"
-    },
-    {
-      "type": "select",
-      "id": "image_ratio",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.related-products.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.related-products.settings.image_ratio.options__2.label"
-        },
-        {
-          "value": "square",
-          "label": "t:sections.related-products.settings.image_ratio.options__3.label"
-        }
-      ],
-      "default": "adapt",
-      "label": "t:sections.related-products.settings.image_ratio.label"
-    },
-    {
-      "type": "select",
-      "id": "image_shape",
-      "options": [
-        {
-          "value": "default",
-          "label": "t:sections.all.image_shape.options__1.label"
-        },
-        {
-          "value": "arch",
-          "label": "t:sections.all.image_shape.options__2.label"
-        },
-        {
-          "value": "blob",
-          "label": "t:sections.all.image_shape.options__3.label"
-        },
-        {
-          "value": "chevronleft",
-          "label": "t:sections.all.image_shape.options__4.label"
-        },
-        {
-          "value": "chevronright",
-          "label": "t:sections.all.image_shape.options__5.label"
-        },
-        {
-          "value": "diamond",
-          "label": "t:sections.all.image_shape.options__6.label"
-        },
-        {
-          "value": "parallelogram",
-          "label": "t:sections.all.image_shape.options__7.label"
-        },
-        {
-          "value": "round",
-          "label": "t:sections.all.image_shape.options__8.label"
-        }
-      ],
-      "default": "default",
-      "label": "t:sections.all.image_shape.label",
-      "info": "t:sections.all.image_shape.info"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_secondary_image",
-      "default": false,
-      "label": "t:sections.related-products.settings.show_secondary_image.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_vendor",
-      "default": false,
-      "label": "t:sections.related-products.settings.show_vendor.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "show_rating",
-      "default": false,
-      "label": "t:sections.related-products.settings.show_rating.label",
-      "info": "t:sections.related-products.settings.show_rating.info"
-    },
-    {
-      "type": "header",
-      "content": "t:sections.related-products.settings.header_mobile.content"
-    },
-    {
-      "type": "select",
-      "id": "columns_mobile",
-      "default": "2",
-      "label": "t:sections.related-products.settings.columns_mobile.label",
-      "options": [
-        {
-          "value": "1",
-          "label": "t:sections.related-products.settings.columns_mobile.options__1.label"
-        },
-        {
-          "value": "2",
-          "label": "t:sections.related-products.settings.columns_mobile.options__2.label"
-        }
-      ]
     },
     {
       "type": "header",

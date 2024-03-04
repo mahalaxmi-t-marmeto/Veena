@@ -14,6 +14,10 @@
   }
 {%- endstyle -%}
 
+<div class="page-width">
+  {% render 'breadcrumbs' %}
+</div>
+
 <div class="customer login section-{{ section.id }}-padding">
   <h1 id="recover" tabindex="-1">
     {{ 'customer.recover_password.title' | t }}
@@ -137,13 +141,18 @@
         </a>
       {%- endif -%}
 
-      <button>
+      <button class="button gradiant-button-black">
         {{ 'customer.login_page.sign_in' | t }}
       </button>
 
-      <a href="{{ routes.account_register_url }}">
+      <hr>
+      <span class="or">
+        or
+      </span>
+
+      <div class="button button--tertiary" href="{{ routes.account_register_url }}">
         {{ 'customer.login_page.create_account' | t }}
-      </a>
+      </div>
     {%- endform -%}
   </div>
 

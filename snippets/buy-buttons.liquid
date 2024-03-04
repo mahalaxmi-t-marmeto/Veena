@@ -25,7 +25,8 @@
     -%}
 
     <product-form
-      class="product-form"
+      class="product-form "
+      id="product-buy-button"
       data-hide-errors="{{ gift_card_recipient_feature_active }}"
       data-section-id="{{ section.id }}"
     >
@@ -75,7 +76,7 @@
               assign quantity_rule_soldout = true
             endif
           -%}
-          <button
+          {% comment %} <button
             id="ProductSubmitButton-{{ section_id }}"
             type="submit"
             name="add"
@@ -93,7 +94,7 @@
                   {{ product.selected_variant.price | money_with_currency }}
                 </span>
               {%- endif -%}
-            </span>
+            </span> {% endcomment %}
             {%- render 'loading-spinner' -%}
           </button>
           {%- if show_dynamic_checkout -%}

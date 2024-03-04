@@ -50,7 +50,9 @@
         </fieldset>
       {%- elsif picker_type == 'button' -%}
         <fieldset class="product-form__input product-form__input--pill">
-          <legend class="form__label" id="optionvalue-{{ section.id }}">{{ option.name }} : {{ option.selected_value }}</legend>
+          <legend class="form__label product-variant-option" id="optionvalue-{{ section.id }}"
+          >{{ option.name }} : <span> {{ option.selected_value }} </span>
+          </legend>
           {% render 'product-variant-options',
             product: product,
             option: option,

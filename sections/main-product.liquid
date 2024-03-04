@@ -121,7 +121,7 @@
                 {% endunless %}
               </div>
             {%- when 'price' -%}
-              <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
+              <div class="no-js-hidden price-wrapper" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
                 {%- render 'price',
                   product: product,
                   use_variant: true,
@@ -204,7 +204,7 @@
             {%- when 'description' -%}
               {%- if product.description != blank -%}
                 <div class="product__description rte quick-add-hidden" {{ block.shopify_attributes }}>
-                  <h2>{{ "About the Product" }}</h2>
+                  <h2 class="h3">{{ "About the Product" }}</h2>
                   {{ product.description }}
                 </div>
               {%- endif -%}
@@ -236,6 +236,28 @@
               >
                 <span class="visually-hidden">{{ 'products.product.sku' | t }}:</span> {{- product.selected_or_first_available_variant.sku -}}
               </p>
+
+            {%- when 'offertext' -%}
+              <div class="offer-text-container">
+                <h2 class="h3">Available Offers</h2>
+               {% if block.settings.offer_label1 != blank %}
+                <div class="offer_text">
+                  {{ block.settings.offer_svg1 }}
+                  <p>
+                    {{ block.settings.offer_label1 }}
+                  </p>
+                </div>
+               {% endif %}
+               {% if block.settings.offer_label2 != blank %}
+                <div class="offer_text">
+                  {{ block.settings.offer_svg2 }}
+                  <p>
+                    {{ block.settings.offer_label2 }}
+                  </p>
+                </div>
+               {% endif %}
+              </div>
+
             {%-  when 'discount' -%}
             {% assign discount_code = product.selected_or_first_available_variant.metafields.custom.discount_code %}
             <div id="variant-discount">
@@ -291,7 +313,7 @@
                 {% # theme-check-disable %}
                 {%- assign cart_qty = cart | item_count_for_variant: product.selected_or_first_available_variant.id -%}
                 {% # theme-check-enable %}
-                <label class="quantity__label form__label" for="Quantity-{{ section.id }}">
+                <label class="quantity__label product-quantity-label form__label" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                   <span class="quantity__rules-cart no-js-hidden{% if cart_qty == 0 %} hidden{% endif %}">
                     {%- render 'loading-spinner' -%}
@@ -493,8 +515,7 @@
               data-quantity="1" 
               data-section-id="{{ section.id }}"
               >Add to cart</add-to-cart>
-              {% comment %} <input type="text" name="properties[First Name]"> {% endcomment %}
-              {% comment %} {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%} {% endcomment %}
+              {%- render 'buy-buttons', block: block, product: product, product_form_id: product_form_id, section_id: section.id, show_pickup_availability: true -%}
             {%- when 'rating' -%}
               {%- if product.metafields.reviews.rating.value != blank -%}
                 {% liquid
@@ -782,6 +803,36 @@
           "id": "color_scheme",
           "label": "t:sections.all.colors.label",
           "default": "scheme-1"
+        }
+      ]
+    },
+    {
+      "type": "offertext",
+      "name":"Offer text",
+      "settings": [
+        {
+          "type": "html",
+          "id": "offer_svg1",
+          "label": "Offer badge",
+          "info": "Add in SVG format"
+        },
+        {
+          "type": "text",
+          "id": "offer_label1",
+          "label": "Offer Label",
+          "default": "Instant 10% Discount On Win Banks Credit/Debit Cards EMI and CreditCard"
+        },
+        {
+          "type": "html",
+          "id": "offer_svg2",
+          "label": "Offer badge",
+          "info": "Add in SVG format"
+        },
+        {
+          "type": "text",
+          "id": "offer_label2",
+          "label": "Offer Label",
+          "default": "Instant 10% Discount On Win Banks Credit/Debit Cards EMI and CreditCard"
         }
       ]
     },

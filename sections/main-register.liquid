@@ -14,6 +14,10 @@
   }
 {%- endstyle -%}
 
+<div class="page-width">
+  {% render 'breadcrumbs' %}
+</div>
+
 <div class="customer register section-{{ section.id }}-padding">
   <svg style="display: none">
     <symbol id="icon-error" viewBox="0 0 13 13">
@@ -49,7 +53,9 @@
         {%- endfor -%}
       </ul>
     {%- endif -%}
+   <div class="customer-registration-fields">
     <div class="field">
+      <div id="names_span">First name</div>
       <input
         type="text"
         name="customer[first_name]"
@@ -60,11 +66,12 @@
         autocomplete="given-name"
         placeholder="{{ 'customer.register.first_name' | t }}"
       >
-      <label for="RegisterForm-FirstName">
+      <label id="register-form-placeholders" for="RegisterForm-FirstName">
         {{ 'customer.register.first_name' | t }}
       </label>
     </div>
     <div class="field">
+      <div id="names_span">Last name</div>
       <input
         type="text"
         name="customer[last_name]"
@@ -75,11 +82,12 @@
         autocomplete="family-name"
         placeholder="{{ 'customer.register.last_name' | t }}"
       >
-      <label for="RegisterForm-LastName">
+      <label id="register-form-placeholders" for="RegisterForm-LastName">
         {{ 'customer.register.last_name' | t }}
       </label>
     </div>
     <div class="field">
+      <div id="names_span">Email</div>
       <input
         type="email"
         name="customer[email]"
@@ -97,7 +105,7 @@
         {% endif %}
         placeholder="{{ 'customer.register.email' | t }}"
       >
-      <label for="RegisterForm-email">
+      <label id="register-form-placeholders" for="RegisterForm-email">
         {{ 'customer.register.email' | t }}
       </label>
     </div>
@@ -111,6 +119,7 @@
       </span>
     {%- endif -%}
     <div class="field">
+      <div id="names_span">Password</div>
       <input
         type="password"
         name="customer[password]"
@@ -122,10 +131,11 @@
         {% endif %}
         placeholder="{{ 'customer.register.password' | t }}"
       >
-      <label for="RegisterForm-password">
+      <label id="register-form-placeholders" for="RegisterForm-password">
         {{ 'customer.register.password' | t }}
       </label>
     </div>
+   </div>
     {%- if form.errors contains 'password' -%}
       <span id="RegisterForm-password-error" class="form__message">
         <svg aria-hidden="true" focusable="false">
@@ -135,9 +145,14 @@
         {{ form.errors.messages.password }}.
       </span>
     {%- endif -%}
-    <button>
+    <button class="button gradiant-button-black">
       {{ 'customer.register.submit' | t }}
     </button>
+
+    <div class="login-in-register">
+      <p>Have an account? <a href="account_login_url">Log in</a> to checkout faster </p>
+    </div>
+
   {%- endform -%}
 </div>
 

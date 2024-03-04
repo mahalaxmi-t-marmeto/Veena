@@ -1,3 +1,6 @@
+{{ 'section-custom-recently-viewed.css' | asset_url | stylesheet_tag }}
+
+
 {%- capture section_settings -%}
     {
       "productId": {{ product.id | json }}
@@ -11,7 +14,7 @@
       data-section-type="wizaah-recently-viewed-products" 
       data-section-settings='{{ section_settings }}'
     >
-      <div class="page-width">
+      <div class="recently-viwed-wrapper page-width">
         {%- if section.settings.title != blank -%}
           <h2>{{ section.settings.title | escape }}</h2>      
         {%- endif -%}

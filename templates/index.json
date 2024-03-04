@@ -496,6 +496,21 @@
         "padding_bottom": 30
       }
     },
+    "custom_image_with_text_banner_xCJULL": {
+      "type": "custom-image-with-text-banner",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/banner.jpg",
+        "pre_heading": "Women's",
+        "post_heading": "fashion emerges as the universal language that speaks volumes without words.",
+        "heading": "We Believe in the Power of Fashion",
+        "button_label": "Explore",
+        "button_link": "",
+        "content_position": "align-end justify-center",
+        "color_scheme": "scheme-591160ac-eedb-4ede-bda6-5f10d30bf08b",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
+    },
     "custom_testimonials_CkdrWG": {
       "type": "custom-Testimonials",
       "blocks": {
@@ -649,6 +664,7 @@
     "custom_usp_8Bq6Le",
     "custom_shop_the_look_RaDBgj",
     "custom_logos_HKVnq6",
+    "custom_image_with_text_banner_xCJULL",
     "custom_testimonials_CkdrWG",
     "custom_blog_pzykdG",
     "custom_faq_TfzcHh"

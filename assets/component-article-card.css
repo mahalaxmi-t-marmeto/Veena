@@ -52,6 +52,7 @@
 
 .blog-articles .article-card .card__information,
 .blog__posts .article-card .card__information {
+  text-align: left;
   padding-left: 2rem;
   padding-right: 2rem;
 }
@@ -105,9 +106,9 @@
     padding-bottom: 14.3rem;
   }
 
-  .article-card__image--medium .ratio::before {
+  /* .article-card__image--medium .ratio::before {
     padding-bottom: 21.9rem;
-  }
+  } */
 
   .article-card__image--large .ratio::before {
     padding-bottom: 27.5rem;

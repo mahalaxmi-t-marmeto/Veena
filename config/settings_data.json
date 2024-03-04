@@ -2,7 +2,7 @@
   "current": {
     "logo": "shopify:\/\/shop_images\/logo.png",
     "logo_width": 90,
-    "type_header_font": "harmonia_sans_n4",
+    "type_header_font": "harmonia_sans_n6",
     "heading_scale": 100,
     "type_body_font": "harmonia_sans_n4",
     "body_scale": 100,
@@ -27,7 +27,7 @@
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
     "inputs_border_thickness": 1,
-    "inputs_border_opacity": 55,
+    "inputs_border_opacity": 10,
     "inputs_radius": 28,
     "inputs_shadow_opacity": 0,
     "inputs_shadow_horizontal_offset": 0,
@@ -55,13 +55,13 @@
     "collection_card_shadow_horizontal_offset": 0,
     "collection_card_shadow_vertical_offset": 4,
     "collection_card_shadow_blur": 5,
-    "blog_card_style": "standard",
+    "blog_card_style": "card",
     "blog_card_image_padding": 0,
     "blog_card_text_alignment": "left",
     "blog_card_color_scheme": "scheme-2",
     "blog_card_border_thickness": 0,
     "blog_card_border_opacity": 10,
-    "blog_card_corner_radius": 0,
+    "blog_card_corner_radius": 18,
     "blog_card_shadow_opacity": 0,
     "blog_card_shadow_horizontal_offset": 0,
     "blog_card_shadow_vertical_offset": 4,
@@ -116,9 +116,12 @@
     "cart_type": "drawer",
     "show_vendor": false,
     "show_cart_note": true,
-    "cart_drawer_collection": "",
+    "cart_drawer_collection": "best-selling",
     "cart_color_scheme": "scheme-1",
     "free_shipping": "50000",
+    "checkout_accent_color": "#d03c3f",
+    "checkout_button_color": "#d03c3f",
+    "checkout_error_color": "#d03c3f",
     "sections": {
       "main-password-header": {
         "type": "main-password-header",
@@ -135,6 +138,13 @@
       "swatches": {
         "type": "swatches",
         "blocks": {
+          "color_settings_d6Yc8K": {
+            "type": "colorSettings",
+            "settings": {
+              "title": "",
+              "color_code": "#000000"
+            }
+          },
           "color_settings_VGtDVd": {
             "type": "colorSettings",
             "settings": {
@@ -207,6 +217,7 @@
           }
         },
         "block_order": [
+          "color_settings_d6Yc8K",
           "color_settings_VGtDVd",
           "color_settings_9VETmC",
           "color_settings_Ur73rz",

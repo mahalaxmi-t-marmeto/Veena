@@ -14,7 +14,8 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }} gradient">
+<div class="color-{{ section.settings.color_scheme }} contact-us-wrapper gradient grid grid--2-col-desktop grid--1-col">
+ <div class="grid__item">
   <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin inline-richtext {{ section.settings.heading_size }}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}">
@@ -51,7 +52,6 @@
           </li>
         </ul>
       {%- endif -%}
-      <div class="contact__fields">
         <div class="field">
           <input
             class="field__input"
@@ -62,7 +62,10 @@
             value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}"
             placeholder="{{ 'templates.contact.form.name' | t }}"
           >
-          <label class="field__label" for="ContactForm-name">{{ 'templates.contact.form.name' | t }}</label>
+          <label class="field__label" for="ContactForm-name">
+            {{ 'templates.contact.form.name' | t }}
+            <span class="mandatory" aria-hidden="true">*</span></label
+          >
         </div>
         <div class="field field--with-error">
           <input
@@ -83,7 +86,7 @@
           >
           <label class="field__label" for="ContactForm-email">
             {{- 'templates.contact.form.email' | t }}
-            <span aria-hidden="true">*</span></label
+            <span class="mandatory" aria-hidden="true">*</span></label
           >
           {%- if form.errors contains 'email' -%}
             <small class="contact__field-error" id="ContactForm-email-error">
@@ -96,7 +99,6 @@
             </small>
           {%- endif -%}
         </div>
-      </div>
       <div class="field">
         <input
           type="tel"
@@ -124,13 +126,43 @@
           {{- 'templates.contact.form.comment' | t -}}
         </label>
       </div>
-      <div class="contact__button">
-        <button type="submit" class="button">
+      <div class="contact__button ">
+        <button type="submit" class="button gradiant-button">
           {{ 'templates.contact.form.send' | t }}
         </button>
       </div>
     {%- endform -%}
   </div>
+ </div>
+
+ <div class="grid__item contact-us-details">
+ {% if section.settings.text_heading2 != blank %}
+  <div>
+    <h2> {{ section.settings.text_heading1 }} </h2>
+    <p> {{ section.settings.text_description1 }} </p>
+  </div>
+ {% endif %}
+ {% if section.settings.text_heading2 != blank %}
+  <div class="contact-us-details_mobile" >
+    <h2> {{ section.settings.text_heading2 }} </h2>
+    <p> {{ section.settings.text_description2 }} </p>
+  </div>
+ {% endif %}
+
+  <div class="follow-us">
+    <h2>Follow us</h2>
+    <div class="social-icons">
+      <a href="{{ section.settings.url1 }}">{{ section.settings.svg1 }}</a>
+      <a href="{{ section.settings.url2 }}">{{ section.settings.svg2 }}</a>
+      <a href="{{ section.settings.url3 }}">{{ section.settings.svg3 }}</a>
+      <a href="{{ section.settings.url4 }}">{{ section.settings.svg4}}</a>
+    </div>
+  </div>
+
+ </div>
+
+ 
+
 </div>
 
 {% schema %}
@@ -173,6 +205,74 @@
       "id": "color_scheme",
       "label": "t:sections.all.colors.label",
       "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "text_heading1",
+      "label": "Text heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text_description1",
+      "label": "Text Description",
+      "default": "<p>Description</p>"
+    },
+    {
+      "type": "text",
+      "id": "text_heading2",
+      "label": "Text heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "id": "text_description2",
+      "label": "Text Description",
+      "default": "<p>Description</p>"
+    },
+    {
+      "type": "header",
+      "content":"Social Share"
+    },
+    {
+      "type": "html",
+      "id":"svg1",
+      "label": "icon for social media 1"
+    },
+    {
+      "type": "url",
+      "id":"url1",
+      "label": "url for social media link 1"
+    },
+    {
+      "type": "html",
+      "id":"svg2",
+      "label": "icon for social media 1"
+    },
+    {
+      "type": "url",
+      "id":"url2",
+      "label": "url for social media link 1"
+    },
+    {
+      "type": "html",
+      "id":"svg3",
+      "label": "icon for social media 1"
+    },
+    {
+      "type": "url",
+      "id":"url3",
+      "label": "url for social media link 1"
+    },
+    {
+      "type": "html",
+      "id":"svg4",
+      "label": "icon for social media 1"
+    },
+    {
+      "type": "url",
+      "id":"url4",
+      "label": "url for social media link 1"
     },
     {
       "type": "header",

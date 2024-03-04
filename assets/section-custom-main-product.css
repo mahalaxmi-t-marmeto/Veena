@@ -120,12 +120,13 @@
 }
 
 #custom__atc {
-    display: flex;
-    width: 70%;
-    position: relative;
-    left: 28%;
-    min-height: 46px;
-    bottom: 63px;
+    width: 73%;
+    padding: 1.4rem;
+    margin: 0;
+    position: absolute;
+    right: 14px;
+    margin-top: -69px;
+    font-size: 1.6rem;
 }
 
 .custom-atc__hover-button {
@@ -162,4 +163,105 @@
         font-size: 3rem;
     }
 
+}
+
+button.shopify-payment-button__button.shopify-payment-button__button--unbranded.BUz42FHpSPncCPJ4Pr_f.jjzYeefyWpPZLH9pIgyw.RWJ0IfBjxIhflh4AIrUw {
+    width: 134%;
+   background-color: #D03C3F;
+   font-size: 1.6rem;
+   font-weight: 400;
+   padding: 1.3rem;
+}
+
+button.shopify-payment-button__button.shopify-payment-button__button--unbranded.BUz42FHpSPncCPJ4Pr_f.jjzYeefyWpPZLH9pIgyw.RWJ0IfBjxIhflh4AIrUw:hover {
+    background-color: black;
+}
+
+
+.offer-text-container .h3 
+{
+    font-size: 1.8rem;
+    font-weight: 500;
+    margin: 2rem 0;
+}
+
+.offer_text {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
+}
+
+.offer_text svg {
+    fill: #17af40;
+}
+
+.offer_text p {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+.product__description .h3 {
+    font-size: 2rem;
+    margin: 2rem;
+    margin-left: 0;
+}
+
+.product__title h1 {
+    font-size: 2.8rem;
+}
+
+.price__sale .price-item {
+    font-size: 2.6rem;
+    font-weight: 700;
+}
+
+#cat-price {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+}
+
+#sale-badge {
+    background-color:rgb(18, 111, 211) ;
+}
+
+
+.price-wrapper {
+    margin: 1.2rem;
+}
+
+.price-hr {
+    margin: 0;
+    margin-top: 1rem;
+    opacity: 30%;
+    margin-bottom: 2rem;
+}
+
+#price-template--14799774613598__main {
+    margin-top: 1rem;
+}
+
+.product-variant-option {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+.product-variant-option span {
+    color: black;
+}
+
+.product-quantity-label {
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+#product-buy-button {
+    margin-top: -1rem;
+}
+
+.product_details_heading h2 {
+    font-size: 2rem;
 }
