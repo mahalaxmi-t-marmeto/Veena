@@ -63,7 +63,44 @@ class CustomerAddresses {
   }
 
   _toggleExpanded(target) {
+    this.elements.toggleButtons.forEach((element) => {
+      if(element != target)
+      {
+        element.setAttribute(attributes.expanded, "false");
+      }
+      if(element == target)
+      {
+        document.querySelectorAll(".address-card").forEach((addressCard)=>
+      {
+        if( addressCard.id != element.dataset.addressId)
+        {
+          addressCard.style.background="white";
+        }
+        else if( target.getAttribute(attributes.expanded) == "true" )
+        {
+          addressCard.style.background="white";
+        }
+        else
+        {
+          addressCard.style.background="#FFD1D1";
+        }
+      })
+      }
+    });
     target.setAttribute(attributes.expanded, (target.getAttribute(attributes.expanded) === 'false').toString());
+    let form =document.querySelector(".form-div")
+    if(target.getAttribute(attributes.expanded) == "true")
+    {
+      console.log(form);
+      form.style.display="block"
+      form.style.height="80rem"
+    }
+    else
+    {
+      console.log(form);
+      form.style.display="none"
+      form.style.height="0"
+    }
   }
 
   _handleAddEditButtonClick = ({ currentTarget }) => {
