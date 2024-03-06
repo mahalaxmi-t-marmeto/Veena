@@ -1,0 +1,49 @@
+{% liquid
+  assign current_variant = product.selected_or_first_available_variant
+  assign featured_image = current_variant.image | default: product.featured_image
+  assign secondary_image = product.images[1] | default: product.featured_image
+
+  assign new_badge = ''
+  for tag in product.tags
+    if tag contains 'New'
+      assign new_badge = tag | split: '_' | last
+      break
+    endif
+  endfor
+%}
+
+
+<megamenu-product-card 
+class="megamenu-product-card-wrapper" data-product-handle="{{ product.url | within: collection }}"
+data-section-id="{{ section_id }}">
+
+    <div class="megamenu-product-card center">
+        <div class="megamenu-product-card__image">
+            <a href="{{ current_variant.url }}">
+                <div class="">
+                    {% render 'custom-product-image', featured_image:featured_image, secondary_image:secondary_image %}
+                </div>
+            </a>
+
+            <div class="megamenu-product-card__badges">
+                {% if new_badge != '' %}
+                <span id="badge" class="h5">
+                    {{ new_badge }}
+                </span>
+                {% endif %}
+            </div>
+
+        </div>
+
+        <div class="megamenu-product-card__info">
+            <a href="{{ product.url }}" class="h3">{{ product.title|  capitalize | truncate: 20 }}</a>
+            <div class="megamenu-product-card__prices">
+                <span class="megamenu-product-card__prices_price">{{ current_variant.price | money_with_currency }}</span>
+                {% if current_variant.compare_at_price > current_variant.price %}
+                <s class="megamenu-product-card__prices_cap">{{ current_variant.compare_at_price | money_with_currency }}</s>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+</megamenu-product-card>

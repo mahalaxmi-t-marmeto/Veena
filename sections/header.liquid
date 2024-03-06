@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 {%- if section.settings.menu_type_desktop == 'mega' -%}
+  {{ 'mega-menu-product-card.css' | asset_url | stylesheet_tag }}
   <link rel="stylesheet" href="{{ 'component-mega-menu.css' | asset_url }}" media="print" onload="this.media='all'">
   <noscript>{{ 'component-mega-menu.css' | asset_url | stylesheet_tag }}</noscript>
 {%- endif -%}
@@ -254,6 +255,11 @@
               <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
             {%- endform -%}
           </noscript>
+
+          <h2 class="h4 faqContact">
+          <a href="">FAQ <span> | </span> </a>
+          <a href="/pages/contact">Contact</a>
+        </h2>
 
           <localization-form class="small-hide medium-hide no-js-hidden" data-prevent-hide>
             {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
@@ -526,6 +532,26 @@
   "class": "section-header",
   "max_blocks": 3,
   "settings": [
+    {
+      "type": "product_list",
+      "id": "product_list_mens",
+      "label":"Men's Products",
+      "limit": 5,
+      "info": "Products to show in Men's Collection in Mega Menu maximum products to show are 5"
+    },
+    {
+      "type": "product_list",
+      "id": "product_list_womens",
+      "label":"Women's Products",
+      "limit": 5,
+      "info": "Products to show in Women's Collection in Mega Menu maximum products to show are 5"
+    },
+    {
+      "type": "blog",
+      "id": "blog",
+      "label": "Blog",
+      "info": "Articles to show in Blogs Megamenu and Maximum 4 articles will be shown from a blog"
+    },
     {
       "type": "select",
       "id": "logo_position",

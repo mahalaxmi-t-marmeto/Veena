@@ -1,0 +1,175 @@
+{{ 'custom-header.css' | asset_url | stylesheet_tag }}
+
+<div class="custom-header-wrapper">
+  <div class=" custom-header-container">
+
+
+    <nav class="custom-header-navigation">
+      <ul>
+        {%- for link in section.settings.link_list.links -%}
+          <li>
+            {%- if link.links != blank -%}
+                <details>
+                  <summary>
+                    <span>
+                      {{- link.title | escape -}}
+                    </span>
+                    {% render 'icon-caret' %}
+                  </summary>
+                  <div>
+                    <ul>
+                      {%- for childlink in link.links -%}
+                        <li>
+                          <a href="{{ childlink.url }}">
+                            {{ childlink.title | escape }}
+                          </a>
+                          {%- if childlink.links != blank -%}
+                            <ul>
+                              {%- for grandchildlink in childlink.links -%}
+                                <li>
+                                  <a href="{{ grandchildlink.url }}">
+                                    {{ grandchildlink.title | escape }}
+                                  </a>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          {%- endif -%}
+                        </li>
+                      {%- endfor -%}
+                    </ul>
+                  </div>
+                </details>
+            {%- else -%}
+              <a href="{{ link.url }}">
+                <span>
+                  {{- link.title | escape -}}
+                </span>
+              </a> 
+
+              {% for block in section.settings.blocks %}
+                
+              {% endfor %}
+              
+            {%- endif -%}
+          </li>
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="custom-header-logo">
+    {% if section.settings.logo != blank %}
+      {% render 'responsive-picture', desktopImage:section.settings.logo  %}       
+    {% endif %}
+    </div>
+
+    <div class="faqContainer">
+      <h2 class="h4 faqContact">
+      <a href="">FAQ <span> | </span> </a>
+      <a href="/pages/contact">Contact</a>
+      </h2>
+    </div>
+
+    <div class="custom-header-icons">
+      <div class="svg_container">
+        {% render 'icon-search' %}
+      </div>
+      <div class="svg_container">
+        {% render 'icon-account' %}
+      </div>
+      <div class="svg_container">
+        {% render 'icon-cart' %}
+      </div>
+    </div>
+
+  </div>  
+</div>
+
+
+
+{% schema %}
+{
+  "name": "header",
+  "tag":"section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo",
+      "info": "100 x 50"
+    },
+    {
+      "type": "link_list",
+      "id": "link_list",
+      "label": "Link Labels",
+      "info":"Navigation links to show in header navbar"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_icons",
+      "label": "show_icons"
+    }
+    ],
+    "blocks": [
+      {
+        "name": "Trends",
+        "type": "grid",
+        "settings": [
+          {
+            "type": "text",
+            "id": "block_type",
+            "label": "Megamenu Type",
+            "info": "Write the title name to which you want to add thid block to"
+          },
+          {
+            "type": "image_picker",
+            "id": "image1",
+            "label": "First Image",
+            "info": "350 x 400"
+          },
+          {
+            "type": "image_picker",
+            "id": "image2",
+            "label": "Second Image",
+            "info": "350 x 400"
+          },
+          {
+            "type": "image_picker",
+            "id": "image3",
+            "label": "Third Image",
+            "info": "350 x 400"
+          },
+          {
+            "type": "image_picker",
+            "id": "image4",
+            "label": "Fourth Image",
+            "info": "350 x 400"
+          }
+        ]
+      },
+      {
+        "name": "products",
+        "type": "products",
+        "settings": [
+          {
+            "type": "product_list",
+            "id": "product_list",
+            "label": "Products",
+            "info": "Products to show in Mens menu"
+          }
+        ]
+      },
+      {
+        "name": "Blogs",
+        "type": "blog",
+        "settings": [
+          {
+            "type": "blog",
+            "id": "blog",
+            "label": "blog",
+            "info": "Articles to show in Blog menu"
+          }
+        ]
+      }
+    ]
+}
+{% endschema %}

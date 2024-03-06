@@ -31,11 +31,11 @@
                 tabindex="-1"
               >
                 <ul
-                  class="mega-menu__list page-width{% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
+                  class="mega-menu__list {% if link.levels == 1 %} mega-menu__list--condensed{% endif %}"
                   role="list"
                 >
                   {%- for childlink in link.links -%}
-                    <li>
+                    <li class="list-container">
                       <a
                         id="HeaderMenu-{{ link.handle }}-{{ childlink.handle }}"
                         href="{{ childlink.url }}"
@@ -64,6 +64,46 @@
                           {%- endfor -%}
                         </ul>
                       {%- endif -%}
+
+                      {% if link.title == "Trends" %}
+                        <div class="header-image">    
+                          <img src="{{ childlink.title |  handleize |  append: '.jpg' |  file_img_url : "master"  }}" alt="">
+                        </div>                        
+                      {% endif %}
+
+                      {% if link.title == "Men's" %}
+                        <div class="grid grid--5-col-desktop">
+                          {% for product in section.settings.product_list_mens %}
+                            <div class="grid__item">
+                            {% render 'megamenu-product-card', product: product, section_id: section.id %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+
+                      {% if link.title == "Women's" %}
+                        <div class="grid grid--5-col-desktop">
+                          {% for product in section.settings.product_list_womens %}
+                            <div class="grid__item">
+                            {% render 'megamenu-product-card', product: product, section_id: section.id %}
+                            </div>
+                          {% endfor %}
+                        </div>
+                      {% endif %}
+
+                      {% if link.title == "Blogs" %}
+                        <div class="grid grid--4-col-desktop">
+                          {% for blog in setion.setings.blog %}
+                            {% for article in blog.articles %}
+                              {{ article.author }}                              
+                            {% endfor %}                            
+                          {% endfor %}
+                       
+                        {% render 'responsive-picture', desktopImage:article.image %}
+
+                        </div>
+                      {% endif %}
+
                     </li>
                   {%- endfor -%}
                 </ul>

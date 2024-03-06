@@ -30,9 +30,24 @@
     "header": {
       "type": "header",
       "settings": {
+        "product_list_mens": [
+          "blue-oxford-shirt",
+          "black-stripe-spring-oxford-shirt",
+          "chore-coat-brown-duck",
+          "carson-chore-jacket-black-hole",
+          "denim-chore-coat-black"
+        ],
+        "product_list_womens": [
+          "gloss-exquis-grenade",
+          "long-casual-hooded-coat",
+          "mascara-naturel-parfait",
+          "travel-handy-hiking-zip-pouch",
+          "primer-mat-absolu"
+        ],
+        "blog": "news",
         "logo_position": "middle-center",
         "menu": "veena-menu",
-        "menu_type_desktop": "dropdown",
+        "menu_type_desktop": "mega",
         "sticky_header_type": "on-scroll-up",
         "show_line_separator": true,
         "color_scheme": "scheme-1",

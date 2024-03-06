@@ -231,6 +231,14 @@
         ],
         "settings": {
         }
+      },
+      "custom-header": {
+        "type": "custom-header",
+        "settings": {
+          "logo": "shopify:\/\/shop_images\/logo.png",
+          "link_list": "veena-menu",
+          "show_icons": false
+        }
       }
     },
     "content_for_index": [
