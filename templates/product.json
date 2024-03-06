@@ -35,6 +35,11 @@
             "show_inventory_quantity": true
           }
         },
+        "pincode_nNQVtD": {
+          "type": "pincode",
+          "settings": {
+          }
+        },
         "discount_y86ee3": {
           "type": "discount",
           "disabled": true,
@@ -114,6 +119,7 @@
         "price",
         "variant_picker",
         "inventory_X9GkyQ",
+        "pincode_nNQVtD",
         "discount_y86ee3",
         "quantity_selector",
         "buy_buttons",
