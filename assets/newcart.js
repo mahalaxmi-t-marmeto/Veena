@@ -2,14 +2,13 @@ class addToCart extends HTMLElement {
     constructor() {
         super();
 
-        console.log(this);
         this.addEventListener('click', this.addtocart)
         this.sectionId =this.dataset.sectionId
     }
 
     addtocart() {
         let cart=document.querySelector('cart-notification') || document.querySelector('cart-drawer');
-        let cartQty=document.querySelector(`#Quantity-${this.sectionId}`).value
+        let cartQty=document.querySelector(`#Quantity-${this.sectionId}`)?.value
 
         let formData = {
             "quantity": cartQty,

@@ -69,3 +69,9 @@
 .faqContact a:hover {
     color: #D03C3F;
 }
+
+@media screen and (max-width: 750px) {
+    .faqContact {
+        display: none;
+    }
+  }

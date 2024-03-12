@@ -4,7 +4,8 @@
   data-section="{{ section.id }}"
 >
 
-  {{ 'section-custom-main-product.css' | asset_url |  stylesheet_tag }}
+{{ 'product-bundle.css' | asset_url | stylesheet_tag }}
+{{ 'section-custom-main-product.css' | asset_url |  stylesheet_tag }}
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
   {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
@@ -34,6 +35,7 @@
     }
   {%- endstyle -%}
 
+<script src="{{ 'product-bundle.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'newcart.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'copytext.js' | asset_url }}" defer="defer"></script>
 <script src="{{ 'pincode-checker.js' | asset_url }}" defer="defer"></script>
@@ -226,6 +228,44 @@
                   {{ product.description }}
                 </div>
               {%- endif -%}
+            {% when 'bundles' %}
+              <div class="product-bundle-wrapper">
+                <div class=>
+                    <div class="product-bundle">
+                        <h2 class="product-bundle__heading">{{ section.settings.bundle_heading }}</h2>
+                        <div class="product-bundle-container">
+                            <product-bundle class="product-bundle__grid " data-section-id="{{ section.id }}">
+                        {% for product in product.metafields.custom.bundles.value %}
+                            <div class="product-bundle__grid-item product-bundles">
+                            {% render 'megamenu-product-card',
+                            product: product,                    
+                            section_id: section.id
+                            %}
+                            <input class="bundle-checkbox" data-product-id="{{ product.selected_or_first_available_variant.id }}"
+                            value="{{  product.selected_or_first_available_variant.id }}"
+                            type="checkbox" 
+                            >
+                            {% if forloop.index != forloop.length %}
+                                <span class="addicon">
+                                +
+                                </span>   
+                            {%  else %}  
+                                <span class="addicon">
+                                    =
+                                </span>        
+                            {% endif %}
+                            </div>
+                        {% endfor %}
+                        <div id="bundle__atc" 
+                        class="button custom-atc__hover-button" 
+                        data-product-id="{{ product.id }}"  
+                        data-variant-id="{{ product.selected_variant.id }}"
+                        data-section-id="{{ section.id }}"
+                        >Add to cart</div>
+                        </product-bundle>
+                    </div>
+                </div>
+            </div>
             {% when 'productdetails' %}
               <div class="product_details">
                     <details>
@@ -916,6 +956,19 @@
           "id": "heading",
           "label": "Heading",
           "default": "DELIVERY DETAILS"
+        }
+      ]
+    },
+    {
+      "type": "bundles",
+      "name":"Product Bundles",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "bundle_heading",
+          "label": "Bundle Heading",
+          "default": "Frequently bought together"
         }
       ]
     },

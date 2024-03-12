@@ -21,7 +21,7 @@
       
         <div class="recentlyviewed__container">
           {%- if template.name == 'search' -%}
-            <div class="grid grid--1-col grid--4-col-desktop">
+            <div class="grid grid--2-col grid--4-col-desktop">
               {%- assign parsed_terms = search.terms | split: ' OR ' -%}
               {%- for parsed_term in parsed_terms -%}
                 {%- assign id = parsed_term | split: 'id:' | last | times: 1 -%}

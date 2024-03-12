@@ -1,0 +1,242 @@
+{{ 'main-mapro.css' | asset_url | stylesheet_tag }}
+<script src="{{'main-mapro.js'| asset_url}}"></script>
+<script src="{{'custom-slider.js'| asset_url}}" defer></script>
+
+
+{% style %}
+    .padding-{{ section.id }} 
+    {
+      padding-top: {{ section.settings.padding_top | divided_by: 2 }}px;
+      padding-bottom: {{ section.settings.padding_bottom | divided_by: 2 }}px;
+    }
+
+    @media screen and (min-width: 750px) 
+    {
+        .padding-{{ section.id }} 
+        {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+{% capture TabSwitchSlide %}
+    {
+        "autoplay": {{ section.settings.autoplay }},
+        "arrows": {{ section.settings.arrows }},
+        "pagination": {{ section.settings.pagination }},
+        "perPage": {{ section.settings.perPage }},
+        "breakpoints":{
+          "640": {
+              "perPage": 2
+        }
+        },
+        "speed": {{ section.settings.speed |  append: '000'}},
+        "type": "{{ section.settings.slider_type }}",
+        "interval":{{ section.settings.interval | append :'000' }},
+        "rewind":{{ section.settings.rewind }},
+        "gap":"{{ section.settings.gap |  append: 'rem'}}"
+    }
+{% endcapture %}
+
+
+<div class="tab-switching-container padding-{{ section.id }}">
+    <div class="page-width">
+        <h2 class="tab-conatiner-heading center">{{ section.settings.heading }}</h2>
+
+        <div class="tab-switching-container__collection-titles">
+            {% for block in section.blocks %}
+               <custom-button>
+                    <h2 class="collection-title">
+                        {{ block.settings.collection_name }}
+                    </h2>   
+               </custom-button>        
+            {% endfor %}
+        </div>
+        
+        <div class="tab-switching-product-container">
+            <custom-slider data-slider-options='{{ TabSwitchSlide }}' >
+                <div class="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list">
+                            {% for block in section.blocks %}
+                                {% for product in block.settings.collection.products %}
+                                    {% if product != blank %}
+                                        <li class="splide__slide" data-collection-name="{{ block.settings.collection_name | handalize }}">
+                                            {% render 'custom-product-card', product:product, section_id: section.id %}
+                                        </li>
+                                    {% else %}
+                                        {% for i in (1..4) %}
+                                            <li class="splide__slide">
+                                            {{ 'product-' | append: i | placeholder_svg_tag }}
+                                            </li>
+                                     {% endfor %}
+                                    {% endif %}
+                                {% endfor %}
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </custom-slider>
+        </div>
+
+    </div>
+</div>
+
+
+{% schema %}
+{
+    "name": "Mapro Tab Switch",
+    "tag":"section",
+    "settings": [
+        {
+            "type": "header",
+            "content":"Tab Switching Container"
+        },
+        {
+            "type": "text",
+            "id": "heading",
+            "label":"Conatiner Heading",
+            "default":"Fresh From The Source"
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": " Color Schema",
+            "info": "applies color schema to whole section",
+            "default": "scheme-1"
+        },
+        {
+            "type": "header",
+            "content": "Section padding"
+        },
+        {
+            "type": "header",
+            "content":"Slider Settings"
+        },
+        {
+            "type": "select",
+            "id": "slider_type",
+            "label": "Slider Type",
+            "options": [
+                {
+                "value": "loop",
+                "label": "Loop"
+                },
+                {
+                "value": "slide",
+                "label": "Slide"
+                },
+                {
+                "value": "fade",
+                "label": "Fade"
+                }
+            ],
+                "default": "loop"
+        },
+        {
+            "type": "range",
+            "id": "perPage",
+            "min": 1,
+            "max": 6,
+            "step": 1,
+            "label": "Per Page",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "speed",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "Transition Speed of Slide",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "interval",
+            "min": 1,
+            "max": 10,
+            "step": 1,
+            "label": "Slider Autoplay Interval in seconds",
+            "default": 1
+        },
+        {
+            "type": "range",
+            "id": "gap",
+            "min": 1,
+            "max": 4,
+            "step": 1,
+            "label": "Gap between slides in rem",
+            "default": 2
+        },
+        {
+            "type": "checkbox",
+            "id": "autoplay",
+            "label": "Enable Autoplay",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "arrows",
+            "label": "Enable Arrows",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "pagination",
+            "label": "Show Dots",
+            "default": true
+        },
+        {
+            "type": "checkbox",
+            "id": "rewind",
+            "label": "Rewind Slider",
+            "default": true
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding top",
+            "default": 30
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "label": "Padding bottom",
+            "default": 30
+        }
+        ],
+        "blocks": [
+            {
+                "name": "collection",
+                "type": "collection",
+                "settings": [
+                    {
+                        "type": "header",
+                        "content":"Collection"
+                    },
+                    {
+                        "type": "text",
+                        "id":"collection_name",
+                        "label": "Collection name",
+                        "info": "Collection name which you want to display"
+                    },
+                    {
+                        "type": "collection",
+                        "id": "collection",
+                        "label": "Collection"
+                    }
+                ]
+            }
+        ]
+}
+{% endschema %}

@@ -37,7 +37,9 @@
         },
         "pincode_nNQVtD": {
           "type": "pincode",
+          "disabled": true,
           "settings": {
+            "heading": "DELIVERY DETAILS"
           }
         },
         "discount_y86ee3": {
@@ -111,6 +113,12 @@
             "content": "",
             "page": "shipping-and-return"
           }
+        },
+        "bundles_pcK4jm": {
+          "type": "bundles",
+          "settings": {
+            "bundle_heading": "Frequently bought together"
+          }
         }
       },
       "block_order": [
@@ -128,7 +136,8 @@
         "payment_WRPw63",
         "description",
         "productdetails_NENqWR",
-        "collapsible_tab_8VxTTQ"
+        "collapsible_tab_8VxTTQ",
+        "bundles_pcK4jm"
       ],
       "settings": {
         "enable_sticky_info": true,
