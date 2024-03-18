@@ -102,9 +102,12 @@ class="product-card"
                               </div> 
                           {% endcomment %}
 
-                          <div class="item-swatch product-card__swatch-container">
+                          {% for variant in product.variants %}
+                            {% assign variantTitle = variant.title |  handleize %}                 
+                            {% if variantTitle == downcased_option_value %}
+                              <div class="item-swatch product-card__swatch-container">
                               <div class="color-variant-box">
-                                  {% if current_variant.inventory_quantity == 0  %}
+                                  {% if variant.available == false %}
                                     <div class="swatch__out-of-stock">
                                     <div class="product-card__swatch product-card__colorswatch color-variant"  data-value="{{ downcased_option_value }}"> </div>
                                     </div>
@@ -112,7 +115,11 @@ class="product-card"
                                     <div class="product-card__swatch product-card__colorswatch color-variant" data-value="{{ downcased_option_value }}"> </div>
                                   {% endif %}
                               </div>
-                          <div>    
+                          <div>   
+                            {% endif %}
+                          {% endfor %}
+
+                           
 
                           {% comment %} <div class="item-swatch product-card__swatch-container">
                               <div class="color-variant-box">

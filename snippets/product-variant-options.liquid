@@ -102,11 +102,19 @@
       {{ label_unavailable }}
     </label> {% endcomment %}
 
+
     <label for="{{ input_id }}">
       <div class="item-swatch product-card__swatch-container">
-      <div class="color-variant-box">
-          <div class="product-card__swatch product-card__colorswatch color-variant" data-value="{{ value }}"></div>
-      </div>
+        {% if option_disabled %}
+          <div class="swatch__out-of-stock">
+            <div class="product-card__swatch product-card__colorswatch color-variant"  data-value="{{ value }}"> </div>
+          </div>
+        {% else if %}
+          <div class="color-variant-box">
+            <div class="product-card__swatch product-card__colorswatch color-variant" data-value="{{ value }}"></div>
+          </div>
+        {% endif %} 
+      
       </div> 
     </label>
   {%- elsif picker_type == 'dropdown' or picker_type == 'swatch_dropdown' -%}
