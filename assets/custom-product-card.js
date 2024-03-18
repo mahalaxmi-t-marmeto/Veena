@@ -17,8 +17,8 @@ class CustomProductCard extends HTMLElement {
   }
 
   getUpdatedCard() {
-    const url = `${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
-    // const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=product-card`;
+    // const url = `${this.productHandle}?variant=${this.currentVariant.id}&section_id=${this.sectionId}`;
+    const url = `/products/${this.productHandle}?variant=${this.currentVariant.id}&section_id=product-card`;
 
     fetch(url)
       .then((response) => response.text())
