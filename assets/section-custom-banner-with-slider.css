@@ -149,6 +149,39 @@
 
 .main-container__slider .splide__arrow svg {
     fill: #fff;
+    transition: all .5s;
+}
+
+.main-container__slider .splide__arrow--next svg {
+    position: relative;
+    right: 5px;
+}
+.main-container__slider .splide__arrow--next:hover .two {
+    transform: translate(20px);
+    opacity: 0;
+}
+.main-container__slider .splide__arrow--next .one {
+    opacity: 0;
+}
+.main-container__slider .splide__arrow--next:hover .one {
+    transform: translate(15px);
+    opacity: 1;
+}
+
+.main-container__slider .splide__arrow--prev svg {
+    position: relative;
+    left: 5px;
+}
+.main-container__slider .splide__arrow--prev:hover .one {
+    transform: translateX(-20px) scaleX(-1);
+    opacity: 0;
+}
+.main-container__slider .splide__arrow--prev .two {
+    opacity: 0;
+}
+.main-container__slider .splide__arrow--prev:hover .two {
+    transform: translateX(-15px) scaleX(-1);
+    opacity: 1;
 }
 
 .main-container__mobile-banner img {

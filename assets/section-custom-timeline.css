@@ -1,0 +1,12 @@
+.timeline-container--content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.timeline-container--content p {
+    width: 80%;
+}

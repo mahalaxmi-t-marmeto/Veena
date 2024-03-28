@@ -1,0 +1,243 @@
+{{ 'section-custom-timeline.css' | asset_url | stylesheet_tag }}
+
+{% style  %} 
+
+  .padding-{{ section.id }} {
+    padding-top:{{ section.settings.padding_top |  divided_by: 2 }}px;
+    padding-bottom:{{ section.settings.padding_bottom | divided_by: 2 }}px;
+  }
+
+  .background-{{ section.id }} {
+    background-color:{{ section.settings.background_color }}
+  }
+
+  @media screen and (min-width:750px) {
+      .padding-{{ section.id }} {
+      padding-top:{{ section.settings.padding_top }}px;
+      padding-bottom:{{ section.settings.padding_bottom}}px;
+    }
+  }
+
+{% endstyle %}
+
+{% capture Timeline_Slider %}
+  {
+      "autoplay": {{ section.settings.autoplay }},
+      "arrows": {{ section.settings.arrows }},
+      "pagination": {{ section.settings.pagination }},
+      "perPage": {{ section.settings.perPage }},
+      "breakpoints":{
+        "640": {
+			"perPage": 1
+      }
+      },
+      "speed": {{ section.settings.speed |  append: '000'}},
+      "type": "{{ section.settings.slider_type }}",
+      "interval":{{ section.settings.interval | append :'000' }},
+      "rewind":{{ section.settings.rewind }},
+      "gap":"{{ section.settings.gap |  append: 'rem'}}"
+  }
+{% endcapture %}
+
+<div class="timeline-wrapper background-{{ section.id }} padding-{{ section.id }} ">
+  <div class="timeline-container page-width"> 
+    <div class="timeline-container--content">
+      <h2>{{ section.settings.heading }}</h2>
+      <p>{{ section.settings.description }}</p>
+      <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_label  }}</a>
+    </div>
+    <div class="timeline-container--slider">
+
+    </div>
+
+  </div>
+  <custom-slider class="color-{{ section.settings.color_scheme  }}" data-slider-options='{{ Timeline_Slider }}'>
+  </custom-slider>
+</div>
+  
+  
+  
+{% schema %}
+{
+  "name": "Timeline slider",
+  "settings": [
+    {
+      "type": "header",
+      "content":"Timeline Settings"
+    },
+    {
+      "type": "text",
+      "label":"Heading",
+      "id": "heading",
+      "default": "Heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description",
+      "default": "<p>OEL is a nimble organisation focused not merely on carving out larger market shares but delivering compelling consumer experiences </p>"
+    },
+    {
+      "type": "text",
+      "label":"Button label",
+      "id": "button_label",
+      "default": "See more"
+    },
+    {
+      "type": "url",
+      "label": "Button link",
+      "id": "button_link"
+    },
+    {
+      "type": "header",
+      "content":"Slider Settings"
+    },
+    {
+      "type": "select",
+      "id": "slider_type",
+      "label": "Slider Type",
+      "options": [
+          {
+          "value": "loop",
+          "label": "Loop"
+          },
+          {
+          "value": "slide",
+          "label": "Slide"
+          },
+          {
+          "value": "fade",
+          "label": "Fade"
+          }
+      ],
+        "default": "loop"
+    },
+    {
+      "type": "range",
+      "id": "perPage",
+      "min": 1,
+      "max": 6,
+      "step": 1,
+      "label": "Per Page",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "speed",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Transition Speed of Slide",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "interval",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "label": "Slider Autoplay Interval in seconds",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "gap",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "label": "Gap between slides in rem",
+      "default": 2
+    },
+    {
+      "type": "checkbox",
+      "id": "autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "arrows",
+      "label": "Enable Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pagination",
+      "label": "Show Dots",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "rewind",
+      "label": "Rewind Slider",
+      "default": true
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": " Color Schema",
+      "info": "applies color schema to whole section",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 30
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 30
+    }
+    ],
+    "blocks": [
+      {
+        "type": "slider",
+        "name":"Timeline block",
+        "settings": [
+          {
+            "type":"header",
+            "content":"Block settings"
+          },
+          {
+            "type": "number",
+            "label":"Year",
+            "id": "year",
+            "default": 2000
+          },
+          {
+            "type": "text",
+            "label":"Heading",
+            "id": "block_heading",
+            "default": "Forays into Home Appliances Business"
+          },
+          {
+            "type": "richtext",
+            "label": "Description",
+            "id": "block_description",
+            "default": "<p>Orient Electric ventured into the home appliances market in 2011 with a wide range of products including Air Coolers, Water Heaters, Juicer Mixer Grinders, Mixer Grinders, Toasters, Electric Kettles, Coolers, Induction Cookers, Rice Cookers and Electric Irons.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name":"Timeline slider"
+      }
+    ]
+}
+{% endschema %}
