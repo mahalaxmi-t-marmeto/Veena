@@ -659,7 +659,153 @@
       "invalid_expiry_year": "ليست سنة انتهاء صالحة",
       "reset_password_html": "عنوان البريد الإلكتروني هذا مرتبط بالفعل بحساب. إذا كان هذا الحساب ملكك، فيمكنك <a href=\"\/account\/login#recover\">إعادة تعيين كلمة المرور الخاصة بك<\/a>",
       "verify_email": "لقد أرسلنا بريدًا إلكترونيًا إلى %{customer_email}، يرجى النقر على الرابط المتضمن للتحقق من عنوان بريدك الإلكتروني.",
-      "product_not_available": "لم يتم نشر المنتج لهذا العميل."
+      "product_not_available": "لم يتم نشر المنتج لهذا العميل.",
+      "shop_404": {
+        "title": "إنشاء موقع للتجارة الإلكترونية والبيع عبر الإنترنت! برامج التجارة الإلكترونية من Shopify",
+        "heros": {
+          "store_unavailable": "عذرا، هذا المتجر غير متوفر حاليا.",
+          "store_not_exist": "هذا المتجر غير موجود.",
+          "no_storefront": "هذا المتجر ليس لديه موقع على شبكة الانترنت حتى الآن."
+        },
+        "links": {
+          "explore_other_stores": "اكتشف المتاجر الأخرى",
+          "start_free_trial": "ابدأ نسخة تجريبية مجانية"
+        },
+        "owner_ctas": {
+          "header": "هل أنت مالك المتجر؟",
+          "fix_domain": "أكمل إعداد عنوان الويب الجديد الخاص بك، وانتقل إلى %{domain_settings_link}. انقر على \"اتصال المجال\" وأدخل: %{domain}.<br> إذا كنت تواجه مشكلة في الدخول إلى متجرك، فجرّب صفحة %{forgot_your_store_link}.",
+          "fix_domain_link_text": "إعدادات المجال الخاص بك",
+          "forgot_your_store_link_text": "نسيت متجرك",
+          "add_storefront": "يمكنك إعداد موقع الويب الخاص بك عن طريق إضافة قناة المتجر عبر الإنترنت في %{admin_link}. إذا كنت تواجه مشكلة في الدخول إلى متجرك، فجرّب صفحة %{forgot_your_store_link}.",
+          "admin_link_text": "مسؤل"
+        },
+        "ctas": {
+          "sell_in_person": {
+            "header": "بيع شخصيا",
+            "caption": "احصل على الميزات التي تحتاجها لتشغيل متجر البيع بالتجزئة الخاص بك سواء كنت تبدأ مشروعك أو تقوم بتوسيع نطاقه.",
+            "link_text": "ابدأ النسخة التجريبية المجانية"
+          },
+          "open_a_store": {
+            "header": "افتح متجر شوبيفاي جديد",
+            "caption": "ابدأ فترة تجريبية مجانية مدتها 3 أيام، ثم استمر مقابل 1 دولار شهريًا للأشهر الثلاثة التالية.",
+            "link_text": "أفتح حساب الأن"
+          },
+          "editions": {
+            "header": "تحقق من إصدارات Shopify",
+            "caption": "مع أكثر من 100 تحديث للمنتج، يمكنك أن تكون أكثر إنتاجية وإبداعًا وقوة في التجارة مما كنت تتخيله.",
+            "link_text": "اكتشف أحدث الإصدارات"
+          },
+          "store_owner": {
+            "header": "هل أنت مالك المتجر؟",
+            "caption": "هل تواجه صعوبة في الدخول إلى متجرك؟ جرّب ميزة %{forgot_your_store_link}. إذا كنت ترغب في إعادة تنشيط متجرك، فاتصل بـ %{shopify_support_link}.",
+            "shopify_support_link_text": "دعم شوبيفاي"
+          }
+        }
+      }
+    },
+    "notices": {
+      "customer": {
+        "password_reset_error": "خطأ في إعادة تعيين كلمة المرور",
+        "no_account_found": "لم يتم العثور على حساب مع هذا البريد الإلكتروني.",
+        "invalid_credentials": "بريد أو كلمة مرورغير صحيحة.",
+        "denylisted_reset_password": "تعذر الوصول إلى حسابك لأن كلمة المرور الحالية غير آمنة. سوف تتلقى رسالة بريد إلكتروني لتحديث كلمة المرور الخاصة بك.",
+        "signup_disabled": "تم تعطيل إنشاء حساب العميل."
+      },
+      "address": {
+        "updated": "تم تحديث العنوان بنجاح.",
+        "error_updating": "حدث خطأ أثناء تحديث العنوان",
+        "created": "تم إنشاء العنوان بنجاح",
+        "error_creating": "حدث خطأ أثناء إنشاء العنوان.",
+        "deleted": "تم حذف العنوان بنجاح",
+        "error_deleting": "حدث خطأ أثناء حذف العنوان."
+      },
+      "line_item": {
+        "item_status": {
+          "add_variant": "تمت إضافة %{دلتا}",
+          "increment_item": "تمت إضافة %{دلتا}",
+          "decrement_item": "تمت إزالة %{delta} من %{total}",
+          "decrement_fulfilled_line_item": "تم إرجاع %{delta} من %{total}",
+          "decrement_return_line_item": "تمت إزالة %{delta} من العودة"
+        }
+      },
+      "order": {
+        "not_available": "هذا الطلب غير متوفر",
+        "financial_status": {
+          "authorized": "مخول",
+          "pending": "قيد الانتظار",
+          "paid": "مدفوع",
+          "unpaid": "غير مدفوعة الأجر",
+          "voided": "باطل",
+          "partially_paid": "المدفوعة جزئيا",
+          "partially_refunded": "المردودة جزئيا",
+          "refunded": "ردها",
+          "expired": "منتهي الصلاحية"
+        },
+        "fulfillment_status": {
+          "fulfilled": "استيفاء",
+          "complete": "مكتمل",
+          "partial": "جزئي",
+          "unfulfilled": "لم تتحقق",
+          "restocked": "إعادة تخزينها"
+        },
+        "transaction_status": {
+          "success": "نجاح",
+          "pending": "قيد الانتظار",
+          "failure": "فشل",
+          "error": "خطأ"
+        },
+        "cancel_reason": {
+          "declined": "تم رفض الدفع",
+          "inventory": "العناصر غير متوفرة",
+          "fraud": "أمر احتيالي",
+          "customer": "قام العميل بتغيير\/إلغاء الطلب",
+          "staff": "خطأ الموظفين",
+          "other": "آخر"
+        },
+        "cash_on_delivery": "الدفع عند الاستلام (COD)"
+      },
+      "cart": {
+        "only_n_items_available": "يمكنك فقط إضافة %{count} %{name} إلى سلة التسوق.",
+        "too_many_items_in_cart": "لا يمكنك إضافة المزيد من %{name} إلى سلة التسوق.",
+        "less_than_minimum": "يحتوي هذا العنصر على الحد الأدنى من %{min}.",
+        "more_than_maximum": "الحد الأقصى لهذا العنصر هو %{max}.",
+        "not_respect_step": "يمكنك فقط إضافة هذا العنصر بزيادات قدرها %{step}.",
+        "all_items_in_cart": "جميع %{count} %{name} موجودة في سلة التسوق الخاصة بك.",
+        "empty_update": "لا يمكن تحديث سلة التسوق الفارغة",
+        "missing_parameters": "لا يوجد معرف صالح أو معلمة سطر",
+        "generic_error": "خطأ في سلة التسوق",
+        "product_not_available": "المنتج غير متوفر",
+        "too_many_line_items_error": "لا يمكن أن تحتوي سلة التسوق الخاصة بك على أكثر من %{max} من العناصر.",
+        "link_expired": "انتهت صلاحية الرابط",
+        "link_no_longer_exists": "الرابط لم يعد موجودا.",
+        "stock_problems_html": "واحد أو أكثر من العناصر لم تعد متوفرة. لقد قدمنا <a href=\"%{link}\">​​عربة محدثة<\/a> .",
+        "changed": "تغيرت العربة",
+        "items_changed": "تم تغيير عنصر واحد أو أكثر.",
+        "product_sold_out": "تم بيع المنتج '%{name}' بالفعل.",
+        "variant_not_found": "لا يمكن العثور على البديل",
+        "variant_requires_selling_plan": "لا يمكن شراء البديل إلا من خلال خطة بيع.",
+        "selling_plan_not_available_for_company_locations": "الشراء لمرة واحدة فقط متاح لطلبات B2B",
+        "digital_product_not_available_for_company_locations": "لا يمكن إضافة هذا العنصر إلى طلب B2B",
+        "selling_plan_not_applicable": "لا يمكن تطبيق خطة البيع على البديل",
+        "shipping_address_not_required": "هذه العربة لا تتطلب الشحن",
+        "shipping_address_invalid": "حدثت مشكلة أثناء حساب أسعار الشحن. استمر في الخروج لاختيار سعر الشحن قبل إكمال طلبك.",
+        "bundle_requires_components": "لا يمكن إضافة حزمة المنتج '%{name}' إلى سلة التسوق.",
+        "gift_card_with_components_not_supported": "لا يمكن إضافة حزمة المنتج '%{name}' إلى سلة التسوق.",
+        "gift_card_price_must_be_greater_than_zero": "لا يمكن إضافة حزمة المنتج '%{name}' إلى سلة التسوق.",
+        "bundle_products_not_supported_for_b2b_draft": "لا يمكن إضافة العناصر المجمعة إلى طلبات B2B لهذا الموقع.",
+        "view_lines_limit_reached": "يجب أن تكون الخطوط أقل من %{limit}",
+        "merchandise_line_transformers": {
+          "run_error": "حدث خطأ في سلة التسوق الخاصة بك."
+        }
+      },
+      "storefront": {
+        "invalid_password": "كلمة المرور غير صحيحة، يرجى المحاولة مرة أخرى."
+      },
+      "tags": {
+        "add_articles": "تضييق نطاق البحث إلى المقالات التي تحتوي أيضًا على العلامة %{tag}",
+        "add_products": "تحديد ضيق للمنتجات المطابقة للعلامة %{tag}",
+        "remove_articles": "توسيع البحث ليشمل المقالات التي لا تحتوي على علامة %{tag}"
+      }
     }
   },
   "customer_accounts": {
