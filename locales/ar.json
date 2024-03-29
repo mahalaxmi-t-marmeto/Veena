@@ -206,7 +206,10 @@
             "one": "مجموعة من علامة {{number}}",
             "other": "مجموعة من علامات {{number}}"
           }
-        }
+        },
+        "full_price": "السعر الكامل:",
+        "google_map_title": "خرائط جوجل",
+        "submit_order_button_label": "أكد الطلب"
       },
       "contact": {
         "different_shipping_address_label": "الشحن إلى عنوان مختلف",
@@ -1324,7 +1327,8 @@
           "search_address": "البحث عن العنوان",
           "rollup_title": "اختر موقعا"
         },
-        "missing_shipping_address": "عنوان الشحن مفقود"
+        "missing_shipping_address": "عنوان الشحن مفقود",
+        "address_default": "تعيين كافتراضي"
       },
       "localized_fields": {
         "additional_information": {
@@ -1522,18 +1526,25 @@
         "delete_credit_card_modal": {
           "cancel": "يلغي",
           "delete": "يمسح",
-          "confirmation": "هل أنت متأكد أنك تريد حذف {{brandName}} الذي ينتهي بـ {{lastDigits}} ؟"
+          "confirmation": "هل أنت متأكد أنك تريد حذف {{brandName}} الذي ينتهي بـ {{lastDigits}} ؟",
+          "title": "حذف البطاقة"
         },
         "edit_credit_card_modal": {
           "title": "تحرير البطاقة",
           "done": "منتهي",
           "cancel": "يلغي",
           "fields": {
-            "billing": "مشروع قانون ل"
+            "billing": "مشروع قانون ل",
+            "default": "تعيين كافتراضي",
+            "card_number": "رقم البطاقة",
+            "expiry": "تاريخ انتهاء الصلاحية",
+            "security_code": "رمز الحماية",
+            "name": "الاسم على البطاقة"
           }
         },
         "order_edit_banner_items_added": {
-          "one": "تمت الإضافة"
+          "one": "تمت الإضافة",
+          "other": "تمت إضافة %{count}."
         },
         "order_edit_banner_items_removed": {
           "in_full": "إزالة"
@@ -1546,7 +1557,8 @@
         "order_edit_banner_single_item_returned": "عاد",
         "gift_card_wrapper": {
           "heading": "كرت هدية",
-          "payment_tag": "كرت هدية"
+          "payment_tag": "كرت هدية",
+          "add_label": "أضف بطاقة هدية"
         },
         "purchase_order_number": {
           "title": "PO عدد"
@@ -1562,7 +1574,12 @@
         "local_payment_method_receiver_notice": "بعد تقديم طلبك، سوف تتلقى تفاصيل الدفع. قم بالدفع من خلال ماكينة الصراف الآلي أو عبر الإنترنت خلال {{dueDays}} من الأيام.",
         "order_edit_banner_subtitle": "تم تحديث طلبك {{order_number}} . راجع هذه التغييرات، ثم ادفع لتأكيد طلبك.",
         "markets_pro_disclaimer_label": "بالنقر أدناه وإكمال طلبك، فإنك توافق على شراء العناصر الخاصة بك من Global-e كتاجر مسجل لهذه المعاملة، على %{markets_pro_terms} و%{privacy_policy من Global-e. Global-e هي شركة دولية تقدم خدمات تلبية الطلبات لـ %{shop_name}",
-        "waiting_on_taxes_message": "إذا لم يتم احتساب الضرائب الخاصة بك خلال الثواني القليلة القادمة، فقم بتحديث الصفحة."
+        "waiting_on_taxes_message": "إذا لم يتم احتساب الضرائب الخاصة بك خلال الثواني القليلة القادمة، فقم بتحديث الصفحة.",
+        "saved_credit_card_info": "آخر أربعة أرقام",
+        "order_edit_banner_multiple_items_added": "تمت إضافة {{amount}}",
+        "order_edit_banner_updated_order_label": "طلب محدث",
+        "markets_pro_disclaimer_privacy_policy": "سياسة الخصوصية",
+        "payment_method": "طريقة الدفع او السداد"
       },
       "field_errors": {
         "gift_card_invalid": "بطاقة الهدايا \"••••%{last_four_characters}\" لم تعد صالحة",
@@ -1908,7 +1925,8 @@
       "payment_summary": {
         "free_label": "حر",
         "express_payment_gateway_label": "يعبر",
-        "manual_payment_gateway_label": "يدوي"
+        "manual_payment_gateway_label": "يدوي",
+        "billing_address_title": "عنوان وصول الفواتير"
       },
       "billing": {
         "billing_address_title": "مشروع قانون ل",
@@ -1916,8 +1934,11 @@
         "delete": "يمسح",
         "address_form": {
           "save": "يحفظ",
-          "cancel": "يلغي"
-        }
+          "cancel": "يلغي",
+          "add_address": "اضف عنوان"
+        },
+        "address_edit": "تعديل العنوان",
+        "address_delete": "حذف العنوان"
       },
       "company_location": {
         "location_title": "موقع"
@@ -2163,7 +2184,8 @@
     "filters": {
       "availability": {
         "value": {
-          "in_stock": "في الأوراق المالية"
+          "in_stock": "في الأوراق المالية",
+          "out_of_stock": "إنتهى من المخزن"
         }
       },
       "boolean": {
@@ -2181,7 +2203,14 @@
       "account": "حساب",
       "addresses": "عناوين",
       "search": "يبحث",
-      "challenge": "تحدي"
+      "challenge": "تحدي",
+      "blog_or_article_with_error": "خطأ - %{title}",
+      "create_account": "إنشاء حساب",
+      "reset_account": "إعادة ضبط الحساب",
+      "order": "الطلب %{name}",
+      "collections": "المجموعات",
+      "not_found": "404 غير موجود",
+      "checkpoint": "نقطة تفتيش"
     },
     "challenge": {
       "submit_button_text": "يُقدِّم"
@@ -2213,6 +2242,9 @@
           "visibility": "لقد قمنا بتحديث سياستنا، والآن يتم فتح تتبع رسائل البريد الإلكتروني. سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط ما إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من إجمالي معدل فتح البريد الإلكتروني.",
           "opt_out_html": "إذا كنت لا ترغب في مشاركة هذه المعلومات، يمكنك <a style=\"text-decoration:underline;\" href=\"%{link}\">إلغاء الاشتراك.<\/a>"
         }
+      },
+      "subscribed": {
+        "unsubscribe": "إلغاء الاشتراك"
       }
     }
   },
@@ -2379,7 +2411,21 @@
       "pagination": {
         "load_more": "تحميل المزيد"
       },
-      "title": "عناوين"
+      "title": "عناوين",
+      "address_deleted_notification": "تم حذف العنوان",
+      "default_address": {
+        "title": "العنوان الافتراضي"
+      },
+      "delete_confirmation_button": "حذف العنوان",
+      "delete_confirmation_title": "هل تريد حذف العنوان؟",
+      "edit_button_accessibility_label": "تعديل {{address}}",
+      "edit_section_accessibility_label": "تعديل {{address}}",
+      "edit_modal_title": {
+        "default": "تعديل العنوان"
+      },
+      "loading_accessibility_message": "عنوان تحميل",
+      "save_new_address_accessibility_label": "حفظ العنوان",
+      "billing_address_dropdown_placeholder": "عنوان وصول الفواتير"
     },
     "payment_methods": {
       "payment_delete": {
@@ -2645,6 +2691,9 @@
       },
       "failed_address_update": {
         "description": "حدثت مشكلة أثناء تحديث عنوانك. حاول تحديث هذه الصفحة أو التحقق من اتصالك بالإنترنت."
+      },
+      "no_access": {
+        "title": "ممنوع الدخول"
       }
     },
     "orders": {
@@ -2896,7 +2945,11 @@
         "cancel": "يلغي",
         "edit": "يحرر",
         "last_name": "اسم العائلة",
-        "save": "يحفظ"
+        "save": "يحفظ",
+        "edit_accessibility_label": "تعديل الملف الشخصي",
+        "first_name": "الاسم الأول",
+        "no_name_provided_accessibility_label": "لم تتم إضافة أي اسم",
+        "save_accessibility_label": "احفظ الملف"
       },
       "profile_update_confirmation_message": "تحديث الملف الشخصي",
       "title": "حساب تعريفي",
@@ -2921,16 +2974,26 @@
       "loading_message": "تحميل",
       "log_out_link": "تسجيل خروج",
       "orders_link_label": "طلبات",
-      "settings_link": "إعدادات"
+      "settings_link": "إعدادات",
+      "action_menu_accessibility_label": "المزيد من الإجراءات",
+      "contact_link": "اتصل بنا",
+      "go_to_store_link": "اذهب إلى المتجر",
+      "nav_label_accessibility_label": "الملاحة الرئيسية",
+      "subscriptions_link_label": "الاشتراكات"
     },
     "address_form": {
       "attention": "انتباه",
       "cancel": "يلغي",
-      "save": "يحفظ"
+      "save": "يحفظ",
+      "auto_complete_title": "اقتراحات",
+      "creation_success_notification": "تمت إضافة العنوان",
+      "section_title_accessibility_label": "اضف عنوان",
+      "update_success_notification": "تم تحديث العنوان"
     },
     "B2B": {
       "account_information": {
-        "company_card_section_accessibility_label": "شركة"
+        "company_card_section_accessibility_label": "شركة",
+        "company_card_name_label": "اسم الشركة"
       },
       "locations": {
         "contact_email": "بريد إلكتروني",
@@ -2946,18 +3009,33 @@
         "tax_exemptions_modal_close": "يغلق",
         "taxes_none": "لا أحد",
         "tax_exemption_not_applicable": "لا يوجد",
-        "shipping_address_required": "أضف عنوان شحن إلى هذا الموقع لبدء تقديم الطلبات."
+        "shipping_address_required": "أضف عنوان شحن إلى هذا الموقع لبدء تقديم الطلبات.",
+        "contact_permissions": "الأذونات",
+        "contact_phone_number": "رقم التليفون",
+        "location_picker_label": "اسم الموقع",
+        "payment_details_title": "بيانات الدفع",
+        "payment_terms": "شروط الدفع",
+        "permissions_label": "أذوناتك",
+        "permissions_title": "الأذونات",
+        "tax_details_title": "التفاصيل الضريبية",
+        "tax_exemptions": "الإعفاءات الضريبية"
       },
       "location_selection": {
         "selection_cancel_button": "يلغي",
         "description": "إذا كان لديك بالفعل عناصر في عربة التسوق الخاصة بك، فقد يؤثر تغيير المواقع على أسعار وكميات عربة التسوق.",
-        "no_location_description": "لم يعد لديك إذن بتقديم طلبات {{company}} . لا يزال بإمكانك تقديم الطلبات الشخصية."
+        "no_location_description": "لم يعد لديك إذن بتقديم طلبات {{company}} . لا يزال بإمكانك تقديم الطلبات الشخصية.",
+        "list_accessibility_label": "قائمة المواقع",
+        "loading_store_accessibility_message": "الذهاب إلى المتجر",
+        "selection_confirmation_button": "اختيار موقع",
+        "clear_search": "مسح البحث",
+        "try_new_search": "حاول إجراء بحث جديد"
       },
       "orders": {
         "draft_order_list": {
           "hide_all": "أخف كل شيء",
           "show_all": "عرض الكل",
-          "title": "قيد الانتظار"
+          "title": "قيد الانتظار",
+          "pending_orders_count_more_than_pagination_length": "{{count}} +"
         },
         "order_list_column_headers_location": "موقع",
         "order_list_column_headers_contact": "اتصال"
@@ -2965,7 +3043,8 @@
       "draft_order_details": {
         "payment_status": {
           "paid": {
-            "title": "مدفوع"
+            "title": "مدفوع",
+            "title_with_date": "{{date}}"
           },
           "refund": {
             "title": "ردها"
@@ -2974,21 +3053,45 @@
           "pending": {
             "description_authorized": "سيتم تحصيل الرسوم من طريقة الدفع الخاصة بك في تاريخ الاستحقاق، أو يمكنك الدفع الآن.",
             "description_due_on_receipt_partially_paid": "تم دفع هذا الطلب جزئيًا. لديك الرصيد المتبقي. ستتلقى فاتورة عندما يحين موعد الدفع.",
-            "description_due_on_fulfillment_partially_paid": "تم دفع هذا الطلب جزئيًا. لديك الرصيد المتبقي. يكون الدفع مستحقًا بمجرد استيفاء جميع العناصر الموجودة في هذا الطلب."
-          }
-        }
+            "description_due_on_fulfillment_partially_paid": "تم دفع هذا الطلب جزئيًا. لديك الرصيد المتبقي. يكون الدفع مستحقًا بمجرد استيفاء جميع العناصر الموجودة في هذا الطلب.",
+            "title": "استحقاق الدفع"
+          },
+          "draft": {
+            "submitted": {
+              "title": "ادفع للتأكيد"
+            }
+          },
+          "title": "حالة السداد"
+        },
+        "order_timeline": {
+          "expand_events_label": "اظهر التفاصيل",
+          "hide_events_label": "أخف التفاصيل"
+        },
+        "title": "طلب {{name}}"
       },
       "purchase_order_number": {
         "cancel": "يلغي",
         "discard": "ينبذ",
         "modal_po_number_input_label": "PO عدد",
-        "save": "يحفظ"
+        "save": "يحفظ",
+        "add_accessibility_label": "أضف رقم طلب الشراء",
+        "add_modal_title": "أضف رقم طلب الشراء",
+        "edit_accessibility_label": "تعديل رقم أمر الشراء",
+        "edit_modal_title": "تعديل رقم أمر الشراء",
+        "empty_state": "لا يوجد رقم أمر الشراء"
       },
       "payment_methods": {
         "payment_delete": {
           "description_without_replacement": "لن تكون طريقة الدفع هذه متاحة لعمليات الشراء المستقبلية من هذا الموقع.",
           "description_with_replacement": "سيؤثر حذف طريقة الدفع هذه على المدفوعات المصرح بها مسبقًا لهذا الموقع. استبدلها بطريقة دفع بديلة لمواصلة تلقي الطلبات القادمة."
+        },
+        "payment_details": {
+          "order_label": "طلب {{name}}"
         }
+      },
+      "addresses": {
+        "billing_address_card_title": "عنوان وصول الفواتير",
+        "shipping_address_card_title": "عنوان الشحن"
       }
     },
     "enable_javascript": "لعرض حسابك، قم بتمكين JavaScript في إعدادات المتصفح الخاص بك أو قم بتسجيل الدخول باستخدام متصفح آخر."
