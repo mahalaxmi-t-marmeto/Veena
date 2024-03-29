@@ -239,7 +239,8 @@
         "pincode_placeholder": "رمز التعريف الشخصي",
         "civic_number_warning": "أضف رقم المنزل إذا كان لديك واحد",
         "optional_last_name_label": "الاسم الأخير (اختياري)",
-        "optional_recipient_label": "تنبيه (اختياري)"
+        "optional_recipient_label": "تنبيه (اختياري)",
+        "contact_method_title": "اتصال"
       },
       "delivery_options": {
         "free_total_label": "حر",
@@ -877,7 +878,8 @@
           "no_purchase_order_number": "(لا يوجد رقم أمر الشراء)",
           "due_after_order_reviewed_html": "مستحق بعد مراجعة الطلب",
           "review_title_free_order": "قم بمراجعة وإكمال طلبك",
-          "payment_method_saved_company_location": "حفظ البطاقة لهذا الموقع"
+          "payment_method_saved_company_location": "حفظ البطاقة لهذا الموقع",
+          "contact_method_title": "اتصال"
         },
         "block_title": "قم بمراجعة معلوماتك"
       },
@@ -1472,7 +1474,52 @@
         "billing_address_invalid_phone": "قم بتحديث رقم الهاتف في عنوان إرسال الفواتير الخاص بك لـ {{label}} {{last_digits}} للمتابعة.",
         "billing_address_invalid_phone_no_card": "قم بتحديث رقم الهاتف في عنوان إرسال الفواتير الخاص بك للمتابعة.",
         "preview_not_available": {
-          "title": "المعاينة غير متوفرة"
+          "title": "المعاينة غير متوفرة",
+          "button": "نعم"
+        },
+        "saved_credit_card_actions": {
+          "edit": "يحرر",
+          "delete": "يمسح"
+        },
+        "saved_credit_cards_modal": {
+          "done": "منتهي",
+          "cancel": "يلغي"
+        },
+        "add_credit_card_modal": {
+          "title": "إضافة بطاقة",
+          "save": "يحفظ",
+          "cancel": "يلغي"
+        },
+        "delete_credit_card_modal": {
+          "cancel": "يلغي",
+          "delete": "يمسح"
+        },
+        "edit_credit_card_modal": {
+          "title": "تحرير البطاقة",
+          "done": "منتهي",
+          "cancel": "يلغي",
+          "fields": {
+            "billing": "مشروع قانون ل"
+          }
+        },
+        "order_edit_banner_items_added": {
+          "one": "تمت الإضافة"
+        },
+        "order_edit_banner_items_removed": {
+          "in_full": "إزالة"
+        },
+        "order_edit_banner_items_returned": {
+          "in_full": "عاد"
+        },
+        "order_edit_banner_single_item_added": "تمت الإضافة",
+        "order_edit_banner_single_item_removed": "إزالة",
+        "order_edit_banner_single_item_returned": "عاد",
+        "gift_card_wrapper": {
+          "heading": "كرت هدية",
+          "payment_tag": "كرت هدية"
+        },
+        "purchase_order_number": {
+          "title": "PO عدد"
         }
       },
       "field_errors": {
@@ -1817,7 +1864,21 @@
         "return_to_store": "العودة إلى {{shopName}}"
       },
       "payment_summary": {
-        "free_label": "حر"
+        "free_label": "حر",
+        "express_payment_gateway_label": "يعبر",
+        "manual_payment_gateway_label": "يدوي"
+      },
+      "billing": {
+        "billing_address_title": "مشروع قانون ل",
+        "edit": "يحرر",
+        "delete": "يمسح",
+        "address_form": {
+          "save": "يحفظ",
+          "cancel": "يلغي"
+        }
+      },
+      "company_location": {
+        "location_title": "موقع"
       }
     },
     "pagination": {
@@ -2056,6 +2117,35 @@
         "add_products": "تحديد ضيق للمنتجات المطابقة للعلامة %{tag}",
         "remove_articles": "توسيع البحث ليشمل المقالات التي لا تحتوي على علامة %{tag}"
       }
+    },
+    "filters": {
+      "availability": {
+        "value": {
+          "in_stock": "في الأوراق المالية"
+        }
+      },
+      "boolean": {
+        "true_label": "نعم",
+        "false_label": "لا"
+      }
+    },
+    "search": {
+      "sorting": {
+        "relevance": "ملاءمة"
+      }
+    },
+    "page_titles": {
+      "products": "منتجات",
+      "account": "حساب",
+      "addresses": "عناوين",
+      "search": "يبحث",
+      "challenge": "تحدي"
+    },
+    "challenge": {
+      "submit_button_text": "يُقدِّم"
+    },
+    "checkpoint": {
+      "submit_button_text": "يُقدِّم"
     }
   },
   "customer_accounts": {
@@ -2206,14 +2296,22 @@
       "hide_items": "إخفاء العناصر",
       "loading": "جارٍ تحميل تفاصيل الطلب",
       "loading_finished_accessibility_message": "تم تحميل تفاصيل الطلب",
-      "location": "موقع"
+      "location": "موقع",
+      "contact": "اتصال"
     },
     "addresses": {
       "add_button": "اضف عنوان",
       "add_button_text": "يضيف",
       "add_button_accessibility_label": "اضف عنوان",
       "back_button": "خلف",
-      "back_button_accessibility_label": "العودة إلى تعديل العنوان {{address}}"
+      "back_button_accessibility_label": "العودة إلى تعديل العنوان {{address}}",
+      "cancel_deletion_button": "يلغي",
+      "delete_button": "يمسح",
+      "edit_button": "يحرر",
+      "pagination": {
+        "load_more": "تحميل المزيد"
+      },
+      "title": "عناوين"
     },
     "payment_methods": {
       "payment_delete": {
@@ -2467,6 +2565,9 @@
         "title": "خطأ",
         "description": "قم بتحديث هذه الصفحة أو حاول مرة أخرى خلال بضع دقائق.",
         "refresh_button": "إعادة تحميل الصفحة"
+      },
+      "load_orders_error": {
+        "retry_button": "أعد المحاولة"
       }
     },
     "orders": {
@@ -2714,7 +2815,11 @@
     },
     "account_information": {
       "profile_card": {
-        "title": "حساب تعريفي"
+        "title": "حساب تعريفي",
+        "cancel": "يلغي",
+        "edit": "يحرر",
+        "last_name": "اسم العائلة",
+        "save": "يحفظ"
       },
       "profile_update_confirmation_message": "تحديث الملف الشخصي",
       "title": "حساب تعريفي",
@@ -2726,6 +2831,74 @@
         }
       },
       "add_button": "يضيف"
+    },
+    "navigation_and_structure": {
+      "account_menu": {
+        "label": "حساب"
+      },
+      "delete_confirmation": {
+        "cancel": "يلغي",
+        "delete": "يمسح"
+      },
+      "dismiss_toast": "رفض",
+      "loading_message": "تحميل",
+      "log_out_link": "تسجيل خروج",
+      "orders_link_label": "طلبات",
+      "settings_link": "إعدادات"
+    },
+    "address_form": {
+      "attention": "انتباه",
+      "cancel": "يلغي",
+      "save": "يحفظ"
+    },
+    "B2B": {
+      "account_information": {
+        "company_card_section_accessibility_label": "شركة"
+      },
+      "locations": {
+        "contact_email": "بريد إلكتروني",
+        "contact_list_title": "الناس",
+        "contact_name": "اسم",
+        "own_role_contact_name": "أنت",
+        "pagination": {
+          "load_more": "تحميل المزيد"
+        },
+        "section_title": "موقع",
+        "tax_id": "الرقم الضريبي",
+        "multiple_tax_exemptions_and": "و",
+        "tax_exemptions_modal_close": "يغلق",
+        "taxes_none": "لا أحد",
+        "tax_exemption_not_applicable": "لا يوجد"
+      },
+      "location_selection": {
+        "selection_cancel_button": "يلغي"
+      },
+      "orders": {
+        "draft_order_list": {
+          "hide_all": "أخف كل شيء",
+          "show_all": "عرض الكل",
+          "title": "قيد الانتظار"
+        },
+        "order_list_column_headers_location": "موقع",
+        "order_list_column_headers_contact": "اتصال"
+      },
+      "draft_order_details": {
+        "payment_status": {
+          "paid": {
+            "title": "مدفوع"
+          },
+          "refund": {
+            "title": "ردها"
+          },
+          "pay_now": "ادفع الآن"
+        }
+      },
+      "purchase_order_number": {
+        "cancel": "يلغي",
+        "discard": "ينبذ",
+        "modal_po_number_input_label": "PO عدد",
+        "save": "يحفظ"
+      }
     }
   },
   "sections": {
