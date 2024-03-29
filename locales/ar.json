@@ -115,6 +115,35 @@
             "must_fulfill_from_same_location_constraint_not_satisfied": "لم يتم استيفاء قيود التنفيذ لأنه لا يمكن تنفيذ العناصر من نفس الموقع.",
             "delivery_strategy_conditions_not_satisfied": "تتوفر استراتيجيات التسليم لهذا الموقع، ولكن شروطها غير مستوفاة.",
             "out_of_stock_at_origin_location": "لا يوجد مخزون في الموقع الأصلي."
+          },
+          "discount": {
+            "unsupported_expectation": "يحتوي خط الخصم المقدم على توقع لا يمكن تفسيره من قبل السياسة.",
+            "allocations_mismatch": "لا يتطابق تخصيص الخصم المتوقع مع تخصيص الخصم الفعلي."
+          },
+          "tax": {
+            "new_tax_must_be_accepted": "يجب قبول بند ضريبي جديد في اقتراح البائع من أجل الاستمرار.",
+            "unresolvable_tax_terms": "الشروط المقترحة غير قابلة للحل في ظل سياق المفاوضات الحالي.",
+            "tax_inclusivity_mismatch": "أعد التفاوض باستخدام قيمة TotalTaxAndDutyAmount أو TotalAmountIncludedInTarget الملموسة.",
+            "tax_exemption_not_supported": "الإعفاءات الضريبية غير معتمدة لجلسة التفاوض الحالية.",
+            "line_splits_not_supported": "يجب تقسيم حقل \"بنود البضائع\" بحيث يحتوي كل منها على مكون سطر واحد في عرض البائع."
+          },
+          "payment": {
+            "missing_retail_attributions": "مطلوبة سمات البيع بالتجزئة لدفعات بطاقات الائتمان التي تم إدخالها يدوياً.",
+            "unexpected_retail_attributions": "تم توفير سمات البيع بالتجزئة بشكل غير متوقع للدفع ببطاقة الائتمان.",
+            "saved_payment_methods_cvv_verification_disabled": "تتطلب طريقة الدفع المحددة التحقق من رمز CVV وهو غير ممكّن لهذا المتجر. حدد طريقة دفع مختلفة.",
+            "store_credit_mismatched_currency": "لا تتطابق عملة حساب ائتمان المتجر مع عملة الخروج."
+          },
+          "sale_attribution": {
+            "unresolvable_target_merchandise_lines": "سمات البيع المقترحة غير قابلة للحل في ظل سياق التفاوض الحالي."
+          },
+          "inventory": {
+            "changing_behavior_not_allowed": "ليس لدى هذا العميل الإذن بتغيير سلوك المخزون."
+          },
+          "captcha": {
+            "metadata_mismatch": "لا يتطابق موفر captcha ونوعه مع القيم المتوقعة.",
+            "job_already_queued": "لقد تم بالفعل وضع التحقق من صحة كلمة التحقق في قائمة الانتظار لرمز التحقق المميز هذا.",
+            "token_expired": "انتهت صلاحية رمز التحقق المميز المقدم. أكمل كلمة التحقق الجديدة لمواصلة الخروج.",
+            "token_invalid": "رمز التحقق المميز المقدم غير صالح. أكمل كلمة التحقق الجديدة لمواصلة الخروج."
           }
         },
         "back_button_label": "يعود",
@@ -1492,7 +1521,8 @@
         },
         "delete_credit_card_modal": {
           "cancel": "يلغي",
-          "delete": "يمسح"
+          "delete": "يمسح",
+          "confirmation": "هل أنت متأكد أنك تريد حذف {{brandName}} الذي ينتهي بـ {{lastDigits}} ؟"
         },
         "edit_credit_card_modal": {
           "title": "تحرير البطاقة",
@@ -1520,7 +1550,19 @@
         },
         "purchase_order_number": {
           "title": "PO عدد"
-        }
+        },
+        "vaulting_agreement_label": "احفظ معلومات الدفع الخاصة بي لدى %{company} لإجراء عملية دفع أسرع.",
+        "business_customer_vaulting_payment_label": "احفظ هذه البطاقة عند الدفع وأذن لـ %{company} بتحصيل رسوم هذه البطاقة مقابل عمليات الشراء المستقبلية لهذا الموقع. سيتم السماح لأي عميل مخصص لهذا الموقع باستخدام هذه البطاقة.",
+        "purchase_options_and_vaulting_agreement_label": "هناك عنصر واحد أو أكثر في سلة التسوق الخاصة بك عبارة عن عملية شراء مؤجلة أو شراء اشتراك. من خلال الاستمرار في الدفع، فإنك توافق على أنه سيتم تحصيل الرسوم من طريقة الدفع الخاصة بك تلقائيًا بالسعر والتكرار المذكورين في هذه الصفحة حتى تنتهي أو تقوم بالإلغاء. تخضع جميع عمليات الإلغاء إلى %{cancellation_policy_label}.",
+        "saved_credit_card_cvv_verification": "لأغراض التحقق، يرجى إدخال رمز الأمان الخاص ببطاقتك.",
+        "expired_cards_info": {
+          "one": "هناك %{count} بطاقة منتهية الصلاحية، والتي يمكنك عرضها وتعديلها في حسابك.",
+          "other": "هناك %{count} من البطاقات منتهية الصلاحية، والتي يمكنك عرضها وتعديلها في حسابك."
+        },
+        "local_payment_method_receiver_notice": "بعد تقديم طلبك، سوف تتلقى تفاصيل الدفع. قم بالدفع من خلال ماكينة الصراف الآلي أو عبر الإنترنت خلال {{dueDays}} من الأيام.",
+        "order_edit_banner_subtitle": "تم تحديث طلبك {{order_number}} . راجع هذه التغييرات، ثم ادفع لتأكيد طلبك.",
+        "markets_pro_disclaimer_label": "بالنقر أدناه وإكمال طلبك، فإنك توافق على شراء العناصر الخاصة بك من Global-e كتاجر مسجل لهذه المعاملة، على %{markets_pro_terms} و%{privacy_policy من Global-e. Global-e هي شركة دولية تقدم خدمات تلبية الطلبات لـ %{shop_name}",
+        "waiting_on_taxes_message": "إذا لم يتم احتساب الضرائب الخاصة بك خلال الثواني القليلة القادمة، فقم بتحديث الصفحة."
       },
       "field_errors": {
         "gift_card_invalid": "بطاقة الهدايا \"••••%{last_four_characters}\" لم تعد صالحة",
@@ -2146,6 +2188,32 @@
     },
     "checkpoint": {
       "submit_button_text": "يُقدِّم"
+    },
+    "email_marketing": {
+      "unsubscribed": {
+        "disclaimer": "لن تتلقى أي تحديثات تسويقية أخرى منا. يمكنك الاشتراك مرة أخرى في أي وقت."
+      },
+      "open_tracking": {
+        "opt_in": {
+          "visibility": "سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط ما إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من معدل فتح البريد الإلكتروني المجمع.",
+          "opt_out_html": "يمكنك <a style=\"text-decoration:underline;\" href=\"%{link}\">إلغاء الاشتراك<\/a> في التتبع المفتوح للبريد الإلكتروني إذا كنت لا ترغب في مشاركة هذه المعلومات.",
+          "preview_bar": "أنت تقوم بمعاينة ما سيراه العملاء عند الاشتراك في التتبع المفتوح عبر البريد الإلكتروني."
+        },
+        "opt_out": {
+          "opt_in_html": "<a style=\"text-decoration:underline;\" href=\"%{link}\">قم بالاشتراك<\/a> في التتبع المفتوح عبر البريد الإلكتروني.",
+          "preview_bar": "أنت تقوم بمعاينة ما سيراه العملاء عند إلغاء الاشتراك في التتبع المفتوح للبريد الإلكتروني."
+        },
+        "no_longer_track": {
+          "privacy_policy": "بعد إرسال هذا البريد الإلكتروني، قمنا بتحديث سياسة الخصوصية الخاصة بنا ولم نعد نتتبع عمليات الفتح."
+        },
+        "track": {
+          "visibility": "سنرى فقط ما إذا كنت قد فتحت البريد الإلكتروني، كجزء من إجمالي معدل فتح البريد الإلكتروني."
+        },
+        "updated_policy": {
+          "visibility": "لقد قمنا بتحديث سياستنا، والآن يتم فتح تتبع رسائل البريد الإلكتروني. سيتم الإبلاغ عن معدلات فتح البريد الإلكتروني بشكل مجهول. سنرى فقط ما إذا كنت قد فتحت بريدًا إلكترونيًا كجزء من إجمالي معدل فتح البريد الإلكتروني.",
+          "opt_out_html": "إذا كنت لا ترغب في مشاركة هذه المعلومات، يمكنك <a style=\"text-decoration:underline;\" href=\"%{link}\">إلغاء الاشتراك.<\/a>"
+        }
+      }
     }
   },
   "customer_accounts": {
@@ -2568,6 +2636,15 @@
       },
       "load_orders_error": {
         "retry_button": "أعد المحاولة"
+      },
+      "address_deletion_error": {
+        "description": "حدثت مشكلة أثناء حذف هذا العنوان. حاول مرة أخرى أو قم بتحديث الصفحة."
+      },
+      "failed_address_creation": {
+        "description": "حدثت مشكلة أثناء إنشاء عنوانك. حاول تحديث هذه الصفحة أو التحقق من اتصالك بالإنترنت."
+      },
+      "failed_address_update": {
+        "description": "حدثت مشكلة أثناء تحديث عنوانك. حاول تحديث هذه الصفحة أو التحقق من اتصالك بالإنترنت."
       }
     },
     "orders": {
@@ -2868,10 +2945,13 @@
         "multiple_tax_exemptions_and": "و",
         "tax_exemptions_modal_close": "يغلق",
         "taxes_none": "لا أحد",
-        "tax_exemption_not_applicable": "لا يوجد"
+        "tax_exemption_not_applicable": "لا يوجد",
+        "shipping_address_required": "أضف عنوان شحن إلى هذا الموقع لبدء تقديم الطلبات."
       },
       "location_selection": {
-        "selection_cancel_button": "يلغي"
+        "selection_cancel_button": "يلغي",
+        "description": "إذا كان لديك بالفعل عناصر في عربة التسوق الخاصة بك، فقد يؤثر تغيير المواقع على أسعار وكميات عربة التسوق.",
+        "no_location_description": "لم يعد لديك إذن بتقديم طلبات {{company}} . لا يزال بإمكانك تقديم الطلبات الشخصية."
       },
       "orders": {
         "draft_order_list": {
@@ -2890,7 +2970,12 @@
           "refund": {
             "title": "ردها"
           },
-          "pay_now": "ادفع الآن"
+          "pay_now": "ادفع الآن",
+          "pending": {
+            "description_authorized": "سيتم تحصيل الرسوم من طريقة الدفع الخاصة بك في تاريخ الاستحقاق، أو يمكنك الدفع الآن.",
+            "description_due_on_receipt_partially_paid": "تم دفع هذا الطلب جزئيًا. لديك الرصيد المتبقي. ستتلقى فاتورة عندما يحين موعد الدفع.",
+            "description_due_on_fulfillment_partially_paid": "تم دفع هذا الطلب جزئيًا. لديك الرصيد المتبقي. يكون الدفع مستحقًا بمجرد استيفاء جميع العناصر الموجودة في هذا الطلب."
+          }
         }
       },
       "purchase_order_number": {
@@ -2898,8 +2983,15 @@
         "discard": "ينبذ",
         "modal_po_number_input_label": "PO عدد",
         "save": "يحفظ"
+      },
+      "payment_methods": {
+        "payment_delete": {
+          "description_without_replacement": "لن تكون طريقة الدفع هذه متاحة لعمليات الشراء المستقبلية من هذا الموقع.",
+          "description_with_replacement": "سيؤثر حذف طريقة الدفع هذه على المدفوعات المصرح بها مسبقًا لهذا الموقع. استبدلها بطريقة دفع بديلة لمواصلة تلقي الطلبات القادمة."
+        }
       }
-    }
+    },
+    "enable_javascript": "لعرض حسابك، قم بتمكين JavaScript في إعدادات المتصفح الخاص بك أو قم بتسجيل الدخول باستخدام متصفح آخر."
   },
   "sections": {
     "announcements": {
