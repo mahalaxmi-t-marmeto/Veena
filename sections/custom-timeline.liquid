@@ -39,20 +39,48 @@
   }
 {% endcapture %}
 
-<div class="timeline-wrapper background-{{ section.id }} padding-{{ section.id }} ">
-  <div class="timeline-container page-width"> 
-    <div class="timeline-container--content">
+<div class="timeline-wrapper background-{{ section.id }}
+color-{{ section.settings.color_scheme }}
+ padding-{{ section.id }} ">
+  <div class="timeline-container"> 
+    <div class="timeline-container--content page-width">
       <h2>{{ section.settings.heading }}</h2>
       <p>{{ section.settings.description }}</p>
       <a href="{{ section.settings.button_link }}" class="button">{{ section.settings.button_label  }}</a>
     </div>
-    <div class="timeline-container--slider">
 
+    <custom-slider data-slider-options='{{ Timeline_Slider }}'>
+      <div class="timeline-container--slider">
+      <div class="splide">
+        <div class="splide__track">
+          <ul class="splide__list">
+           {% for block in section.blocks %}
+            <li class="splide__slide">
+              <div>
+                <div>
+                  {% render 'responsive-picture', desktopImage:section.settings.timeline_image1 %}
+                </div>
+               <div class="timeline--slider--text">
+                {%- if block.settings.year != blank -%}
+                  <h2 class="h5 timeline--year">{{ block.settings.year }}</h2>
+                {%- endif -%}
+                {%- if block.settings.title != blank -%}
+                  <h2 class="h5 timeline--title">{{ block.settings.title }}</h2>
+                {%- endif -%}
+               </div>
+              </div>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
     </div>
+  </custom-slider>
+    
 
   </div>
-  <custom-slider class="color-{{ section.settings.color_scheme  }}" data-slider-options='{{ Timeline_Slider }}'>
-  </custom-slider>
+  
+
 </div>
   
   
@@ -89,6 +117,18 @@
       "id": "button_link"
     },
     {
+      "type": "image_picker",
+      "label": "Icon",
+      "info":"Icon to display in timeline blocks when active",
+      "id":"timeline_image1"
+    },
+    {
+      "type": "image_picker",
+      "label": "Icon",
+      "info":"Icon to display in timeline blocks when inactive",
+      "id":"timeline_image2"
+    },
+    {
       "type": "header",
       "content":"Slider Settings"
     },
@@ -115,11 +155,11 @@
     {
       "type": "range",
       "id": "perPage",
-      "min": 1,
-      "max": 6,
+      "min": 6,
+      "max": 10,
       "step": 1,
       "label": "Per Page",
-      "default": 1
+      "default": 8
     },
     {
       "type": "range",
@@ -128,16 +168,16 @@
       "max": 10,
       "step": 1,
       "label": "Transition Speed of Slide",
-      "default": 1
+      "default": 3
     },
     {
       "type": "range",
       "id": "interval",
-      "min": 1,
+      "min": 3,
       "max": 10,
       "step": 1,
       "label": "Slider Autoplay Interval in seconds",
-      "default": 1
+      "default": 5
     },
     {
       "type": "range",
@@ -221,8 +261,8 @@
           },
           {
             "type": "text",
-            "label":"Heading",
-            "id": "block_heading",
+            "label":"title",
+            "id": "title",
             "default": "Forays into Home Appliances Business"
           },
           {

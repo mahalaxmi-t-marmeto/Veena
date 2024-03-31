@@ -1,3 +1,8 @@
+.timeline-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
 .timeline-container--content {
     display: flex;
     flex-direction: column;
@@ -7,6 +12,81 @@
     text-align: center;
 }
 
+.timeline-container--slider {
+    background: url(https://www.orientelectric.com/theme/Orient/img/bg-aboutslider-nav.png) left center repeat-x;
+}
+
 .timeline-container--content p {
     width: 80%;
+}
+
+.timeline-container .splide__slide {
+    height: 16rem;
+}
+
+.timeline-container li:nth-child(even) {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}
+
+.timeline-container li:nth-child(even)>div {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column-reverse;
+}
+
+.timeline-container li:nth-child(odd) {
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+.timeline-container li:nth-child(odd)>div {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.timeline-container .h5 {
+    margin: 0;
+}
+
+.timeline-container .timeline--slider--text:hover .h5{
+    color: #E85A29;
+}
+
+.timeline-wrapper .button {
+    background-color: transparent;
+    color: #E85A29;
+}
+
+.timeline--year {
+    font-size: 19px;
+    color: #919191;
+    line-height: 23px;
+}
+
+.timeline--title {
+    float: left;
+    font-size: 13px;
+    color: #7a7a7a;
+    font-weight: 400;
+}
+
+.timeline-container .splide__arrow--prev {
+    top: -1em;
+}
+
+.timeline-container .splide__arrow--next {
+    top: -1em;
+}
+
+.timeline-container .splide__arrow {
+    border-radius: 0;
+    width: 1em;
+}
+
+.timeline-container  .splide__arrow[disabled] {
+    opacity: 0;
 }

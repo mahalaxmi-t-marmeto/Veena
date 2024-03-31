@@ -649,6 +649,141 @@
         "padding_bottom": 60,
         "color_scheme": ""
       }
+    },
+    "custom_timeline_Wktpr9": {
+      "type": "custom-timeline",
+      "blocks": {
+        "slider_NTVPMP": {
+          "type": "slider",
+          "settings": {
+            "year": 1939,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Electric Limited,formerly a division of Orient Paper and Industries Limited (OPIL), was incorporated as Orient Paper Mills Ltd. in 1939. The CK Birla Group started Orient Paper with just one paper machine at Brajrajnagar in Orissa, India.<\/p>"
+          }
+        },
+        "slider_xHELGd": {
+          "type": "slider",
+          "settings": {
+            "year": 1954,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Fans, the erstwhile Calcutta Electrical Manufacturing Company, became a part of the CK Birla Group in 1954 and was subsequently rechristened Orient Electric in 2014.<\/p>"
+          }
+        },
+        "slider_rCn3Lk": {
+          "type": "slider",
+          "settings": {
+            "year": 1990,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Electric developed and patented the revolutionary PSPO (Peak Speed Performance Output) technology in early 90's which changed the industry outlook altogether. In order to improve production, meet the ever-changing needs of the customers, and establish itself as a global market leader, Orient Electric also equipped its manufacturing plants at Faridabad in Haryana and Kolkata in the state of West Bengal with state of the art machinery and technology.<\/p>"
+          }
+        },
+        "slider_NngDGH": {
+          "type": "slider",
+          "settings": {
+            "year": 2008,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Leveraging its strong brand identity developed over the years, Orient Electric forayed into a new range of electrical products. It started trading of CFLs (compact fluorescent) and FTLs (fluorescent tube) in the year 2007. In 2008, the company set up an advanced manufacturing unit at Faridabad in the state of Haryana dedicated to manufacturing of CFLs and FTLs.It later ventured into LED lighting solutions in 2014 and as of today, it is one of the leading lighting companies in India with a diverse LED-centric portfolio.<\/p>"
+          }
+        },
+        "slider_NpNXm3": {
+          "type": "slider",
+          "settings": {
+            "year": 2011,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Electric ventured into the home appliances market in 2011 with a wide range of products including Air Coolers, Water Heaters, Juicer Mixer Grinders, Mixer Grinders, Toasters, Electric Kettles, Coolers, Induction Cookers, Rice Cookers and Electric Irons. Orient Electric's Home Appliances division today enjoys a pan India presence with a strong distribution network.<\/p>"
+          }
+        },
+        "slider_wQWhdW": {
+          "type": "slider",
+          "settings": {
+            "year": 2014,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>The company changed its brand name and identity from 'Orient Electricals' to 'Orient Electric' and consolidated its business verticals of Fans, Lighting and Home Appliances. The brand revamp was done with an aim to establish the company's identity as a one-stop home solutions provider with the next generation customers who make informed buying decisions. As part of the brand repositioning plan, the company also launched a new unified communications campaign 'Switch to smart' and its new logo in the vibrant colour 'orange'. The year also marked the launch of BLDC fans and Orient Electric's entry into LED lighting solutions.<\/p>"
+          }
+        },
+        "slider_cJDE4q": {
+          "type": "slider",
+          "settings": {
+            "year": 2015,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Continuing with its efforts to position itself as one-stop solution provider of lifestyle electrical solutions, Orient Electric forayed into the Switchgear market. Orient Electric's smart range of energy-efficient LV Switchgear products includes MCB (Miniature Circuit Breakers), RCCB (Residual Current Circuit Breakers), Isolators and Distribution Boards. The company manufactures the Switchgear range at its state of the art manufacturing facility located at Noida in the state of Uttar Pradesh.<\/p>"
+          }
+        },
+        "slider_kjm3Vy": {
+          "type": "slider",
+          "settings": {
+            "year": 2016,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>On January 16, 2019, Orient Electric announced the national launch of India's first smart ceiling fan Aeroslim which set new standards in the segment with its IoT & voice control, one-of-a-kind slim cylindrical design and energy-efficient inverter motor.<\/p>"
+          }
+        },
+        "slider_d96hkD": {
+          "type": "slider",
+          "settings": {
+            "year": 2017,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Electric gets demerged from Orient Paper & Industries Limited (OPIL) into a separate listed entity, Orient Electric Limited (OEL). The Scheme of demerger was approved by the Kolkata Bench of the National Company Law Tribunal on November 9, 2017.<\/p>"
+          }
+        },
+        "slider_dtPK3L": {
+          "type": "slider",
+          "settings": {
+            "year": 2018,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>On 14th May 2018, Orient Electric Limited got listed on the Bombay Stock Exchange (BSE) and the National Stock Exchange (NSE). Orient Electric Ltd. stock trades under the code \"541301\" on BSE and under the code \"ORIENTELEC\" on NSE.<\/p>"
+          }
+        },
+        "slider_TQhwLx": {
+          "type": "slider",
+          "settings": {
+            "year": 2019,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Electric makes its way into the list of 2020 Fortune India 500 - India's Largest Corporations. The recognition validates the robustness of company's business model and is reflective of its ambitious growth journey as a standalone company.<\/p>"
+          }
+        },
+        "slider_Bn9tdH": {
+          "type": "slider",
+          "settings": {
+            "year": 2020,
+            "title": "Forays into Home Appliances Business",
+            "block_description": "<p>Orient Electric makes its way into the list of 2020 Fortune India 500 - India's Largest Corporations. The recognition validates the robustness of company's business model and is reflective of its ambitious growth journey as a standalone company..<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "slider_NTVPMP",
+        "slider_xHELGd",
+        "slider_rCn3Lk",
+        "slider_NngDGH",
+        "slider_NpNXm3",
+        "slider_wQWhdW",
+        "slider_cJDE4q",
+        "slider_kjm3Vy",
+        "slider_d96hkD",
+        "slider_dtPK3L",
+        "slider_TQhwLx",
+        "slider_Bn9tdH"
+      ],
+      "settings": {
+        "heading": "One-Stop Brand for Electrical Lifestyle Solutions",
+        "description": "<p>Orient Electric Limited (OEL) is part of the diversified USD 2.9 billion Indian conglomerate CK Birla Group. A distinguished name in the Indian fan industry for almost seven decades, OEL has today established itself in the market as a one-stop brand for lifestyle electrical solutions which include Fans, Lighting, Home Appliances, Switchgears, and other electrical solutions.<\/p><p>OEL is a nimble organisation focused not merely on carving out larger market shares but delivering compelling consumer experiences and creating markets niches through differentiated products. OEL stock trades under the code \"541301\" on BSE and under the code \"ORIENTELEC\" on NSE.<\/p>",
+        "button_label": "See more",
+        "button_link": "",
+        "timeline_image1": "shopify:\/\/shop_images\/bg-as-tn-active.png",
+        "timeline_image2": "shopify:\/\/shop_images\/bg-as-tn.png",
+        "slider_type": "loop",
+        "perPage": 8,
+        "speed": 2,
+        "interval": 5,
+        "gap": 2,
+        "autoplay": false,
+        "arrows": true,
+        "pagination": false,
+        "rewind": true,
+        "color_scheme": "",
+        "padding_top": 30,
+        "padding_bottom": 30
+      }
     }
   },
   "order": [
@@ -667,6 +802,7 @@
     "custom_image_with_text_banner_xCJULL",
     "custom_testimonials_CkdrWG",
     "custom_blog_pzykdG",
-    "custom_faq_TfzcHh"
+    "custom_faq_TfzcHh",
+    "custom_timeline_Wktpr9"
   ]
 }
