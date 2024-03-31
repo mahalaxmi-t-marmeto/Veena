@@ -771,7 +771,7 @@
         "button_link": "",
         "timeline_image1": "shopify:\/\/shop_images\/bg-as-tn-active.png",
         "timeline_image2": "shopify:\/\/shop_images\/bg-as-tn.png",
-        "slider_type": "loop",
+        "slider_type": "slide",
         "perPage": 8,
         "speed": 2,
         "interval": 5,
@@ -779,8 +779,8 @@
         "autoplay": false,
         "arrows": true,
         "pagination": false,
-        "rewind": true,
-        "color_scheme": "",
+        "rewind": false,
+        "color_scheme": "scheme-1d0629c1-f7f4-437b-a1c4-13f5e4dd62f9",
         "padding_top": 30,
         "padding_bottom": 30
       }
