@@ -25,6 +25,7 @@
       "autoplay": {{ section.settings.autoplay }},
       "arrows": {{ section.settings.arrows }},
       "pagination": {{ section.settings.pagination }},
+      "perMove":1,
       "perPage": {{ section.settings.perPage }},
       "breakpoints":{
         "640": {
@@ -38,6 +39,8 @@
       "gap":"{{ section.settings.gap |  append: 'rem'}}"
   }
 {% endcapture %}
+
+<script src="{{'custom-timeline.js'| asset_url}}" defer></script>
 
 <div class="timeline-wrapper background-{{ section.id }}
 color-{{ section.settings.color_scheme }}
@@ -55,10 +58,10 @@ color-{{ section.settings.color_scheme }}
         <div class="splide__track">
           <ul class="splide__list">
            {% for block in section.blocks %}
-            <li class="splide__slide">
-              <div>
-                <div>
-                  {% render 'responsive-picture', desktopImage:section.settings.timeline_image1 %}
+            <li class="splide__slide timeline--slide--block">
+              <custom-timeline>
+                <div class="timeline--icon">
+                  {% render 'responsive-picture', desktopImage:section.settings.timeline_image2 %}
                 </div>
                <div class="timeline--slider--text">
                 {%- if block.settings.year != blank -%}
@@ -68,7 +71,7 @@ color-{{ section.settings.color_scheme }}
                   <h2 class="h5 timeline--title">{{ block.settings.title }}</h2>
                 {%- endif -%}
                </div>
-              </div>
+              </custom-timeline>
             </li>
             {% endfor %}
           </ul>

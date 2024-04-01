@@ -1,0 +1,25 @@
+<div class="page-width">
+  <form method="POST" action="YOUR_WEBAPP_URL">
+    <div class="grid">
+       <div class="field grid--2-col grid__item">
+        <input name="Name" type="text" id="googleName" placeholder="Name" class="field__input" required>
+        <label class="field__label" for="googleName">Name</label>
+      </div>
+      <div class="field grid--2-col grid__item">
+        <input name="Email" type="email" id="googleEmail" placeholder="Email" class="field__input" required>
+        <label class="field__label" for="googleEmail">Email</label>
+      </div>
+    </div>
+    <button class="button" type="submit">Send</button>
+  </form>  
+</div>
+{% schema %}
+  {
+    "name": "Google Sheet Form",
+    "presets": [
+      {
+        "name": "Google Sheet Form"
+      }
+    ]
+  }
+{% endschema %}
