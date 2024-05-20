@@ -1,0 +1,96 @@
+.feedback-form-container{
+    width: 66rem;
+    height: 80rem;
+    margin: 10rem auto;
+}
+.form{
+    border-radius: 5rem;
+    box-shadow: 2px 2px 15px 1px black;
+}
+
+.feedback-form{
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.feedback-form .field{
+    width: 80%;
+}
+
+.field--area{
+    width: 90%;
+    display: flex;
+    align-items: start;
+    margin-left: 6rem;
+    flex-direction: column;
+    margin-top: -2rem;
+}
+
+.field--area textarea{
+    width: 90%;
+    height: 8rem;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 18px 0px #00000094;
+    padding: 1rem;
+}
+
+.field--area p{
+    color: #170F49;
+    font-weight: 700;
+}
+
+.feedback-form .label {
+    position: absolute;
+    top: -3rem;
+    left: 1rem;
+    color: #170F49;
+    font-weight: 700;
+}
+
+#button{
+    background-color: #4A3AFF;
+    margin-bottom: 2rem;
+    margin-left: 6rem;
+    padding: 2rem;
+}
+
+.field-checkbox{
+    display: flex;
+    flex-direction: row;
+    margin-left: -14rem;
+}
+
+.ratings>input {
+    display: none;
+}
+
+.ratings {
+    position: relative;
+    left: -21rem;
+    width: 54%;
+    display: flex;
+}
+
+#ratings {
+    position: relative;
+    left: 14rem;
+}
+
+.ratings .stars {
+    font-size: 3rem;
+    margin: 2px;
+}
+
+.field {
+    margin-bottom: 20px;
+}
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-top: 5px;
+}

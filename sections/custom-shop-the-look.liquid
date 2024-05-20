@@ -35,8 +35,9 @@
     <div class="shop-the-look__grid grid grid--1-col grid--3-col-desktop 
     grid--3-col-tablet color-{{ section.settings.color_scheme }}">
       {% for block in section.blocks %}
-        <div class="grid__item">
-          <div class="shop-the-look__image">
+        <div class="grid__item delayed-section" id="del{{forloop.index}}" data-scrub="0.5">
+          <div class="innerContainer">
+            <div class="shop-the-look__image ">
             <div class="shop-the-look__dots shop-the-look-primary-{{ block.id }}">
                 <svg class="shop-the-look__dot" xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none" class="icon-circle">
                     <circle class="icon-circle" cx="5.5" cy="5.5" r="5.5" fill="currentColor"></circle>
@@ -122,11 +123,49 @@
               </a>
           {% endif %}
           </div>
+          </div>
         </div>
       {% endfor %}
     </div>
   </div>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer="defer"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer="defer"></script>
+
+<script>
+ // use a script tag or an external JS file
+ document.addEventListener("DOMContentLoaded", (event) => {
+  gsap.registerPlugin(ScrollTrigger)
+
+  let delSections = document.querySelectorAll(".delayed-section");
+
+  delSections.forEach(section => {
+    
+    let imageAnim = gsap.to(section.querySelector("img"), {
+      y: "-100vh",
+      ease: "none",
+      paused: true
+    });
+    
+    let progressTo = gsap.quickTo(imageAnim, "progress", {ease: "power3", duration: parseFloat(section.dataset.scrub) || 0.1});
+    
+    gsap.to(section.querySelector(".innerContainer"), {
+      y: "100vh",
+      ease: "none",
+      scrollTrigger: {
+        scrub: true,
+        trigger: section,
+        start: "top bottom",
+        end: "bottom top",
+        onUpdate: self => progressTo(self.progress)
+      }
+    });
+  });
+ });
+
+</script>
 
 {% schema %}
   {
