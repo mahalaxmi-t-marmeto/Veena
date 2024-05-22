@@ -44,7 +44,6 @@
         },
         "discount_y86ee3": {
           "type": "discount",
-          "disabled": true,
           "settings": {
             "heading": "Variant specific discount",
             "background": "linear-gradient(90deg, rgba(68, 52, 116, 1), rgba(121, 9, 119, 0.9726) 62%, rgba(122, 14, 189, 1) 76%)",
