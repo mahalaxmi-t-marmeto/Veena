@@ -123,6 +123,13 @@
           "settings": {
             "bundle_heading": "Frequently bought together"
           }
+        },
+        "opinew_product_reviews_app_footer_badge_88RnU9": {
+          "type": "shopify:\/\/apps\/opinew-product-reviews-app\/blocks\/footer-badge\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+          "settings": {
+            "badge_type": "wide_average",
+            "align": "left"
+          }
         }
       },
       "block_order": [
@@ -142,7 +149,8 @@
         "description",
         "productdetails_NENqWR",
         "collapsible_tab_8VxTTQ",
-        "bundles_pcK4jm"
+        "bundles_pcK4jm",
+        "opinew_product_reviews_app_footer_badge_88RnU9"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -180,11 +188,21 @@
             "button_label": "Check It Now",
             "button_link": "shopify:\/\/collections"
           }
+        },
+        "text_wTQMaL": {
+          "type": "text",
+          "settings": {
+            "heading": "Heading",
+            "description": "<p>Description<\/p>",
+            "button_label": "Button",
+            "button_link": ""
+          }
         }
       },
       "block_order": [
         "text",
-        "text_r4VRNF"
+        "text_r4VRNF",
+        "text_wTQMaL"
       ],
       "settings": {
         "color_scheme": "",
