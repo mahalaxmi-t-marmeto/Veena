@@ -3,6 +3,11 @@
     "main": {
       "type": "main-product",
       "blocks": {
+        "opinew_product_reviews_app_product_stars_rWdd9V": {
+          "type": "shopify:\/\/apps\/opinew-product-reviews-app\/blocks\/product-stars\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+          "settings": {
+          }
+        },
         "vendor": {
           "type": "text",
           "settings": {
@@ -121,6 +126,7 @@
         }
       },
       "block_order": [
+        "opinew_product_reviews_app_product_stars_rWdd9V",
         "vendor",
         "title",
         "price",
