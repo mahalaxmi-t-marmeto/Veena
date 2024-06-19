@@ -31,6 +31,7 @@
                         <h2 class="h0 richtext-heading">
                             <p>{{ block.settings.heading }}</p>
                             <h2>Cheking for branch changes</h2>
+                            <h2>Cheking changes for second branch</h2>
                         </h2>
                     {% endif %}
                     {% if block.settings.button_label != blank %}
@@ -38,6 +39,7 @@
                             role="link" aria-disabled="true" {% else %}
                             href="{{ block.settings.button_link }}" {% endif %}>
                             {{- block.settings.button_label | escape -}}
+                            <h2>Changes in first branch after making changes of second branch</h2>
                         </a>
                     {% endif %}
                 {% endfor %}
