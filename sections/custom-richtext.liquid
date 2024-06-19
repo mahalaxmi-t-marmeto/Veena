@@ -32,6 +32,7 @@
                             <p>{{ block.settings.heading }}</p>
                             <h2>banner change + additional change</h2>
                             <h2>second banner change</h2>
+
                         </h2>
                     {% endif %}
                     {% if block.settings.button_label != blank %}
@@ -39,6 +40,7 @@
                             role="link" aria-disabled="true" {% else %}
                             href="{{ block.settings.button_link }}" {% endif %}>
                             {{- block.settings.button_label | escape -}}
+                            <h2>Changes in first branch after making changes of second branch</h2>
                         </a>
                     {% endif %}
                 {% endfor %}
