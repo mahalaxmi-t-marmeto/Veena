@@ -1,6 +1,15 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/logo.png",
+    "logo": "shopify://shop_images/logo.png",
     "logo_width": 90,
     "type_header_font": "harmonia_sans_n6",
     "heading_scale": 100,
@@ -98,7 +107,7 @@
     "sale_badge_color_scheme": "scheme-4",
     "sold_out_badge_color_scheme": "scheme-3",
     "brand_headline": "",
-    "brand_description": "<p><\/p>",
+    "brand_description": "<p></p>",
     "brand_image_width": 100,
     "social_facebook_link": "",
     "social_instagram_link": "",
@@ -229,32 +238,35 @@
           "color_settings_xYNaR7",
           "color_settings_haRFgr"
         ],
-        "settings": {
-        }
+        "settings": {}
       },
       "custom-header": {
         "type": "custom-header",
         "settings": {
-          "logo": "shopify:\/\/shop_images\/logo.png",
+          "logo": "shopify://shop_images/logo.png",
           "link_list": "veena-menu",
           "show_icons": false
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "14060646107696862457": {
-        "type": "shopify:\/\/apps\/judge-me-reviews\/blocks\/judgeme_core\/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+        "type": "shopify://apps/judge-me-reviews/blocks/judgeme_core/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       },
       "opinew-global-code": {
-        "type": "shopify:\/\/apps\/opinew-product-reviews-app\/blocks\/global\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+        "type": "shopify://apps/opinew-product-reviews-app/blocks/global/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+        "disabled": false,
+        "settings": {}
+      },
+      "17410671050484012158": {
+        "type": "shopify://apps/cartking-free-gift-buy-x-get-y/blocks/gift-embed-v2/4831ea51-9f80-493d-8541-da4662a9e219",
         "disabled": false,
         "settings": {
+          "targetSelector": "",
+          "targetLocation": "After"
         }
       }
     },
@@ -527,7 +539,7 @@
       "sale_badge_color_scheme": "scheme-4",
       "sold_out_badge_color_scheme": "scheme-3",
       "brand_headline": "",
-      "brand_description": "<p><\/p>",
+      "brand_description": "<p></p>",
       "brand_image_width": 100,
       "social_twitter_link": "",
       "social_facebook_link": "",
