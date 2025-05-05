@@ -263,7 +263,7 @@
       },
       "14236898902689827741": {
         "type": "shopify://apps/stack-discounts-ninja/blocks/app-embed/42061352-3816-430f-b7f9-d8d92f58c694",
-        "disabled": false,
+        "disabled": true,
         "settings": {}
       }
     },
