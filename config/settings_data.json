@@ -261,12 +261,12 @@
         "disabled": false,
         "settings": {}
       },
-      "17410671050484012158": {
-        "type": "shopify://apps/cartking-free-gift-buy-x-get-y/blocks/gift-embed-v2/4831ea51-9f80-493d-8541-da4662a9e219",
+      "15165505441455205624": {
+        "type": "shopify://apps/autocart/blocks/autocart/aac12e90-e97d-4173-bb1b-0facfcf7d6e4",
         "disabled": false,
         "settings": {
-          "targetSelector": "",
-          "targetLocation": "After"
+          "debug": false,
+          "manual_relaod": false
         }
       }
     },
