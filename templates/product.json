@@ -1,12 +1,20 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "main": {
       "type": "main-product",
       "blocks": {
         "opinew_product_reviews_app_product_stars_rWdd9V": {
-          "type": "shopify:\/\/apps\/opinew-product-reviews-app\/blocks\/product-stars\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
-          "settings": {
-          }
+          "type": "shopify://apps/opinew-reviews/blocks/product-stars/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+          "settings": {}
         },
         "vendor": {
           "type": "text",
@@ -17,13 +25,11 @@
         },
         "title": {
           "type": "title",
-          "settings": {
-          }
+          "settings": {}
         },
         "price": {
           "type": "price",
-          "settings": {
-          }
+          "settings": {}
         },
         "variant_picker": {
           "type": "variant_picker",
@@ -57,8 +63,7 @@
         },
         "quantity_selector": {
           "type": "quantity_selector",
-          "settings": {
-          }
+          "settings": {}
         },
         "buy_buttons": {
           "type": "buy_buttons",
@@ -72,42 +77,39 @@
           "settings": {
             "layout": "horizontal",
             "icon_1": "heart",
-            "image_1": "shopify:\/\/shop_images\/i1.svg",
+            "image_1": "shopify://shop_images/i1.svg",
             "heading_1": "Daily deals",
             "icon_2": "return",
-            "image_2": "shopify:\/\/shop_images\/i2.svg",
+            "image_2": "shopify://shop_images/i2.svg",
             "heading_2": "Return policy",
             "icon_3": "truck",
-            "image_3": "shopify:\/\/shop_images\/i3.svg",
+            "image_3": "shopify://shop_images/i3.svg",
             "heading_3": "secure payment",
             "icon_4": "truck",
-            "image_4": "shopify:\/\/shop_images\/i4.svg",
-            "heading_4": "Help center 24\/7"
+            "image_4": "shopify://shop_images/i4.svg",
+            "heading_4": "Help center 24/7"
           }
         },
         "offertext_Lire9w": {
           "type": "offertext",
           "settings": {
-            "offer_svg1": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"20\" height=\"20\" viewbox=\"0 0 24 24\">\n      <path d=\"M22.194,9.023L13.177,.006,4.9,.903l.215,1.988,7.325-.793,8.34,8.339c.296,.296,.296,.777-.012,1.084l-.962,.994L11.099,3.808,1.962,5.057,.953,14.18l9.013,9.012c.521,.521,1.213,.808,1.95,.808s1.43-.287,1.962-.819l6.244-6.449c.665-.665,.916-1.588,.759-2.451l1.314-1.357c1.075-1.076,1.075-2.826,0-3.901Zm-16.194,.977c-.552,0-1-.448-1-1,0-.552,.448-1,1-1,.552,0,1,.448,1,1s-.448,1-1,1Z\"><\/path>                  \n    <\/svg>",
-            "offer_label1": "Instant 10% Discount On Win Banks Credit\/Debit Cards EMI and CreditCard",
-            "offer_svg2": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"20\" height=\"20\" viewbox=\"0 0 24 24\">\n      <path d=\"M22.194,9.023L13.177,.006,4.9,.903l.215,1.988,7.325-.793,8.34,8.339c.296,.296,.296,.777-.012,1.084l-.962,.994L11.099,3.808,1.962,5.057,.953,14.18l9.013,9.012c.521,.521,1.213,.808,1.95,.808s1.43-.287,1.962-.819l6.244-6.449c.665-.665,.916-1.588,.759-2.451l1.314-1.357c1.075-1.076,1.075-2.826,0-3.901Zm-16.194,.977c-.552,0-1-.448-1-1,0-.552,.448-1,1-1,.552,0,1,.448,1,1s-.448,1-1,1Z\"><\/path>                  \n    <\/svg>",
+            "offer_svg1": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewbox=\"0 0 24 24\">\n      <path d=\"M22.194,9.023L13.177,.006,4.9,.903l.215,1.988,7.325-.793,8.34,8.339c.296,.296,.296,.777-.012,1.084l-.962,.994L11.099,3.808,1.962,5.057,.953,14.18l9.013,9.012c.521,.521,1.213,.808,1.95,.808s1.43-.287,1.962-.819l6.244-6.449c.665-.665,.916-1.588,.759-2.451l1.314-1.357c1.075-1.076,1.075-2.826,0-3.901Zm-16.194,.977c-.552,0-1-.448-1-1,0-.552,.448-1,1-1,.552,0,1,.448,1,1s-.448,1-1,1Z\"></path>                  \n    </svg>",
+            "offer_label1": "Instant 10% Discount On Win Banks Credit/Debit Cards EMI and CreditCard",
+            "offer_svg2": "<svg class=\"icon icon-accordion\" aria-hidden=\"true\" focusable=\"false\" xmlns=\"http://www.w3.org/2000/svg\" width=\"20\" height=\"20\" viewbox=\"0 0 24 24\">\n      <path d=\"M22.194,9.023L13.177,.006,4.9,.903l.215,1.988,7.325-.793,8.34,8.339c.296,.296,.296,.777-.012,1.084l-.962,.994L11.099,3.808,1.962,5.057,.953,14.18l9.013,9.012c.521,.521,1.213,.808,1.95,.808s1.43-.287,1.962-.819l6.244-6.449c.665-.665,.916-1.588,.759-2.451l1.314-1.357c1.075-1.076,1.075-2.826,0-3.901Zm-16.194,.977c-.552,0-1-.448-1-1,0-.552,.448-1,1-1,.552,0,1,.448,1,1s-.448,1-1,1Z\"></path>                  \n    </svg>",
             "offer_label2": "Fastest Delivery Tomorrow With Vip DealOrder within 1 hr 8 mins."
           }
         },
         "payment_WRPw63": {
           "type": "payment",
-          "settings": {
-          }
+          "settings": {}
         },
         "description": {
           "type": "description",
-          "settings": {
-          }
+          "settings": {}
         },
         "productdetails_NENqWR": {
           "type": "productdetails",
-          "settings": {
-          }
+          "settings": {}
         },
         "collapsible_tab_8VxTTQ": {
           "type": "collapsible_tab",
@@ -125,7 +127,7 @@
           }
         },
         "opinew_product_reviews_app_footer_badge_88RnU9": {
-          "type": "shopify:\/\/apps\/opinew-product-reviews-app\/blocks\/footer-badge\/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+          "type": "shopify://apps/opinew-reviews/blocks/footer-badge/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
           "settings": {
             "badge_type": "wide_average",
             "align": "left"
@@ -175,25 +177,25 @@
           "type": "text",
           "settings": {
             "heading": "Elegance Redefined",
-            "description": "<p>Discover timeless fashion that seamlessly blends sophistication and modern flair. Our curated collection reflects a commitment to style, quality, and individuality, ensuring you make a statement with every ensemble.<\/p>",
+            "description": "<p>Discover timeless fashion that seamlessly blends sophistication and modern flair. Our curated collection reflects a commitment to style, quality, and individuality, ensuring you make a statement with every ensemble.</p>",
             "button_label": "Explore Now",
-            "button_link": "shopify:\/\/collections"
+            "button_link": "shopify://collections"
           }
         },
         "text_r4VRNF": {
           "type": "text",
           "settings": {
             "heading": "Effortless Casual Couture",
-            "description": "<p>Experience the perfect blend of comfort and style with our casual couture collection. From laid-back essentials to effortlessly chic pieces, redefine casual wear with fashion that allows you to express yourself without compromising on comfort.<\/p>",
+            "description": "<p>Experience the perfect blend of comfort and style with our casual couture collection. From laid-back essentials to effortlessly chic pieces, redefine casual wear with fashion that allows you to express yourself without compromising on comfort.</p>",
             "button_label": "Check It Now",
-            "button_link": "shopify:\/\/collections"
+            "button_link": "shopify://collections"
           }
         },
         "text_wTQMaL": {
           "type": "text",
           "settings": {
             "heading": "Heading",
-            "description": "<p>Description<\/p>",
+            "description": "<p>Description</p>",
             "button_label": "Button",
             "button_link": ""
           }
@@ -217,44 +219,44 @@
         "image_grid_dBLVFL": {
           "type": "image-grid",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/g1.jpg",
+            "desktop_image": "shopify://shop_images/g1.jpg",
             "sub_heading": "Unveil Your Inner Grace",
             "heading": "Timeless Elegance",
-            "description": "<p>Explore a collection that transcends trends, embracing timeless pieces that exude sophistication. Elevate your style with our curated selection designed to stand the test of time.<\/p>",
-            "button_link": "shopify:\/\/collections",
+            "description": "<p>Explore a collection that transcends trends, embracing timeless pieces that exude sophistication. Elevate your style with our curated selection designed to stand the test of time.</p>",
+            "button_link": "shopify://collections",
             "button_text": "Shop Now"
           }
         },
         "image_grid_E7wLUC": {
           "type": "image-grid",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/g2.jpg",
+            "desktop_image": "shopify://shop_images/g2.jpg",
             "sub_heading": "Free-Spirited Fashion Finds",
             "heading": "Boho Chic Vibes",
-            "description": "<p>Immerse yourself in the world of bohemian charm. From flowy silhouettes to vibrant patterns.<\/p>",
-            "button_link": "shopify:\/\/collections",
+            "description": "<p>Immerse yourself in the world of bohemian charm. From flowy silhouettes to vibrant patterns.</p>",
+            "button_link": "shopify://collections",
             "button_text": "Shop Now"
           }
         },
         "image_grid_FtJWch": {
           "type": "image-grid",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/g3.jpg",
+            "desktop_image": "shopify://shop_images/g3.jpg",
             "sub_heading": "Modern Minimalism",
             "heading": "Simplicity Redefined",
             "description": "",
-            "button_link": "shopify:\/\/collections",
+            "button_link": "shopify://collections",
             "button_text": "Shop Now"
           }
         },
         "image_grid_DLcLa6": {
           "type": "image-grid",
           "settings": {
-            "desktop_image": "shopify:\/\/shop_images\/g4.jpg",
+            "desktop_image": "shopify://shop_images/g4.jpg",
             "sub_heading": "Elegance Redefined",
             "heading": "Modern Minimalist Trends",
             "description": "",
-            "button_link": "shopify:\/\/collections",
+            "button_link": "shopify://collections",
             "button_text": "Shop Now"
           }
         }
@@ -293,6 +295,21 @@
       "settings": {
         "title": "Recently viewed"
       }
+    },
+    "opinew-reviews-product-page-code": {
+      "type": "apps",
+      "blocks": {
+        "opinew-reviews-widget": {
+          "type": "shopify://apps/opinew-reviews/blocks/product-widget/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "opinew-reviews-widget"
+      ],
+      "settings": {
+        "include_margins": true
+      }
     }
   },
   "order": [
@@ -300,6 +317,7 @@
     "product_text_grid",
     "pdp_image_grid_mqtx8j",
     "related-products",
-    "recently-viewed-products"
+    "recently-viewed-products",
+    "opinew-reviews-product-page-code"
   ]
 }
