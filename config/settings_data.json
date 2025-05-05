@@ -261,13 +261,10 @@
         "disabled": false,
         "settings": {}
       },
-      "15165505441455205624": {
-        "type": "shopify://apps/autocart/blocks/autocart/aac12e90-e97d-4173-bb1b-0facfcf7d6e4",
+      "14236898902689827741": {
+        "type": "shopify://apps/stack-discounts-ninja/blocks/app-embed/42061352-3816-430f-b7f9-d8d92f58c694",
         "disabled": false,
-        "settings": {
-          "debug": false,
-          "manual_relaod": false
-        }
+        "settings": {}
       }
     },
     "color_schemes": {
