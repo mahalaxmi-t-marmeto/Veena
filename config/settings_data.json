@@ -260,11 +260,6 @@
         "type": "shopify://apps/opinew-product-reviews-app/blocks/global/e1d8e0dc-17ff-4e4a-8a8a-1e73c8ef8676",
         "disabled": false,
         "settings": {}
-      },
-      "14236898902689827741": {
-        "type": "shopify://apps/stack-discounts-ninja/blocks/app-embed/42061352-3816-430f-b7f9-d8d92f58c694",
-        "disabled": true,
-        "settings": {}
       }
     },
     "color_schemes": {
